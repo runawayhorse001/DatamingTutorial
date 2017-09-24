@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Python or R for data analysis? &mdash; Data Mining With Python and R v1.01 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Data Mining With Python and R v1.01 documentation" href="index.html"/>
+        <link rel="next" title="Getting Started" href="gettingstarted.html"/>
+        <link rel="prev" title="Preface" href="preface.html"/>
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-168290-9']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+
+  
+  <script src="static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Data Mining With Python and R
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python or R for data analysis?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ponder-over-questions">Ponder over questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comparison-list">Comparison List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#my-opinions">My Opinions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dap.html">Data analysis procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre.html">Pre-processing procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dim.html">Dimension Reduction Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression.html">Regression Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reg.html">Regularization ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resample.html">Resampling Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpkg.html">Developing Your Own R Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppkg.html">Developing Your Own Python Packages</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Data Mining With Python and R</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Python or R for data analysis?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="sources/comparison.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-or-r-for-data-analysis">
+<span id="comparison"></span><h1>Python or R for data analysis?<a class="headerlink" href="#python-or-r-for-data-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Sharpening the knife longer can make it easier to hack the firewood &#8211; old Chinese proverb</p>
+</div>
+<p>There is an old Chinese proverb that Says ‘sharpening the knife longer can make it easier to hack the firewood&#8217;.  In other words, take extra time to get it right in the preparation phase and then the work will be easier. So it is worth to take several minites to think about which programming language is better for you.</p>
+<p>When you google it, you will get many useful results. Here are some valueable information from <a class="reference external" href="https://www.quora.com/Which-is-better-for-data-analysis-R-or-Python">Quora</a>:</p>
+<div class="section" id="ponder-over-questions">
+<h2>Ponder over questions<a class="headerlink" href="#ponder-over-questions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Six questions to ponder over from  <a class="reference external" href="https://www.quora.com/profile/Vipin-Tyagi-9">Vipin Tyagi</a> at <a class="reference external" href="https://www.quora.com/Which-is-better-for-data-analysis-R-or-Python">Quora</a><ol class="arabic">
+<li>Is your problem is purely data analysis based or mixed one involving mathematics, machine-learning, artificial intelligence based?</li>
+<li>What are the commonly used tools in your field?</li>
+<li>What is the programming expertise of your human resources?</li>
+<li>What level of visualization you require in your presentations?</li>
+<li>Are you academic, research-oriented or commercial professional?</li>
+<li>Do you have access to number of data analytic softwares for doing your assignment?</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="comparison-list">
+<h2>Comparison List<a class="headerlink" href="#comparison-list" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>comparative list  from  <a class="reference external" href="https://www.quora.com/profile/Yassine-Alouini">Yassine Alouini</a> at <a class="reference external" href="https://www.quora.com/Which-is-better-for-data-analysis-R-or-Python">Quora</a></li>
+</ul>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="36%" />
+<col width="55%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>&#160;</td>
+<td><strong>R</strong></td>
+<td><strong>Python</strong></td>
+</tr>
+<tr class="row-even"><td>advantages</td>
+<td><ul class="first last simple">
+<li>great for prototyping</li>
+<li>great for statistical analysis</li>
+<li>nice  IDE</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>great for scripting and automating your different data mining pipelines</li>
+<li>integrates easily in a production workflow</li>
+<li>can be used across different parts of your software engineering team</li>
+<li><strong>scikit-learn</strong> library is awesome for machine-learning tasks.</li>
+<li><strong>Ipython</strong> is also a powerful tool for exploratory analysis and presentations</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>disadvantages</td>
+<td><ul class="first last simple">
+<li>syntax could be obscure</li>
+<li>libraries documentation isn&#8217;t always user friendly</li>
+<li>harder to integrate to a production workflow.</li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li>It isn&#8217;t as thorough for statistical analysis as R</li>
+<li>learning curve is steeper than R, since you can do much more with Python</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="my-opinions">
+<h2>My Opinions<a class="headerlink" href="#my-opinions" title="Permalink to this headline">¶</a></h2>
+<p>In my opinion, <strong>R</strong> and <strong>Python</strong> are both choice.  Since they are open-source softwares (open-source is always good in my eyes) and are free to download. If you are a beginer without any programming experience and only want to do some data analysis, I would definitely suggest to use <strong>R</strong>. Otherwise, I would suggest to use both.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gettingstarted.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="preface.html" class="btn btn-neutral" title="Preface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Wenqiang Feng.
+      Last updated on Sep 23, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'v1.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+
+
+</body>
+</html>

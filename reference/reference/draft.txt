@@ -1,0 +1,119 @@
+     1. **Summary of the data**
+
+ * Summary of the data in **R**
+
+  .. code-block:: r
+
+     summary(rawdata)
+ 
+  Then you you will get 
+
+  .. code-block:: r
+
+
+ *  Summary of the data in **Python**
+
+  .. code-block:: python
+
+     print "\n correlation Matrix"
+     print rawdata.corr()
+ 
+  Then you you will get 
+
+  .. code-block:: python
+
+     > summary(rawdata)
+         Age             Sex                ChestPain       RestBP           Chol            Fbs        
+     Min.   :29.00   Min.   :0.0000   asymptomatic:144   Min.   : 94.0   Min.   :126.0   Min.   :0.0000  
+     1st Qu.:48.00   1st Qu.:0.0000   nonanginal  : 86   1st Qu.:120.0   1st Qu.:211.0   1st Qu.:0.0000  
+     Median :56.00   Median :1.0000   nontypical  : 50   Median :130.0   Median :241.0   Median :0.0000  
+     Mean   :54.44   Mean   :0.6799   typical     : 23   Mean   :131.7   Mean   :246.7   Mean   :0.1485  
+     3rd Qu.:61.00   3rd Qu.:1.0000                      3rd Qu.:140.0   3rd Qu.:275.0   3rd Qu.:0.0000  
+     Max.   :77.00   Max.   :1.0000                      Max.   :200.0   Max.   :564.0   Max.   :1.0000  
+                                                                                                     
+      RestECG           MaxHR           ExAng           Oldpeak         Slope             Ca        
+     Min.   :0.0000   Min.   : 71.0   Min.   :0.0000   Min.   :0.00   Min.   :1.000   Min.   :0.0000  
+     1st Qu.:0.0000   1st Qu.:133.5   1st Qu.:0.0000   1st Qu.:0.00   1st Qu.:1.000   1st Qu.:0.0000  
+     Median :1.0000   Median :153.0   Median :0.0000   Median :0.80   Median :2.000   Median :0.0000  
+     Mean   :0.9901   Mean   :149.6   Mean   :0.3267   Mean   :1.04   Mean   :1.601   Mean   :0.6722  
+     3rd Qu.:2.0000   3rd Qu.:166.0   3rd Qu.:1.0000   3rd Qu.:1.60   3rd Qu.:2.000   3rd Qu.:1.0000  
+     Max.   :2.0000   Max.   :202.0   Max.   :1.0000   Max.   :6.20   Max.   :3.000   Max.   :3.0000  
+                                                                                  NA's   :4       
+            Thal      AHD     
+     fixed     : 18   No :164  
+     normal    :166   Yes:139  
+     reversable:117            
+     NA's      :  2    
+
+ 
+ The following are the top 20 R machine learning and data science packages from `Bhavya Geethika`_, you may want to install all of them.
+
+ * **e1071** Functions for latent class analysis, short time Fourier transform, fuzzy clustering, support vector machines, shortest path computation, bagged clustering, naive Bayes classifier etc (142479 downloads) 
+ * **rpart** Recursive Partitioning and Regression Trees. (135390)
+ * **igraph** A collection of network analysis tools. (122930)
+ * **nnet** Feed-forward Neural Networks and Multinomial Log-Linear Models. (108298)
+ * **randomForest** Breiman and Cutler's random forests for classification and regression. (105375)
+ * **caret** package (short for Classification And REgression Training) is a set of functions that attempt to streamline the process for creating predictive models. (87151)
+ * **kernlab** Kernel-based Machine Learning Lab. (62064)
+ * **glmnet** Lasso and elastic-net regularized generalized linear models. (56948)
+ * **ROCR** Visualizing the performance of scoring classifiers. (51323)
+ * **gbm** Generalized Boosted Regression Models. (44760)
+ * **party** A Laboratory for Recursive Partitioning. (43290)
+ * **arules** Mining Association Rules and Frequent Itemsets. (39654)
+ * **tree** Classification and regression trees. (27882)
+ * **klaR** Classification and visualization. (27828)
+ * **RWeka** R/Weka interface. (26973)
+ * **ipred** Improved Predictors. (22358)
+ * **lars** Least Angle Regression, Lasso and Forward Stagewise. (19691)
+ * **earth** Multivariate Adaptive Regression Spline Models. (15901)
+ * **CORElearn** Classification, regression, feature evaluation and ordinal evaluation. (13856)
+ * **mboost** Model-Based Boosting. (13078)
+
+ .. figure:: images/top20rpkg.jpg
+    :align: center
+
+    **Figure** : Top 20 R Machine Learning and Data Science packages. From http://www.kdnuggets.com/2015/06/top-20-r-machine-learning-packages.html
+
+
+* **Installing package for Python**
+ Install package or modules for Python in Linux can also be quite easy. Here I will only present installation by using pip.
+
+ * **Installing pip**
+    .. code-block:: bash
+
+        sudo easy_install pip
+
+ * **Installing numpy**
+
+    .. code-block:: bash
+
+        pip install numpy
+
+ * **Installing pandas**
+
+    .. code-block:: bash
+
+        pip install pandas
+
+ * **Installing scikits-learn**
+
+    .. code-block:: bash
+
+        pip install -U scikit-learn   
+
+ The following are the best Python modules for data mining from `kdnuggets com`_, you may also want to install all of them.
+
+ #. Basics:
+
+
+ #. Machine Learning and Data Mining:
+
+
+ #. Natural Language:
+
+
+ #. For web scraping:
+
+
+
+ .. _kdnuggets com: http://www.kdnuggets.com/2012/11/best-python-modules-for-data-mining.html

@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Data Mining With Python and R v1.01 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Data Mining With Python and R v1.01 documentation" href="index.html"/>
+        <link rel="next" title="Data analysis procedures" href="dap.html"/>
+        <link rel="prev" title="Python or R for data analysis?" href="comparison.html"/>
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-168290-9']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+
+  
+  <script src="static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Data Mining With Python and R
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">Python or R for data analysis?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-programming-language">Installing programming language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-programming-platform">Installing programming platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-package">Installing package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dap.html">Data analysis procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre.html">Pre-processing procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dim.html">Dimension Reduction Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression.html">Regression Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reg.html">Regularization ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resample.html">Resampling Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpkg.html">Developing Your Own R Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppkg.html">Developing Your Own Python Packages</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Data Mining With Python and R</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="sources/gettingstarted.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<span id="gettingstarted"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Good tools are prerequisite to the successful execution of a job</strong> &#8211; old Chinese proverb</p>
+</div>
+<p>Let&#8217;s keep sharpening our tools. A good programming platform can save you
+lots of troubles and time. Herein I will only present how to install my
+favorite programming platform for R and Python and only show the easiest
+way which I know to install them on Linux system. If you want to install
+on the other operator system, you can Google it. In this section, you may
+learn how to install R, Python and the corresponding programming platform
+and package.</p>
+<div class="section" id="installing-programming-language">
+<span id="index-0"></span><h2>Installing programming language<a class="headerlink" href="#installing-programming-language" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Installing R</strong></li>
+</ul>
+<blockquote>
+<div><p>Go to Ubuntu Software Center and follow the following steps:</p>
+<ol class="arabic simple">
+<li>Open Ubuntu Software Center</li>
+<li>Search for r-base</li>
+<li>And click Install</li>
+</ol>
+<p>Or Open your terminal and  using the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get update
+sudo apt-get install r-base
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Insralling Python</strong></li>
+</ul>
+<blockquote>
+<div><p>Go to Ubuntu Software Center and follow the following steps:</p>
+<ol class="arabic simple">
+<li>Open Ubuntu Software Center</li>
+<li>Search for python</li>
+<li>And click Install</li>
+</ol>
+<p>Or Open your terminal and  using the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install build-essential checkinstall
+sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev
+             libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+sudo apt-get install python
+sudo easy_install pip
+sudo pip install ipython
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="installing-programming-platform">
+<span id="index-1"></span><h2>Installing programming platform<a class="headerlink" href="#installing-programming-platform" title="Permalink to this headline">¶</a></h2>
+<p>My favorite programming platform for R is definitely <strong>RStudio</strong> IDE and for Python is  <strong>Eclipse+Pydev</strong>.</p>
+<ul class="simple">
+<li><strong>Installing RStudio</strong></li>
+</ul>
+<blockquote>
+<div><p>Go to Ubuntu Software Center and follow the following steps:</p>
+<ol class="arabic simple">
+<li>Open Ubuntu Software Center</li>
+<li>Search for RStudio</li>
+<li>And click Install</li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Installing Eclipse + Pydev</strong></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Installing Eclipse</li>
+</ul>
+<blockquote>
+<div><p>Go to Ubuntu Software Center and follow the following steps:</p>
+<ol class="arabic simple">
+<li>Open Ubuntu Software Center</li>
+<li>Search for Eclipse</li>
+<li>And click Install</li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li>Installing Pydev</li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Open Eclipse</li>
+<li>Go to Eclipse Marketplace</li>
+<li>Search for Pydev</li>
+<li>And click Pydev- Python IDE for Eclipse</li>
+</ol>
+<p>Here is the video tutorial for installing Pydev for Eclipse on Youtube: <a class="reference external" href="https://www.youtube.com/watch?v=CryTwaJGpPM">Pydev on Youtube</a></p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="installing-package">
+<span id="index-2"></span><h2>Installing package<a class="headerlink" href="#installing-package" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Installing package for R</strong></li>
+</ul>
+<blockquote>
+<div><p>Install package for R in RStudio os super easy, I will use tree package as a example:</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>install.packages<span class="p">(</span><span class="s">&quot;tree&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The following are the top 20 R machine learning and data science packages from <a class="reference external" href="http://www.kdnuggets.com/2015/06/top-20-r-machine-learning-packages.html">Bhavya Geethika</a>, you may want to install all of them.</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>e1071</strong> Functions for latent class analysis, short time Fourier transform, fuzzy clustering, support vector machines, shortest path computation, bagged clustering, naive Bayes classifier etc (142479 downloads)</li>
+<li><strong>rpart</strong> Recursive Partitioning and Regression Trees. (135390)</li>
+<li><strong>igraph</strong> A collection of network analysis tools. (122930)</li>
+<li><strong>nnet</strong> Feed-forward Neural Networks and Multinomial Log-Linear Models. (108298)</li>
+<li><strong>randomForest</strong> Breiman and Cutler&#8217;s random forests for classification and regression. (105375)</li>
+<li><strong>caret</strong> package (short for Classification And REgression Training) is a set of functions that attempt to streamline the process for creating predictive models. (87151)</li>
+<li><strong>kernlab</strong> Kernel-based Machine Learning Lab. (62064)</li>
+<li><strong>glmnet</strong> Lasso and elastic-net regularized generalized linear models. (56948)</li>
+<li><strong>ROCR</strong> Visualizing the performance of scoring classifiers. (51323)</li>
+<li><strong>gbm</strong> Generalized Boosted Regression Models. (44760)</li>
+<li><strong>party</strong> A Laboratory for Recursive Partitioning. (43290)</li>
+<li><strong>arules</strong> Mining Association Rules and Frequent Itemsets. (39654)</li>
+<li><strong>tree</strong> Classification and regression trees. (27882)</li>
+<li><strong>klaR</strong> Classification and visualization. (27828)</li>
+<li><strong>RWeka</strong> R/Weka interface. (26973)</li>
+<li><strong>ipred</strong> Improved Predictors. (22358)</li>
+<li><strong>lars</strong> Least Angle Regression, Lasso and Forward Stagewise. (19691)</li>
+<li><strong>earth</strong> Multivariate Adaptive Regression Spline Models. (15901)</li>
+<li><strong>CORElearn</strong> Classification, regression, feature evaluation and ordinal evaluation. (13856)</li>
+<li><strong>mboost</strong> Model-Based Boosting. (13078)</li>
+</ul>
+<div class="figure align-center" id="id1">
+<img alt="images/top20rpkg.jpg" src="images/top20rpkg.jpg" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Top 20 R Machine Learning and Data Science packages. From <a class="reference external" href="http://www.kdnuggets.com/2015/06/top-20-r-machine-learning-packages.html">http://www.kdnuggets.com/2015/06/top-20-r-machine-learning-packages.html</a></span></p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Installing package for Python</strong></li>
+</ul>
+<blockquote>
+<div><p>Install package or modules for Python in Linux can also be quite easy. Here I will only present installation by using pip.</p>
+<ul class="simple">
+<li><strong>Installing pip</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>sudo easy_install pip
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Installing numpy</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>pip install numpy
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Installing pandas</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>pip install pandas
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Installing scikits-learn</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -U scikit-learn
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>The following are the best Python modules for data mining from <a class="reference external" href="http://www.kdnuggets.com/2012/11/best-python-modules-for-data-mining.html">kdnuggets</a>, you may also want to install all of them.</p>
+<ol class="arabic simple">
+<li>Basics</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><strong>numpy</strong> - numerical library, <a class="reference external" href="http://numpy.scipy.org/">http://numpy.scipy.org/</a></li>
+<li><strong>scipy</strong> - Advanced math, signal processing, optimization, statistics, <a class="reference external" href="http://www.scipy.org/">http://www.scipy.org/</a></li>
+<li><strong>matplotlib</strong>, python plotting - Matplotlib, <a class="reference external" href="http://matplotlib.org">http://matplotlib.org</a></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Machine Learning and Data Mining</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><strong>MDP</strong>, a collection of supervised and unsupervised learning algorithms, <a class="reference external" href="http://pypi.python.org/pypi/MDP/2.4">http://pypi.python.org/pypi/MDP/2.4</a></li>
+<li><strong>mlpy</strong>, Machine Learning Python, <a class="reference external" href="http://mlpy.sourceforge.net">http://mlpy.sourceforge.net</a></li>
+<li><strong>NetworkX</strong>, for graph analysis, <a class="reference external" href="http://networkx.lanl.gov/">http://networkx.lanl.gov/</a></li>
+<li><strong>Orange</strong>, Data Mining Fruitful &amp; Fun, <a class="reference external" href="http://biolab.si">http://biolab.si</a></li>
+<li><strong>pandas</strong>, Python Data Analysis Library, <a class="reference external" href="http://pandas.pydata.org">http://pandas.pydata.org</a></li>
+<li><strong>pybrain</strong>, <a class="reference external" href="http://pybrain.org">http://pybrain.org</a></li>
+<li><strong>scikits-learn</strong> - Classic machine learning algorithms - Provide simple an efficient solutions to learning problems, <a class="reference external" href="http://scikit-learn.org/stable/">http://scikit-learn.org/stable/</a></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Natural Language</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><strong>NLTK</strong>, Natural Language Toolkit, <a class="reference external" href="http://nltk.org">http://nltk.org</a></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>For web scraping</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Scrapy</strong>, An open source web scraping framework for Python, <a class="reference external" href="http://scrapy.org">http://scrapy.org</a></li>
+<li><strong>urllib/urllib2</strong></li>
+</ul>
+</div></blockquote>
+<p>Herein I would like to add one more important package <strong>Theano</strong> for deep learning and <strong>textmining</strong> for text mining:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Theano</strong>, deep learning, <a class="reference external" href="http://deeplearning.net/tutorial/">http://deeplearning.net/tutorial/</a></li>
+<li><strong>textmining</strong>, text mining, <a class="reference external" href="https://pypi.python.org/pypi/textmining/1.0">https://pypi.python.org/pypi/textmining/1.0</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dap.html" class="btn btn-neutral float-right" title="Data analysis procedures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="comparison.html" class="btn btn-neutral" title="Python or R for data analysis?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Wenqiang Feng.
+      Last updated on Sep 23, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'v1.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+
+
+</body>
+</html>

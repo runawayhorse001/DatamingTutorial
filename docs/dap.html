@@ -1,0 +1,1215 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data analysis procedures &mdash; Data Mining With Python and R v1.01 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Data Mining With Python and R v1.01 documentation" href="index.html"/>
+        <link rel="next" title="Pre-processing procedures" href="pre.html"/>
+        <link rel="prev" title="Getting Started" href="gettingstarted.html"/>
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-168290-9']);
+  _gaq.push(['_trackPageview']);
+</script>
+
+
+  
+  <script src="static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Data Mining With Python and R
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">Python or R for data analysis?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data analysis procedures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#procedures">procedures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#datasets-in-this-tutorial">Datasets in this Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-datasets">Loading Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understand-data-with-statistics-methods">Understand Data With Statistics methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understand-data-with-visualization">Understand Data With Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-code-for-this-section">Source Code for This Section</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pre.html">Pre-processing procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dim.html">Dimension Reduction Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression.html">Regression Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reg.html">Regularization ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resample.html">Resampling Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpkg.html">Developing Your Own R Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppkg.html">Developing Your Own Python Packages</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Data Mining With Python and R</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Data analysis procedures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="sources/dap.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="dap"></span><div class="section" id="data-analysis-procedures">
+<span id="index-0"></span><h1>Data analysis procedures<a class="headerlink" href="#data-analysis-procedures" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Know yourself and know your enemy, and you will never be defeated</strong> &#8211; idiom, from Sunzi&#8217;s Art of War</p>
+</div>
+<div class="section" id="procedures">
+<span id="index-1"></span><h2>procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h2>
+<p>Data mining is a complex process that aims to discover patterns in large data sets starting from a collection of exsting data. In my opinion, data minig contains four main steps:</p>
+<ol class="arabic simple">
+<li><strong>Collecting data</strong>: This is a complex step, I will assume we have already gotten the datasets.</li>
+<li><strong>Pre-processing</strong>: In this step, we need to try to understand your data, denoise, do dimentation reduction and select proper predictors etc.</li>
+<li><strong>Feeding data mining</strong>: In this step, we need to use your data to feed your model.</li>
+<li><strong>Post-processing</strong> : In this step, we need to interpret and evaluate your model.</li>
+</ol>
+<p>In this section, we will try to know our enemy &#8211; datasets. We will learn how to load data, how to understand data with statistics method and how to underdtand data with visualization. Next, we will start with Loading Datasets for the Pre-processing.</p>
+</div>
+<div class="section" id="datasets-in-this-tutorial">
+<span id="index-2"></span><h2>Datasets in this Tutorial<a class="headerlink" href="#datasets-in-this-tutorial" title="Permalink to this headline">¶</a></h2>
+<p>The datasets for this tutorial are available to download: <a class="reference external" href="../data/Heart.csv">Heart</a>,  <a class="reference external" href="../data/energy_efficiency.xlsx">Energy Efficienency</a>. Those data are from my course matrials, the copyrights blongs to the origial authors.</p>
+</div>
+<div class="section" id="loading-datasets">
+<span id="index-3"></span><h2>Loading Datasets<a class="headerlink" href="#loading-datasets" title="Permalink to this headline">¶</a></h2>
+<p>There are two main data formats &#8220;<em>.csv&#8221; and &#8220;</em>.xlsx&#8221;. We will show how to load those two types of data in <strong>R</strong> and <strong>Python</strong>, respectively.</p>
+<ol class="arabic simple">
+<li><strong>Loading datasets in R</strong></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Loading <img class="math" src="images/math/6b94a04529a14303aff701018743454978f06ea0.png" alt="*.csv"/> format data</li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="c1"># set the path or enverionment</span>
+<span class="kp">setwd</span><span class="p">(</span><span class="s">&quot;/home/feng/R-language/sat577/HW#4/data&quot;</span><span class="p">)</span>
+
+<span class="c1"># read data set</span>
+rawdata <span class="o">=</span> read.csv<span class="p">(</span><span class="s">&quot;spam.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Loading <img class="math" src="images/math/e202e22985d6296aeec0716c5d8f44bc5d187a66.png" alt="*.xlsx"/> format data</li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="c1"># set the path or enverionment</span>
+<span class="kp">setwd</span><span class="p">(</span><span class="s">&quot;~/Dropbox/R-language/sat577/&quot;</span><span class="p">)</span>
+
+<span class="c1">#install.packages(&quot;readxl&quot;) # CRAN version</span>
+<span class="kn">library</span><span class="p">(</span>readxl<span class="p">)</span>
+
+<span class="c1"># read data set</span>
+energy_eff<span class="o">=</span>read_excel<span class="p">(</span><span class="s">&quot;energy_efficiency.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><strong>Loading datasets in Python</strong></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Loading <img class="math" src="images/math/6b94a04529a14303aff701018743454978f06ea0.png" alt="*.csv"/> format data</li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="c1"># set data path</span>
+<span class="n">path</span> <span class="o">=</span><span class="s1">&#39;~/Dropbox/MachineLearningAlgorithms/python_code/data/Heart.csv&#39;</span>
+
+<span class="c1"># read data set</span>
+<span class="n">rawdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Loading <img class="math" src="images/math/e202e22985d6296aeec0716c5d8f44bc5d187a66.png" alt="*.xlsx"/> format data</li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="c1"># set data path</span>
+<span class="n">path</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;/home/feng/Dropbox/MachineLearningAlgorithms/python_code/data/&#39;</span>
+<span class="s1">&#39;energy_efficiency.xlsx&#39;</span><span class="p">)</span>
+
+<span class="c1"># read data set from first sheet</span>
+<span class="n">rawdata</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">sheetname</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="understand-data-with-statistics-methods">
+<span id="index-4"></span><h2>Understand Data With Statistics methods<a class="headerlink" href="#understand-data-with-statistics-methods" title="Permalink to this headline">¶</a></h2>
+<p>After we get the data in hand, then we can try to understand them.  I will use &#8220;Heart.csv&#8221; dataset as a example to demonstrate how to use those statistics methods.</p>
+<ol class="arabic simple">
+<li><strong>Summary of the data</strong></li>
+</ol>
+<blockquote>
+<div><p>It is always good to have a glance over the summary of the data. Since from the summary you will know some statistics features of your data, and you will also know whether you data contains missing data or not.</p>
+<ul class="simple">
+<li>Summary of the data in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="kp">summary</span><span class="p">(</span>rawdata<span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="kp">summary</span><span class="p">(</span>rawdata<span class="p">)</span>
+        Age             Sex                ChestPain       RestBP
+     Min.   <span class="o">:</span><span class="m">29.00</span>   Min.   <span class="o">:</span><span class="m">0.0000</span>   asymptomatic<span class="o">:</span><span class="m">144</span>   Min.   <span class="o">:</span> <span class="m">94.0</span>
+     <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">48.00</span>   <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">0.0000</span>   nonanginal  <span class="o">:</span> <span class="m">86</span>   <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">120.0</span>
+     Median <span class="o">:</span><span class="m">56.00</span>   Median <span class="o">:</span><span class="m">1.0000</span>   nontypical  <span class="o">:</span> <span class="m">50</span>   Median <span class="o">:</span><span class="m">130.0</span>
+     Mean   <span class="o">:</span><span class="m">54.44</span>   Mean   <span class="o">:</span><span class="m">0.6799</span>   typical     <span class="o">:</span> <span class="m">23</span>   Mean   <span class="o">:</span><span class="m">131.7</span>
+     <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">61.00</span>   <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">1.0000</span>                      <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">140.0</span>
+     Max.   <span class="o">:</span><span class="m">77.00</span>   Max.   <span class="o">:</span><span class="m">1.0000</span>                      Max.   <span class="o">:</span><span class="m">200.0</span>
+
+       Chol            Fbs            RestECG           MaxHR
+     Min.   <span class="o">:</span><span class="m">126.0</span>   Min.   <span class="o">:</span><span class="m">0.0000</span>   Min.   <span class="o">:</span><span class="m">0.0000</span>   Min.   <span class="o">:</span> <span class="m">71.0</span>
+     <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">211.0</span>   <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">0.0000</span>   <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">0.0000</span>   <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">133.5</span>
+     Median <span class="o">:</span><span class="m">241.0</span>   Median <span class="o">:</span><span class="m">0.0000</span>   Median <span class="o">:</span><span class="m">1.0000</span>   Median <span class="o">:</span><span class="m">153.0</span>
+     Mean   <span class="o">:</span><span class="m">246.7</span>   Mean   <span class="o">:</span><span class="m">0.1485</span>   Mean   <span class="o">:</span><span class="m">0.9901</span>   Mean   <span class="o">:</span><span class="m">149.6</span>
+     <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">275.0</span>   <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">0.0000</span>   <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">2.0000</span>   <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">166.0</span>
+     Max.   <span class="o">:</span><span class="m">564.0</span>   Max.   <span class="o">:</span><span class="m">1.0000</span>   Max.   <span class="o">:</span><span class="m">2.0000</span>   Max.   <span class="o">:</span><span class="m">202.0</span>
+
+      ExAng           Oldpeak         Slope             Ca
+     Min.   <span class="o">:</span><span class="m">0.0000</span>   Min.   <span class="o">:</span><span class="m">0.00</span>   Min.   <span class="o">:</span><span class="m">1.000</span>   Min.   <span class="o">:</span><span class="m">0.0000</span>
+     <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">0.0000</span>   <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">0.00</span>   <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">1.000</span>   <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">0.0000</span>
+     Median <span class="o">:</span><span class="m">0.0000</span>   Median <span class="o">:</span><span class="m">0.80</span>   Median <span class="o">:</span><span class="m">2.000</span>   Median <span class="o">:</span><span class="m">0.0000</span>
+     Mean   <span class="o">:</span><span class="m">0.3267</span>   Mean   <span class="o">:</span><span class="m">1.04</span>   Mean   <span class="o">:</span><span class="m">1.601</span>   Mean   <span class="o">:</span><span class="m">0.6722</span>
+     <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">1.0000</span>   <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">1.60</span>   <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">2.000</span>   <span class="m">3</span>rd Qu.<span class="o">:</span><span class="m">1.0000</span>
+     Max.   <span class="o">:</span><span class="m">1.0000</span>   Max.   <span class="o">:</span><span class="m">6.20</span>   Max.   <span class="o">:</span><span class="m">3.000</span>   Max.   <span class="o">:</span><span class="m">3.0000</span>
+                                             <span class="kc">NA</span><span class="s">&#39;s   :4</span>
+<span class="s">         Thal      AHD</span>
+<span class="s">     fixed     : 18   No :164</span>
+<span class="s">     normal    :166   Yes:139</span>
+<span class="s">     reversable:117</span>
+<span class="s">     NA&#39;</span>s      <span class="o">:</span>  <span class="m">2</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Summary of the data in <strong>Python</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;data summary&quot;</span>
+<span class="k">print</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>              <span class="n">Age</span>         <span class="n">Sex</span>      <span class="n">RestBP</span>        <span class="n">Chol</span>         <span class="n">Fbs</span>     <span class="n">RestECG</span>  \
+<span class="n">count</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>
+<span class="n">mean</span>    <span class="mf">54.438944</span>    <span class="mf">0.679868</span>  <span class="mf">131.689769</span>  <span class="mf">246.693069</span>    <span class="mf">0.148515</span>    <span class="mf">0.990099</span>
+<span class="n">std</span>      <span class="mf">9.038662</span>    <span class="mf">0.467299</span>   <span class="mf">17.599748</span>   <span class="mf">51.776918</span>    <span class="mf">0.356198</span>    <span class="mf">0.994971</span>
+<span class="nb">min</span>     <span class="mf">29.000000</span>    <span class="mf">0.000000</span>   <span class="mf">94.000000</span>  <span class="mf">126.000000</span>    <span class="mf">0.000000</span>    <span class="mf">0.000000</span>
+<span class="mi">25</span><span class="o">%</span>     <span class="mf">48.000000</span>    <span class="mf">0.000000</span>  <span class="mf">120.000000</span>  <span class="mf">211.000000</span>    <span class="mf">0.000000</span>    <span class="mf">0.000000</span>
+<span class="mi">50</span><span class="o">%</span>     <span class="mf">56.000000</span>    <span class="mf">1.000000</span>  <span class="mf">130.000000</span>  <span class="mf">241.000000</span>    <span class="mf">0.000000</span>    <span class="mf">1.000000</span>
+<span class="mi">75</span><span class="o">%</span>     <span class="mf">61.000000</span>    <span class="mf">1.000000</span>  <span class="mf">140.000000</span>  <span class="mf">275.000000</span>    <span class="mf">0.000000</span>    <span class="mf">2.000000</span>
+<span class="nb">max</span>     <span class="mf">77.000000</span>    <span class="mf">1.000000</span>  <span class="mf">200.000000</span>  <span class="mf">564.000000</span>    <span class="mf">1.000000</span>    <span class="mf">2.000000</span>
+
+       <span class="n">MaxHR</span>       <span class="n">ExAng</span>     <span class="n">Oldpeak</span>       <span class="n">Slope</span>          <span class="n">Ca</span>
+<span class="n">count</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">299.000000</span>
+<span class="n">mean</span>   <span class="mf">149.607261</span>    <span class="mf">0.326733</span>    <span class="mf">1.039604</span>    <span class="mf">1.600660</span>    <span class="mf">0.672241</span>
+<span class="n">std</span>     <span class="mf">22.875003</span>    <span class="mf">0.469794</span>    <span class="mf">1.161075</span>    <span class="mf">0.616226</span>    <span class="mf">0.937438</span>
+<span class="nb">min</span>     <span class="mf">71.000000</span>    <span class="mf">0.000000</span>    <span class="mf">0.000000</span>    <span class="mf">1.000000</span>    <span class="mf">0.000000</span>
+<span class="mi">25</span><span class="o">%</span>    <span class="mf">133.500000</span>    <span class="mf">0.000000</span>    <span class="mf">0.000000</span>    <span class="mf">1.000000</span>    <span class="mf">0.000000</span>
+<span class="mi">50</span><span class="o">%</span>    <span class="mf">153.000000</span>    <span class="mf">0.000000</span>    <span class="mf">0.800000</span>    <span class="mf">2.000000</span>    <span class="mf">0.000000</span>
+<span class="mi">75</span><span class="o">%</span>    <span class="mf">166.000000</span>    <span class="mf">1.000000</span>    <span class="mf">1.600000</span>    <span class="mf">2.000000</span>    <span class="mf">1.000000</span>
+<span class="nb">max</span>    <span class="mf">202.000000</span>    <span class="mf">1.000000</span>    <span class="mf">6.200000</span>    <span class="mf">3.000000</span>    <span class="mf">3.000000</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><strong>The size of the data</strong></li>
+</ol>
+<blockquote>
+<div><p>Sometimes we also need to know the size or dimension of our data. Such as when you need to extract the
+response from the dataset, you need the number of column, or when you try to split your data into train
+and test data set, you need know the number of row.</p>
+<ul class="simple">
+<li>Checking size in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="kp">dim</span><span class="p">(</span>rawdata<span class="p">)</span>
+</pre></div>
+</div>
+<p>Or you can use the following code</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>nrow<span class="o">=</span><span class="kp">nrow</span><span class="p">(</span>rawdata<span class="p">)</span>
+ncol<span class="o">=</span><span class="kp">ncol</span><span class="p">(</span>rawdata<span class="p">)</span>
+
+<span class="kt">c</span><span class="p">(</span><span class="kp">nrow</span><span class="p">,</span> <span class="kp">ncol</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="kp">dim</span><span class="p">(</span>rawdata<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">303</span>  <span class="m">14</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Checking size in <strong>Python</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">shape</span>
+<span class="k">print</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span>
+</pre></div>
+</div>
+<p>or you can use the follwing code</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nrow</span><span class="o">=</span><span class="n">rawdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#gives number of row count</span>
+<span class="n">ncol</span><span class="o">=</span><span class="n">rawdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#gives number of col count</span>
+<span class="k">print</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Raw</span> <span class="n">data</span> <span class="n">size</span>
+<span class="mi">303</span> <span class="mi">14</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><strong>Data format of the predictors</strong></li>
+</ol>
+<blockquote>
+<div><p>Data format is also very important, since some functions or methods can not be applied to the qualitative data, you
+need to remove those predictors or transform them into quantitative data.</p>
+<ul class="simple">
+<li>Checking data format in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="c1"># install the package</span>
+install.packages<span class="p">(</span><span class="s">&quot;mlbench&quot;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>mlbench<span class="p">)</span>
+
+<span class="kp">sapply</span><span class="p">(</span>rawdata<span class="p">,</span> <span class="kp">class</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>   <span class="o">&gt;</span> <span class="kp">sapply</span><span class="p">(</span>rawdata<span class="p">,</span> <span class="kp">class</span><span class="p">)</span>
+    Age       Sex ChestPain    RestBP      Chol       Fbs   RestECG
+<span class="s">&quot;integer&quot;</span> <span class="s">&quot;integer&quot;</span>  <span class="s">&quot;factor&quot;</span> <span class="s">&quot;integer&quot;</span> <span class="s">&quot;integer&quot;</span> <span class="s">&quot;integer&quot;</span> <span class="s">&quot;integer&quot;</span>
+MaxHR     ExAng   Oldpeak     Slope        Ca      Thal       AHD
+<span class="s">&quot;integer&quot;</span> <span class="s">&quot;integer&quot;</span> <span class="s">&quot;numeric&quot;</span> <span class="s">&quot;integer&quot;</span> <span class="s">&quot;integer&quot;</span>  <span class="s">&quot;factor&quot;</span>  <span class="s">&quot;factor&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Checking data format in <strong>Pyhton</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Data</span> <span class="n">Format</span><span class="p">:</span>
+<span class="n">Age</span>            <span class="n">int64</span>
+<span class="n">Sex</span>            <span class="n">int64</span>
+<span class="n">ChestPain</span>     <span class="nb">object</span>
+<span class="n">RestBP</span>         <span class="n">int64</span>
+<span class="n">Chol</span>           <span class="n">int64</span>
+<span class="n">Fbs</span>            <span class="n">int64</span>
+<span class="n">RestECG</span>        <span class="n">int64</span>
+<span class="n">MaxHR</span>          <span class="n">int64</span>
+<span class="n">ExAng</span>          <span class="n">int64</span>
+<span class="n">Oldpeak</span>      <span class="n">float64</span>
+<span class="n">Slope</span>          <span class="n">int64</span>
+<span class="n">Ca</span>           <span class="n">float64</span>
+<span class="n">Thal</span>          <span class="nb">object</span>
+<span class="n">AHD</span>           <span class="nb">object</span>
+<span class="n">dtype</span><span class="p">:</span> <span class="nb">object</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><strong>The column names</strong></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Checking column names of the data in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="kp">colnames</span><span class="p">(</span>rawdata<span class="p">)</span>
+<span class="kn">attach</span><span class="p">(</span>rawdata<span class="p">)</span> <span class="c1"># enable you can directly use name as predictors</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>   <span class="o">&gt;</span> <span class="kp">colnames</span><span class="p">(</span>rawdata<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;Age&quot;</span>       <span class="s">&quot;Sex&quot;</span>       <span class="s">&quot;ChestPain&quot;</span> <span class="s">&quot;RestBP&quot;</span>    <span class="s">&quot;Chol&quot;</span>
+<span class="p">[</span><span class="m">6</span><span class="p">]</span> <span class="s">&quot;Fbs&quot;</span>       <span class="s">&quot;RestECG&quot;</span>   <span class="s">&quot;MaxHR&quot;</span>     <span class="s">&quot;ExAng&quot;</span>     <span class="s">&quot;Oldpeak&quot;</span>
+<span class="p">[</span><span class="m">11</span><span class="p">]</span> <span class="s">&quot;Slope&quot;</span>     <span class="s">&quot;Ca&quot;</span>        <span class="s">&quot;Thal&quot;</span>      <span class="s">&quot;AHD&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Checking column names of the data in <strong>Python</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">colNames</span> <span class="o">=</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="s2">&quot;Column names:&quot;</span>
+<span class="k">print</span> <span class="n">colNames</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>    <span class="n">Column</span> <span class="n">names</span><span class="p">:</span>
+<span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="s1">&#39;ChestPain&#39;</span><span class="p">,</span> <span class="s1">&#39;RestBP&#39;</span><span class="p">,</span> <span class="s1">&#39;Chol&#39;</span><span class="p">,</span> <span class="s1">&#39;Fbs&#39;</span><span class="p">,</span> <span class="s1">&#39;RestECG&#39;</span><span class="p">,</span> <span class="s1">&#39;MaxHR&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ExAng&#39;</span><span class="p">,</span> <span class="s1">&#39;Oldpeak&#39;</span><span class="p">,</span> <span class="s1">&#39;Slope&#39;</span><span class="p">,</span> <span class="s1">&#39;Ca&#39;</span><span class="p">,</span> <span class="s1">&#39;Thal&#39;</span><span class="p">,</span> <span class="s1">&#39;AHD&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><strong>The first or last parts of the data</strong></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Checking first parts of the data in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="kp">head</span><span class="p">(</span>rawdata<span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="kp">head</span><span class="p">(</span>rawdata<span class="p">)</span>
+   Age Sex    ChestPain RestBP Chol Fbs RestECG MaxHR ExAng Oldpeak
+ <span class="m">1</span>  <span class="m">63</span>   <span class="m">1</span>      typical    <span class="m">145</span>  <span class="m">233</span>   <span class="m">1</span>       <span class="m">2</span>   <span class="m">150</span>     <span class="m">0</span>     <span class="m">2.3</span>
+ <span class="m">2</span>  <span class="m">67</span>   <span class="m">1</span> asymptomatic    <span class="m">160</span>  <span class="m">286</span>   <span class="m">0</span>       <span class="m">2</span>   <span class="m">108</span>     <span class="m">1</span>     <span class="m">1.5</span>
+ <span class="m">3</span>  <span class="m">67</span>   <span class="m">1</span> asymptomatic    <span class="m">120</span>  <span class="m">229</span>   <span class="m">0</span>       <span class="m">2</span>   <span class="m">129</span>     <span class="m">1</span>     <span class="m">2.6</span>
+ <span class="m">4</span>  <span class="m">37</span>   <span class="m">1</span>   nonanginal    <span class="m">130</span>  <span class="m">250</span>   <span class="m">0</span>       <span class="m">0</span>   <span class="m">187</span>     <span class="m">0</span>     <span class="m">3.5</span>
+ <span class="m">5</span>  <span class="m">41</span>   <span class="m">0</span>   nontypical    <span class="m">130</span>  <span class="m">204</span>   <span class="m">0</span>       <span class="m">2</span>   <span class="m">172</span>     <span class="m">0</span>     <span class="m">1.4</span>
+ <span class="m">6</span>  <span class="m">56</span>   <span class="m">1</span>   nontypical    <span class="m">120</span>  <span class="m">236</span>   <span class="m">0</span>       <span class="m">0</span>   <span class="m">178</span>     <span class="m">0</span>     <span class="m">0.8</span>
+    Slope Ca       Thal AHD
+ <span class="m">1</span>     <span class="m">3</span>  <span class="m">0</span>      fixed  No
+ <span class="m">2</span>     <span class="m">2</span>  <span class="m">3</span>     normal Yes
+ <span class="m">3</span>     <span class="m">2</span>  <span class="m">2</span> reversable Yes
+ <span class="m">4</span>     <span class="m">3</span>  <span class="m">0</span>     normal  No
+ <span class="m">5</span>     <span class="m">1</span>  <span class="m">0</span>     normal  No
+ <span class="m">6</span>     <span class="m">1</span>  <span class="m">0</span>     normal  No
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Checking first parts of the data in <strong>Python</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Sample data:&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">rawdata</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span> <span class="n">Sample</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">Age</span>  <span class="n">Sex</span>     <span class="n">ChestPain</span>  <span class="n">RestBP</span>  <span class="n">Chol</span>  <span class="n">Fbs</span>  <span class="n">RestECG</span>  <span class="n">MaxHR</span>  <span class="n">ExAng</span>  <span class="n">Oldpeak</span>  \
+<span class="mi">0</span>   <span class="mi">63</span>    <span class="mi">1</span>       <span class="n">typical</span>     <span class="mi">145</span>   <span class="mi">233</span>    <span class="mi">1</span>        <span class="mi">2</span>    <span class="mi">150</span>      <span class="mi">0</span>      <span class="mf">2.3</span>
+<span class="mi">1</span>   <span class="mi">67</span>    <span class="mi">1</span>  <span class="n">asymptomatic</span>     <span class="mi">160</span>   <span class="mi">286</span>    <span class="mi">0</span>        <span class="mi">2</span>    <span class="mi">108</span>      <span class="mi">1</span>      <span class="mf">1.5</span>
+<span class="mi">2</span>   <span class="mi">67</span>    <span class="mi">1</span>  <span class="n">asymptomatic</span>     <span class="mi">120</span>   <span class="mi">229</span>    <span class="mi">0</span>        <span class="mi">2</span>    <span class="mi">129</span>      <span class="mi">1</span>      <span class="mf">2.6</span>
+<span class="mi">3</span>   <span class="mi">37</span>    <span class="mi">1</span>    <span class="n">nonanginal</span>     <span class="mi">130</span>   <span class="mi">250</span>    <span class="mi">0</span>        <span class="mi">0</span>    <span class="mi">187</span>      <span class="mi">0</span>      <span class="mf">3.5</span>
+<span class="mi">4</span>   <span class="mi">41</span>    <span class="mi">0</span>    <span class="n">nontypical</span>     <span class="mi">130</span>   <span class="mi">204</span>    <span class="mi">0</span>        <span class="mi">2</span>    <span class="mi">172</span>      <span class="mi">0</span>      <span class="mf">1.4</span>
+<span class="mi">5</span>   <span class="mi">56</span>    <span class="mi">1</span>    <span class="n">nontypical</span>     <span class="mi">120</span>   <span class="mi">236</span>    <span class="mi">0</span>        <span class="mi">0</span>    <span class="mi">178</span>      <span class="mi">0</span>      <span class="mf">0.8</span>
+
+   <span class="n">Slope</span>  <span class="n">Ca</span>        <span class="n">Thal</span>  <span class="n">AHD</span>
+<span class="mi">0</span>      <span class="mi">3</span>   <span class="mi">0</span>       <span class="n">fixed</span>   <span class="n">No</span>
+<span class="mi">1</span>      <span class="mi">2</span>   <span class="mi">3</span>      <span class="n">normal</span>  <span class="n">Yes</span>
+<span class="mi">2</span>      <span class="mi">2</span>   <span class="mi">2</span>  <span class="n">reversable</span>  <span class="n">Yes</span>
+<span class="mi">3</span>      <span class="mi">3</span>   <span class="mi">0</span>      <span class="n">normal</span>   <span class="n">No</span>
+<span class="mi">4</span>      <span class="mi">1</span>   <span class="mi">0</span>      <span class="n">normal</span>   <span class="n">No</span>
+<span class="mi">5</span>      <span class="mi">1</span>   <span class="mi">0</span>      <span class="n">normal</span>   <span class="n">No</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>You can use the samilar way to check the last part of the data, for simplicity, i will skip  it.</p>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li>Correlation Matrix</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Computing correlation matrix in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="c1"># get numerical data and remove NAN</span>
+numdata<span class="o">=</span>na.omit<span class="p">(</span>rawdata<span class="p">[,</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="o">:</span><span class="m">12</span><span class="p">)])</span>
+
+<span class="c1"># computing correlation matrix</span>
+cor<span class="p">(</span>numdata<span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> cor<span class="p">(</span>numdata<span class="p">)</span>
+             Age         Sex      RestBP         Chol          Fbs
+Age      <span class="m">1.00000000</span> <span class="m">-0.09181347</span>  <span class="m">0.29069633</span>  <span class="m">0.203376601</span>  <span class="m">0.128675921</span>
+Sex     <span class="m">-0.09181347</span>  <span class="m">1.00000000</span> <span class="m">-0.06552127</span> <span class="m">-0.195907357</span>  <span class="m">0.045861783</span>
+RestBP   <span class="m">0.29069633</span> <span class="m">-0.06552127</span>  <span class="m">1.00000000</span>  <span class="m">0.132284171</span>  <span class="m">0.177623291</span>
+Chol     <span class="m">0.20337660</span> <span class="m">-0.19590736</span>  <span class="m">0.13228417</span>  <span class="m">1.000000000</span>  <span class="m">0.006664176</span>
+Fbs      <span class="m">0.12867592</span>  <span class="m">0.04586178</span>  <span class="m">0.17762329</span>  <span class="m">0.006664176</span>  <span class="m">1.000000000</span>
+RestECG  <span class="m">0.14974915</span>  <span class="m">0.02643577</span>  <span class="m">0.14870922</span>  <span class="m">0.164957542</span>  <span class="m">0.058425836</span>
+MaxHR   <span class="m">-0.39234176</span> <span class="m">-0.05206445</span> <span class="m">-0.04805281</span>  <span class="m">0.002179081</span> <span class="m">-0.003386615</span>
+ExAng    <span class="m">0.09510850</span>  <span class="m">0.14903849</span>  <span class="m">0.06588463</span>  <span class="m">0.056387955</span>  <span class="m">0.011636935</span>
+Oldpeak  <span class="m">0.19737552</span>  <span class="m">0.11023676</span>  <span class="m">0.19161540</span>  <span class="m">0.040430535</span>  <span class="m">0.009092935</span>
+Slope    <span class="m">0.15895990</span>  <span class="m">0.03933739</span>  <span class="m">0.12110773</span> <span class="m">-0.009008239</span>  <span class="m">0.053776677</span>
+Ca       <span class="m">0.36260453</span>  <span class="m">0.09318476</span>  <span class="m">0.09877326</span>  <span class="m">0.119000487</span>  <span class="m">0.145477522</span>
+           RestECG        MaxHR       ExAng      Oldpeak        Slope
+Age      <span class="m">0.14974915</span> <span class="m">-0.392341763</span>  <span class="m">0.09510850</span>  <span class="m">0.197375523</span>  <span class="m">0.158959901</span>
+Sex      <span class="m">0.02643577</span> <span class="m">-0.052064447</span>  <span class="m">0.14903849</span>  <span class="m">0.110236756</span>  <span class="m">0.039337394</span>
+RestBP   <span class="m">0.14870922</span> <span class="m">-0.048052805</span>  <span class="m">0.06588463</span>  <span class="m">0.191615405</span>  <span class="m">0.121107727</span>
+Chol     <span class="m">0.16495754</span>  <span class="m">0.002179081</span>  <span class="m">0.05638795</span>  <span class="m">0.040430535</span> <span class="m">-0.009008239</span>
+Fbs      <span class="m">0.05842584</span> <span class="m">-0.003386615</span>  <span class="m">0.01163693</span>  <span class="m">0.009092935</span>  <span class="m">0.053776677</span>
+RestECG  <span class="m">1.00000000</span> <span class="m">-0.077798148</span>  <span class="m">0.07408360</span>  <span class="m">0.110275054</span>  <span class="m">0.128907169</span>
+MaxHR   <span class="m">-0.07779815</span>  <span class="m">1.000000000</span> <span class="m">-0.37635897</span> <span class="m">-0.341262236</span> <span class="m">-0.381348495</span>
+ExAng    <span class="m">0.07408360</span> <span class="m">-0.376358975</span>  <span class="m">1.00000000</span>  <span class="m">0.289573103</span>  <span class="m">0.254302081</span>
+Oldpeak  <span class="m">0.11027505</span> <span class="m">-0.341262236</span>  <span class="m">0.28957310</span>  <span class="m">1.000000000</span>  <span class="m">0.579775260</span>
+Slope    <span class="m">0.12890717</span> <span class="m">-0.381348495</span>  <span class="m">0.25430208</span>  <span class="m">0.579775260</span>  <span class="m">1.000000000</span>
+Ca       <span class="m">0.12834265</span> <span class="m">-0.264246253</span>  <span class="m">0.14556960</span>  <span class="m">0.295832115</span>  <span class="m">0.110119188</span>
+            Ca
+Age      <span class="m">0.36260453</span>
+Sex      <span class="m">0.09318476</span>
+RestBP   <span class="m">0.09877326</span>
+Chol     <span class="m">0.11900049</span>
+Fbs      <span class="m">0.14547752</span>
+RestECG  <span class="m">0.12834265</span>
+MaxHR   <span class="m">-0.26424625</span>
+ExAng    <span class="m">0.14556960</span>
+Oldpeak  <span class="m">0.29583211</span>
+Slope    <span class="m">0.11011919</span>
+Ca       <span class="m">1.00000000</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Computing correlation matrix in <strong>Python</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> correlation Matrix&quot;</span>
+<span class="k">print</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span>     <span class="n">correlation</span> <span class="n">Matrix</span>
+           <span class="n">Age</span>       <span class="n">Sex</span>    <span class="n">RestBP</span>      <span class="n">Chol</span>       <span class="n">Fbs</span>   <span class="n">RestECG</span>     <span class="n">MaxHR</span>  \
+<span class="n">Age</span>      <span class="mf">1.000000</span> <span class="o">-</span><span class="mf">0.097542</span>  <span class="mf">0.284946</span>  <span class="mf">0.208950</span>  <span class="mf">0.118530</span>  <span class="mf">0.148868</span> <span class="o">-</span><span class="mf">0.393806</span>
+<span class="n">Sex</span>     <span class="o">-</span><span class="mf">0.097542</span>  <span class="mf">1.000000</span> <span class="o">-</span><span class="mf">0.064456</span> <span class="o">-</span><span class="mf">0.199915</span>  <span class="mf">0.047862</span>  <span class="mf">0.021647</span> <span class="o">-</span><span class="mf">0.048663</span>
+<span class="n">RestBP</span>   <span class="mf">0.284946</span> <span class="o">-</span><span class="mf">0.064456</span>  <span class="mf">1.000000</span>  <span class="mf">0.130120</span>  <span class="mf">0.175340</span>  <span class="mf">0.146560</span> <span class="o">-</span><span class="mf">0.045351</span>
+<span class="n">Chol</span>     <span class="mf">0.208950</span> <span class="o">-</span><span class="mf">0.199915</span>  <span class="mf">0.130120</span>  <span class="mf">1.000000</span>  <span class="mf">0.009841</span>  <span class="mf">0.171043</span> <span class="o">-</span><span class="mf">0.003432</span>
+<span class="n">Fbs</span>      <span class="mf">0.118530</span>  <span class="mf">0.047862</span>  <span class="mf">0.175340</span>  <span class="mf">0.009841</span>  <span class="mf">1.000000</span>  <span class="mf">0.069564</span> <span class="o">-</span><span class="mf">0.007854</span>
+<span class="n">RestECG</span>  <span class="mf">0.148868</span>  <span class="mf">0.021647</span>  <span class="mf">0.146560</span>  <span class="mf">0.171043</span>  <span class="mf">0.069564</span>  <span class="mf">1.000000</span> <span class="o">-</span><span class="mf">0.083389</span>
+<span class="n">MaxHR</span>   <span class="o">-</span><span class="mf">0.393806</span> <span class="o">-</span><span class="mf">0.048663</span> <span class="o">-</span><span class="mf">0.045351</span> <span class="o">-</span><span class="mf">0.003432</span> <span class="o">-</span><span class="mf">0.007854</span> <span class="o">-</span><span class="mf">0.083389</span>  <span class="mf">1.000000</span>
+<span class="n">ExAng</span>    <span class="mf">0.091661</span>  <span class="mf">0.146201</span>  <span class="mf">0.064762</span>  <span class="mf">0.061310</span>  <span class="mf">0.025665</span>  <span class="mf">0.084867</span> <span class="o">-</span><span class="mf">0.378103</span>
+<span class="n">Oldpeak</span>  <span class="mf">0.203805</span>  <span class="mf">0.102173</span>  <span class="mf">0.189171</span>  <span class="mf">0.046564</span>  <span class="mf">0.005747</span>  <span class="mf">0.114133</span> <span class="o">-</span><span class="mf">0.343085</span>
+<span class="n">Slope</span>    <span class="mf">0.161770</span>  <span class="mf">0.037533</span>  <span class="mf">0.117382</span> <span class="o">-</span><span class="mf">0.004062</span>  <span class="mf">0.059894</span>  <span class="mf">0.133946</span> <span class="o">-</span><span class="mf">0.385601</span>
+<span class="n">Ca</span>       <span class="mf">0.362605</span>  <span class="mf">0.093185</span>  <span class="mf">0.098773</span>  <span class="mf">0.119000</span>  <span class="mf">0.145478</span>  <span class="mf">0.128343</span> <span class="o">-</span><span class="mf">0.264246</span>
+
+          <span class="n">ExAng</span>   <span class="n">Oldpeak</span>     <span class="n">Slope</span>        <span class="n">Ca</span>
+<span class="n">Age</span>      <span class="mf">0.091661</span>  <span class="mf">0.203805</span>  <span class="mf">0.161770</span>  <span class="mf">0.362605</span>
+<span class="n">Sex</span>      <span class="mf">0.146201</span>  <span class="mf">0.102173</span>  <span class="mf">0.037533</span>  <span class="mf">0.093185</span>
+<span class="n">RestBP</span>   <span class="mf">0.064762</span>  <span class="mf">0.189171</span>  <span class="mf">0.117382</span>  <span class="mf">0.098773</span>
+<span class="n">Chol</span>     <span class="mf">0.061310</span>  <span class="mf">0.046564</span> <span class="o">-</span><span class="mf">0.004062</span>  <span class="mf">0.119000</span>
+<span class="n">Fbs</span>      <span class="mf">0.025665</span>  <span class="mf">0.005747</span>  <span class="mf">0.059894</span>  <span class="mf">0.145478</span>
+<span class="n">RestECG</span>  <span class="mf">0.084867</span>  <span class="mf">0.114133</span>  <span class="mf">0.133946</span>  <span class="mf">0.128343</span>
+<span class="n">MaxHR</span>   <span class="o">-</span><span class="mf">0.378103</span> <span class="o">-</span><span class="mf">0.343085</span> <span class="o">-</span><span class="mf">0.385601</span> <span class="o">-</span><span class="mf">0.264246</span>
+<span class="n">ExAng</span>    <span class="mf">1.000000</span>  <span class="mf">0.288223</span>  <span class="mf">0.257748</span>  <span class="mf">0.145570</span>
+<span class="n">Oldpeak</span>  <span class="mf">0.288223</span>  <span class="mf">1.000000</span>  <span class="mf">0.577537</span>  <span class="mf">0.295832</span>
+<span class="n">Slope</span>    <span class="mf">0.257748</span>  <span class="mf">0.577537</span>  <span class="mf">1.000000</span>  <span class="mf">0.110119</span>
+<span class="n">Ca</span>       <span class="mf">0.145570</span>  <span class="mf">0.295832</span>  <span class="mf">0.110119</span>  <span class="mf">1.000000</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li>covariance Matrix</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Computing covariance matrix in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="c1"># get numerical data and remove NAN</span>
+numdata<span class="o">=</span>na.omit<span class="p">(</span>rawdata<span class="p">[,</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="o">:</span><span class="m">12</span><span class="p">)])</span>
+
+<span class="c1"># computing covariance matrix</span>
+cov<span class="p">(</span>numdata<span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-r"><div class="highlight"><pre><span></span> <span class="o">&gt;</span> cov<span class="p">(</span>numdata<span class="p">)</span>
+                Age          Sex      RestBP         Chol          Fbs
+ Age      <span class="m">81.3775448</span> <span class="m">-0.388397567</span>  <span class="m">46.4305852</span>   <span class="m">95.2454603</span>  <span class="m">0.411909946</span>
+Sex      <span class="m">-0.3883976</span>  <span class="m">0.219905277</span>  <span class="m">-0.5440170</span>   <span class="m">-4.7693542</span>  <span class="m">0.007631703</span>
+ RestBP   <span class="m">46.4305852</span> <span class="m">-0.544016969</span> <span class="m">313.4906736</span>  <span class="m">121.5937353</span>  <span class="m">1.116001885</span>
+ Chol     <span class="m">95.2454603</span> <span class="m">-4.769354223</span> <span class="m">121.5937353</span> <span class="m">2695.1442616</span>  <span class="m">0.122769410</span>
+ Fbs       <span class="m">0.4119099</span>  <span class="m">0.007631703</span>   <span class="m">1.1160019</span>    <span class="m">0.1227694</span>  <span class="m">0.125923099</span>
+ RestECG   <span class="m">1.3440551</span>  <span class="m">0.012334179</span>   <span class="m">2.6196943</span>    <span class="m">8.5204709</span>  <span class="m">0.020628044</span>
+ MaxHR   <span class="m">-81.2442706</span> <span class="m">-0.560447577</span> <span class="m">-19.5302126</span>    <span class="m">2.5968104</span> <span class="m">-0.027586362</span>
+ ExAng     <span class="m">0.4034028</span>  <span class="m">0.032861215</span>   <span class="m">0.5484838</span>    <span class="m">1.3764001</span>  <span class="m">0.001941595</span>
+ Oldpeak   <span class="m">2.0721791</span>  <span class="m">0.060162510</span>   <span class="m">3.9484299</span>    <span class="m">2.4427678</span>  <span class="m">0.003755247</span>
+ Slope     <span class="m">0.8855132</span>  <span class="m">0.011391439</span>   <span class="m">1.3241566</span>   <span class="m">-0.2887926</span>  <span class="m">0.011784247</span>
+ Ca        <span class="m">3.0663958</span>  <span class="m">0.040964288</span>   <span class="m">1.6394357</span>    <span class="m">5.7913852</span>  <span class="m">0.048393975</span>
+        RestECG        MaxHR        ExAng      Oldpeak       Slope
+ Age      <span class="m">1.34405513</span> <span class="m">-81.24427061</span>  <span class="m">0.403402842</span>  <span class="m">2.072179076</span>  <span class="m">0.88551323</span>
+ Sex      <span class="m">0.01233418</span>  <span class="m">-0.56044758</span>  <span class="m">0.032861215</span>  <span class="m">0.060162510</span>  <span class="m">0.01139144</span>
+ RestBP   <span class="m">2.61969428</span> <span class="m">-19.53021257</span>  <span class="m">0.548483760</span>  <span class="m">3.948429889</span>  <span class="m">1.32415658</span>
+ Chol     <span class="m">8.52047092</span>   <span class="m">2.59681040</span>  <span class="m">1.376400081</span>  <span class="m">2.442767839</span> <span class="m">-0.28879262</span>
+ Fbs      <span class="m">0.02062804</span>  <span class="m">-0.02758636</span>  <span class="m">0.001941595</span>  <span class="m">0.003755247</span>  <span class="m">0.01178425</span>
+ RestECG  <span class="m">0.98992166</span>  <span class="m">-1.77682880</span>  <span class="m">0.034656910</span>  <span class="m">0.127690736</span>  <span class="m">0.07920136</span>
+ MaxHR   <span class="m">-1.77682880</span> <span class="m">526.92866602</span> <span class="m">-4.062052479</span> <span class="m">-9.116871675</span> <span class="m">-5.40571480</span>
+ ExAng    <span class="m">0.03465691</span>  <span class="m">-4.06205248</span>  <span class="m">0.221072479</span>  <span class="m">0.158455478</span>  <span class="m">0.07383673</span>
+ Oldpeak  <span class="m">0.12769074</span>  <span class="m">-9.11687168</span>  <span class="m">0.158455478</span>  <span class="m">1.354451303</span>  <span class="m">0.41667415</span>
+ Slope    <span class="m">0.07920136</span>  <span class="m">-5.40571480</span>  <span class="m">0.073836726</span>  <span class="m">0.416674149</span>  <span class="m">0.38133824</span>
+ Ca       <span class="m">0.11970551</span>  <span class="m">-5.68626967</span>  <span class="m">0.064162421</span>  <span class="m">0.322752576</span>  <span class="m">0.06374717</span>
+           Ca
+ Age      <span class="m">3.06639582</span>
+ Sex      <span class="m">0.04096429</span>
+ RestBP   <span class="m">1.63943570</span>
+ Chol     <span class="m">5.79138515</span>
+ Fbs      <span class="m">0.04839398</span>
+ RestECG  <span class="m">0.11970551</span>
+ MaxHR   <span class="m">-5.68626967</span>
+ ExAng    <span class="m">0.06416242</span>
+ Oldpeak  <span class="m">0.32275258</span>
+ Slope    <span class="m">0.06374717</span>
+ Ca       <span class="m">0.87879060</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Computing covariance matrix in <strong>Python</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> covariance Matrix&quot;</span>
+<span class="k">print</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">covariance</span> <span class="n">Matrix</span>
+            <span class="n">Age</span>       <span class="n">Sex</span>      <span class="n">RestBP</span>         <span class="n">Chol</span>       <span class="n">Fbs</span>   <span class="n">RestECG</span>  \
+<span class="n">Age</span>      <span class="mf">81.697419</span> <span class="o">-</span><span class="mf">0.411995</span>   <span class="mf">45.328678</span>    <span class="mf">97.787489</span>  <span class="mf">0.381614</span>  <span class="mf">1.338797</span>
+<span class="n">Sex</span>      <span class="o">-</span><span class="mf">0.411995</span>  <span class="mf">0.218368</span>   <span class="o">-</span><span class="mf">0.530107</span>    <span class="o">-</span><span class="mf">4.836994</span>  <span class="mf">0.007967</span>  <span class="mf">0.010065</span>
+<span class="n">RestBP</span>   <span class="mf">45.328678</span> <span class="o">-</span><span class="mf">0.530107</span>  <span class="mf">309.751120</span>   <span class="mf">118.573339</span>  <span class="mf">1.099207</span>  <span class="mf">2.566455</span>
+<span class="n">Chol</span>     <span class="mf">97.787489</span> <span class="o">-</span><span class="mf">4.836994</span>  <span class="mf">118.573339</span>  <span class="mf">2680.849190</span>  <span class="mf">0.181496</span>  <span class="mf">8.811521</span>
+<span class="n">Fbs</span>       <span class="mf">0.381614</span>  <span class="mf">0.007967</span>    <span class="mf">1.099207</span>     <span class="mf">0.181496</span>  <span class="mf">0.126877</span>  <span class="mf">0.024654</span>
+<span class="n">RestECG</span>   <span class="mf">1.338797</span>  <span class="mf">0.010065</span>    <span class="mf">2.566455</span>     <span class="mf">8.811521</span>  <span class="mf">0.024654</span>  <span class="mf">0.989968</span>
+<span class="n">MaxHR</span>   <span class="o">-</span><span class="mf">81.423065</span> <span class="o">-</span><span class="mf">0.520184</span>  <span class="o">-</span><span class="mf">18.258005</span>    <span class="o">-</span><span class="mf">4.064651</span> <span class="o">-</span><span class="mf">0.063996</span> <span class="o">-</span><span class="mf">1.897941</span>
+<span class="n">ExAng</span>     <span class="mf">0.389220</span>  <span class="mf">0.032096</span>    <span class="mf">0.535473</span>     <span class="mf">1.491345</span>  <span class="mf">0.004295</span>  <span class="mf">0.039670</span>
+<span class="n">Oldpeak</span>   <span class="mf">2.138850</span>  <span class="mf">0.055436</span>    <span class="mf">3.865638</span>     <span class="mf">2.799282</span>  <span class="mf">0.002377</span>  <span class="mf">0.131850</span>
+<span class="n">Slope</span>     <span class="mf">0.901034</span>  <span class="mf">0.010808</span>    <span class="mf">1.273053</span>    <span class="o">-</span><span class="mf">0.129598</span>  <span class="mf">0.013147</span>  <span class="mf">0.082126</span>
+<span class="n">Ca</span>        <span class="mf">3.066396</span>  <span class="mf">0.040964</span>    <span class="mf">1.639436</span>     <span class="mf">5.791385</span>  <span class="mf">0.048394</span>  <span class="mf">0.119706</span>
+
+            <span class="n">MaxHR</span>     <span class="n">ExAng</span>   <span class="n">Oldpeak</span>     <span class="n">Slope</span>        <span class="n">Ca</span>
+<span class="n">Age</span>      <span class="o">-</span><span class="mf">81.423065</span>  <span class="mf">0.389220</span>  <span class="mf">2.138850</span>  <span class="mf">0.901034</span>  <span class="mf">3.066396</span>
+<span class="n">Sex</span>       <span class="o">-</span><span class="mf">0.520184</span>  <span class="mf">0.032096</span>  <span class="mf">0.055436</span>  <span class="mf">0.010808</span>  <span class="mf">0.040964</span>
+<span class="n">RestBP</span>   <span class="o">-</span><span class="mf">18.258005</span>  <span class="mf">0.535473</span>  <span class="mf">3.865638</span>  <span class="mf">1.273053</span>  <span class="mf">1.639436</span>
+<span class="n">Chol</span>      <span class="o">-</span><span class="mf">4.064651</span>  <span class="mf">1.491345</span>  <span class="mf">2.799282</span> <span class="o">-</span><span class="mf">0.129598</span>  <span class="mf">5.791385</span>
+<span class="n">Fbs</span>       <span class="o">-</span><span class="mf">0.063996</span>  <span class="mf">0.004295</span>  <span class="mf">0.002377</span>  <span class="mf">0.013147</span>  <span class="mf">0.048394</span>
+<span class="n">RestECG</span>   <span class="o">-</span><span class="mf">1.897941</span>  <span class="mf">0.039670</span>  <span class="mf">0.131850</span>  <span class="mf">0.082126</span>  <span class="mf">0.119706</span>
+<span class="n">MaxHR</span>    <span class="mf">523.265775</span> <span class="o">-</span><span class="mf">4.063307</span> <span class="o">-</span><span class="mf">9.112209</span> <span class="o">-</span><span class="mf">5.435501</span> <span class="o">-</span><span class="mf">5.686270</span>
+<span class="n">ExAng</span>     <span class="o">-</span><span class="mf">4.063307</span>  <span class="mf">0.220707</span>  <span class="mf">0.157216</span>  <span class="mf">0.074618</span>  <span class="mf">0.064162</span>
+<span class="n">Oldpeak</span>   <span class="o">-</span><span class="mf">9.112209</span>  <span class="mf">0.157216</span>  <span class="mf">1.348095</span>  <span class="mf">0.413219</span>  <span class="mf">0.322753</span>
+<span class="n">Slope</span>     <span class="o">-</span><span class="mf">5.435501</span>  <span class="mf">0.074618</span>  <span class="mf">0.413219</span>  <span class="mf">0.379735</span>  <span class="mf">0.063747</span>
+<span class="n">Ca</span>        <span class="o">-</span><span class="mf">5.686270</span>  <span class="mf">0.064162</span>  <span class="mf">0.322753</span>  <span class="mf">0.063747</span>  <span class="mf">0.878791</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="understand-data-with-visualization">
+<span id="index-5"></span><h2>Understand Data With Visualization<a class="headerlink" href="#understand-data-with-visualization" title="Permalink to this headline">¶</a></h2>
+<p>A picture is worth a thousand words. You will see the powerful impact of the figures in this section.</p>
+<ol class="arabic simple">
+<li>Summary plot of data in figure</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Summary plot in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="c1"># plot of the summary</span>
+plot<span class="p">(</span>rawdata<span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you will get Figure <a class="reference internal" href="#fig-sumr"><span class="std std-ref">Summary plot of the data with R.</span></a></p>
+<div class="figure align-center" id="id1">
+<span id="fig-sumr"></span><a class="reference internal image-reference" href="images/sumr.png"><img alt="images/sumr.png" src="images/sumr.png" style="width: 540.0px; height: 480.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Summary plot of the data with R.</span></p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Summary plot in <strong>Python</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># plot of the summary</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you will get Figure <a class="reference internal" href="#fig-sump"><span class="std std-ref">Summary plot of the data with Python.</span></a></p>
+<div class="figure align-center" id="id2">
+<span id="fig-sump"></span><a class="reference internal image-reference" href="images/sumPython.png"><img alt="images/sumPython.png" src="images/sumPython.png" style="width: 756.0px; height: 621.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Summary plot of the data with Python.</span></p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Histogram of the quantitative predictors</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Histogram in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="c1"># Histogram with normal curve plot</span>
+dev.off<span class="p">()</span>
+Nvars<span class="o">=</span><span class="kp">ncol</span><span class="p">(</span>numdata<span class="p">)</span>
+name<span class="o">=</span><span class="kp">colnames</span><span class="p">(</span>numdata<span class="p">)</span>
+par<span class="p">(</span>mfrow <span class="o">=</span><span class="kt">c</span> <span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+<span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>Nvars<span class="p">)</span>
+<span class="p">{</span>
+  x<span class="o">&lt;-</span> numdata<span class="p">[,</span>i<span class="p">]</span>
+  h<span class="o">&lt;-</span>hist<span class="p">(</span>x<span class="p">,</span> breaks<span class="o">=</span><span class="m">10</span><span class="p">,</span> freq<span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> col<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> xlab<span class="o">=</span>name<span class="p">[</span>i<span class="p">],</span>main<span class="o">=</span><span class="s">&quot; &quot;</span><span class="p">,</span>
+            font.lab<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+  axis<span class="p">(</span><span class="m">1</span><span class="p">,</span> tck<span class="o">=</span><span class="m">1</span><span class="p">,</span> col.ticks<span class="o">=</span><span class="s">&quot;light gray&quot;</span><span class="p">)</span>
+  axis<span class="p">(</span><span class="m">1</span><span class="p">,</span> tck<span class="o">=</span><span class="m">-0.015</span><span class="p">,</span> col.ticks<span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span>
+  axis<span class="p">(</span><span class="m">2</span><span class="p">,</span> tck<span class="o">=</span><span class="m">1</span><span class="p">,</span> col.ticks<span class="o">=</span><span class="s">&quot;light gray&quot;</span><span class="p">,</span> lwd.ticks<span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
+  axis<span class="p">(</span><span class="m">2</span><span class="p">,</span> tck<span class="o">=</span><span class="m">-0.015</span><span class="p">)</span>
+  xfit<span class="o">&lt;-</span><span class="kp">seq</span><span class="p">(</span><span class="kp">min</span><span class="p">(</span>x<span class="p">),</span><span class="kp">max</span><span class="p">(</span>x<span class="p">),</span>length<span class="o">=</span><span class="m">40</span><span class="p">)</span>
+  yfit<span class="o">&lt;-</span>dnorm<span class="p">(</span>xfit<span class="p">,</span>mean<span class="o">=</span><span class="kp">mean</span><span class="p">(</span>x<span class="p">),</span>sd<span class="o">=</span>sd<span class="p">(</span>x<span class="p">))</span>
+  yfit <span class="o">&lt;-</span> yfit<span class="o">*</span><span class="kp">diff</span><span class="p">(</span>h<span class="o">$</span>mids<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">])</span><span class="o">*</span><span class="kp">length</span><span class="p">(</span>x<span class="p">)</span>
+  lines<span class="p">(</span>xfit<span class="p">,</span> yfit<span class="p">,</span> col<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> lwd<span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then you will get Figure <a class="reference internal" href="#fig-histr"><span class="std std-ref">Histogram with normal curve plot in R.</span></a></p>
+<div class="figure align-center" id="id3">
+<span id="fig-histr"></span><a class="reference internal image-reference" href="images/histr.png"><img alt="images/histr.png" src="images/histr.png" style="width: 540.0px; height: 480.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Histogram with normal curve plot in R.</span></p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Histogram in in <strong>Python</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Histogram</span>
+<span class="n">rawdata</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then you will get Figure <a class="reference internal" href="#fig-histp"><span class="std std-ref">Histogram in Python.</span></a></p>
+<div class="figure align-center" id="id4">
+<span id="fig-histp"></span><a class="reference internal image-reference" href="images/histp.png"><img alt="images/histp.png" src="images/histp.png" style="width: 686.0px; height: 526.5px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Histogram in Python.</span></p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Boxplot of the quantitative predictors</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Boxplot in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span>dev.off<span class="p">()</span>
+name<span class="o">=</span><span class="kp">colnames</span><span class="p">(</span>numdata<span class="p">)</span>
+    Nvars<span class="o">=</span><span class="kp">ncol</span><span class="p">(</span>numdata<span class="p">)</span>
+    <span class="c1"># boxplot</span>
+    par<span class="p">(</span>mfrow <span class="o">=</span><span class="kt">c</span> <span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+    <span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>Nvars<span class="p">)</span>
+    <span class="p">{</span>
+     <span class="c1">#boxplot(numdata[,i]~numdata[,Nvars],data=data,main=name[i])</span>
+     boxplot<span class="p">(</span>numdata<span class="p">[,</span>i<span class="p">],</span>data<span class="o">=</span>numdata<span class="p">,</span>main<span class="o">=</span>name<span class="p">[</span>i<span class="p">])</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>Then you will get Figure <a class="reference internal" href="#fig-boxr"><span class="std std-ref">Boxplots in R.</span></a></p>
+<div class="figure align-center" id="id5">
+<span id="fig-boxr"></span><a class="reference internal image-reference" href="images/boxr.png"><img alt="images/boxr.png" src="images/boxr.png" style="width: 540.0px; height: 480.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Boxplots in R.</span></p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Boxplot in <strong>Python</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># boxplot</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then you will get Figure <a class="reference internal" href="#fig-boxp"><span class="std std-ref">Histogram in Python.</span></a></p>
+<div class="figure align-center" id="id6">
+<span id="fig-boxp"></span><a class="reference internal image-reference" href="images/boxp.png"><img alt="images/boxp.png" src="images/boxp.png" style="width: 610.8px; height: 498.6px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Histogram in Python.</span></p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Correlation Matrix plot of the quantitative predictors</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Correlation Matrix plot in <strong>R</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span>dev.off<span class="p">()</span>
+<span class="c1"># laod cocorrelation Matrix plot lib</span>
+<span class="kn">library</span><span class="p">(</span>corrplot<span class="p">)</span>
+M <span class="o">&lt;-</span> cor<span class="p">(</span>numdata<span class="p">)</span>
+<span class="c1">#par(mfrow =c (1,2))</span>
+<span class="c1">#corrplot(M, method = &quot;square&quot;)</span>
+corrplot.mixed<span class="p">(</span>M<span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you will get Figure <a class="reference internal" href="#fig-corr"><span class="std std-ref">Correlation Matrix plot  in R.</span></a></p>
+<div class="figure align-center" id="id7">
+<span id="fig-corr"></span><a class="reference internal image-reference" href="images/corr.png"><img alt="images/corr.png" src="images/corr.png" style="width: 540.0px; height: 480.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Correlation Matrix plot  in R.</span></p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Correlation Matrix plot in <strong>Python</strong></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># cocorrelation Matrix plot</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then you will get get Figure <a class="reference internal" href="#fig-corp"><span class="std std-ref">Correlation Matrix plot  in Python.</span></a></p>
+<div class="figure align-center" id="id8">
+<span id="fig-corp"></span><a class="reference internal image-reference" href="images/corp.png"><img alt="images/corp.png" src="images/corp.png" style="width: 780.0px; height: 591.6px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Correlation Matrix plot  in Python.</span></p>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="source-code-for-this-section">
+<h2>Source Code for This Section<a class="headerlink" href="#source-code-for-this-section" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>The code for this section is available for download for <a class="reference external" href="../code/loaddata.R">R</a>, for <a class="reference external" href="../code/loadData.py">Python</a>,</dt>
+<dd><ul class="first simple">
+<li>R Source code</li>
+</ul>
+<blockquote>
+<div><div class="highlight-r"><div class="highlight"><pre><span></span><span class="kp">rm</span><span class="p">(</span><span class="kt">list</span> <span class="o">=</span> <span class="kp">ls</span><span class="p">())</span>
+<span class="c1"># set the enverionment </span>
+path <span class="o">=</span><span class="s">&#39;~/Dropbox/MachineLearningAlgorithms/python_code/data/Heart.csv&#39;</span>
+rawdata <span class="o">=</span> read.csv<span class="p">(</span>path<span class="p">)</span>
+
+<span class="c1"># summary of the data</span>
+<span class="kp">summary</span><span class="p">(</span>rawdata<span class="p">)</span>
+<span class="c1"># plot of the summary</span>
+plot<span class="p">(</span>rawdata<span class="p">)</span>
+
+<span class="kp">dim</span><span class="p">(</span>rawdata<span class="p">)</span>
+<span class="kp">head</span><span class="p">(</span>rawdata<span class="p">)</span>
+<span class="kp">tail</span><span class="p">(</span>rawdata<span class="p">)</span>
+
+<span class="kp">colnames</span><span class="p">(</span>rawdata<span class="p">)</span>
+<span class="kn">attach</span><span class="p">(</span>rawdata<span class="p">)</span>
+
+<span class="c1"># get numerical data and remove NAN</span>
+numdata<span class="o">=</span>na.omit<span class="p">(</span>rawdata<span class="p">[,</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="o">:</span><span class="m">12</span><span class="p">)])</span>
+
+cor<span class="p">(</span>numdata<span class="p">)</span>
+cov<span class="p">(</span>numdata<span class="p">)</span>
+
+dev.off<span class="p">()</span>
+<span class="c1"># laod cocorrelation Matrix plot lib</span>
+<span class="kn">library</span><span class="p">(</span>corrplot<span class="p">)</span>
+M <span class="o">&lt;-</span> cor<span class="p">(</span>numdata<span class="p">)</span>
+<span class="c1">#par(mfrow =c (1,2))</span>
+<span class="c1">#corrplot(M, method = &quot;square&quot;)</span>
+corrplot.mixed<span class="p">(</span>M<span class="p">)</span>
+
+
+nrow<span class="o">=</span><span class="kp">nrow</span><span class="p">(</span>rawdata<span class="p">)</span>
+ncol<span class="o">=</span><span class="kp">ncol</span><span class="p">(</span>rawdata<span class="p">)</span>
+<span class="kt">c</span><span class="p">(</span><span class="kp">nrow</span><span class="p">,</span> <span class="kp">ncol</span><span class="p">)</span>
+
+
+
+Nvars<span class="o">=</span><span class="kp">ncol</span><span class="p">(</span>numdata<span class="p">)</span>
+<span class="c1"># checking data format </span>
+<span class="kp">typeof</span><span class="p">(</span>rawdata<span class="p">)</span>
+install.packages<span class="p">(</span><span class="s">&quot;mlbench&quot;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>mlbench<span class="p">)</span>
+<span class="kp">sapply</span><span class="p">(</span>rawdata<span class="p">,</span> <span class="kp">class</span><span class="p">)</span>
+
+dev.off<span class="p">()</span>
+name<span class="o">=</span><span class="kp">colnames</span><span class="p">(</span>numdata<span class="p">)</span>
+Nvars<span class="o">=</span><span class="kp">ncol</span><span class="p">(</span>numdata<span class="p">)</span>
+<span class="c1"># boxplot </span>
+par<span class="p">(</span>mfrow <span class="o">=</span><span class="kt">c</span> <span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+<span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>Nvars<span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">#boxplot(numdata[,i]~numdata[,Nvars],data=data,main=name[i])</span>
+  boxplot<span class="p">(</span>numdata<span class="p">[,</span>i<span class="p">],</span>data<span class="o">=</span>numdata<span class="p">,</span>main<span class="o">=</span>name<span class="p">[</span>i<span class="p">])</span>
+<span class="p">}</span>
+
+<span class="c1"># Histogram with normal curve plot </span>
+dev.off<span class="p">()</span>
+Nvars<span class="o">=</span><span class="kp">ncol</span><span class="p">(</span>numdata<span class="p">)</span>
+name<span class="o">=</span><span class="kp">colnames</span><span class="p">(</span>numdata<span class="p">)</span>
+par<span class="p">(</span>mfrow <span class="o">=</span><span class="kt">c</span> <span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
+<span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>Nvars<span class="p">)</span>
+<span class="p">{</span>
+  x<span class="o">&lt;-</span> numdata<span class="p">[,</span>i<span class="p">]</span>
+  h<span class="o">&lt;-</span>hist<span class="p">(</span>x<span class="p">,</span> breaks<span class="o">=</span><span class="m">10</span><span class="p">,</span> freq<span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> col<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> xlab<span class="o">=</span>name<span class="p">[</span>i<span class="p">],</span>main<span class="o">=</span><span class="s">&quot; &quot;</span><span class="p">,</span> 
+            font.lab<span class="o">=</span><span class="m">1</span><span class="p">)</span> 
+  axis<span class="p">(</span><span class="m">1</span><span class="p">,</span> tck<span class="o">=</span><span class="m">1</span><span class="p">,</span> col.ticks<span class="o">=</span><span class="s">&quot;light gray&quot;</span><span class="p">)</span>
+  axis<span class="p">(</span><span class="m">1</span><span class="p">,</span> tck<span class="o">=</span><span class="m">-0.015</span><span class="p">,</span> col.ticks<span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span>
+  axis<span class="p">(</span><span class="m">2</span><span class="p">,</span> tck<span class="o">=</span><span class="m">1</span><span class="p">,</span> col.ticks<span class="o">=</span><span class="s">&quot;light gray&quot;</span><span class="p">,</span> lwd.ticks<span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">)</span>
+  axis<span class="p">(</span><span class="m">2</span><span class="p">,</span> tck<span class="o">=</span><span class="m">-0.015</span><span class="p">)</span>
+  xfit<span class="o">&lt;-</span><span class="kp">seq</span><span class="p">(</span><span class="kp">min</span><span class="p">(</span>x<span class="p">),</span><span class="kp">max</span><span class="p">(</span>x<span class="p">),</span>length<span class="o">=</span><span class="m">40</span><span class="p">)</span> 
+  yfit<span class="o">&lt;-</span>dnorm<span class="p">(</span>xfit<span class="p">,</span>mean<span class="o">=</span><span class="kp">mean</span><span class="p">(</span>x<span class="p">),</span>sd<span class="o">=</span>sd<span class="p">(</span>x<span class="p">))</span> 
+  yfit <span class="o">&lt;-</span> yfit<span class="o">*</span><span class="kp">diff</span><span class="p">(</span>h<span class="o">$</span>mids<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">])</span><span class="o">*</span><span class="kp">length</span><span class="p">(</span>x<span class="p">)</span> 
+  lines<span class="p">(</span>xfit<span class="p">,</span> yfit<span class="p">,</span> col<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> lwd<span class="o">=</span><span class="m">2</span><span class="p">)</span> 
+<span class="p">}</span> 
+
+
+<span class="kn">library</span><span class="p">(</span>reshape2<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+d <span class="o">&lt;-</span> melt<span class="p">(</span>diamonds<span class="p">[,</span><span class="o">-</span><span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="o">:</span><span class="m">4</span><span class="p">)])</span>
+ggplot<span class="p">(</span>d<span class="p">,</span>aes<span class="p">(</span>x <span class="o">=</span> value<span class="p">))</span> <span class="o">+</span> 
+  facet_wrap<span class="p">(</span><span class="o">~</span>variable<span class="p">,</span>scales <span class="o">=</span> <span class="s">&quot;free_x&quot;</span><span class="p">)</span> <span class="o">+</span> 
+  geom_histogram<span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Python Source code</li>
+</ul>
+<blockquote class="last">
+<div><div class="highlight-default"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Created on Apr 25, 2016</span>
+<span class="sd">test code </span>
+<span class="sd">@author: Wenqiang Feng </span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1">#import numpy as np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">pandas.tools.plotting</span> <span class="k">import</span> <span class="n">scatter_matrix</span>
+<span class="kn">from</span> <span class="nn">docutils.parsers.rst.directives</span> <span class="k">import</span> <span class="n">path</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">path</span> <span class="o">=</span><span class="s1">&#39;~/Dropbox/MachineLearningAlgorithms/python_code/data/Heart.csv&#39;</span> 
+    <span class="n">rawdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    
+    <span class="nb">print</span> <span class="s2">&quot;data summary&quot;</span>
+    <span class="nb">print</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+    
+    <span class="c1"># summary plot of the data</span>
+    <span class="n">scatter_matrix</span><span class="p">(</span><span class="n">rawdata</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="c1"># Histogram </span>
+    <span class="n">rawdata</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="c1"># boxplot </span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    
+    <span class="nb">print</span> <span class="s2">&quot;Raw data size&quot;</span>
+    <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">shape</span>
+    <span class="nb">print</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span>
+    
+    <span class="n">path</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;/home/feng/Dropbox/MachineLearningAlgorithms/python_code/data/&#39;</span>
+    <span class="s1">&#39;energy_efficiency.xlsx&#39;</span><span class="p">)</span>
+    <span class="n">path</span>
+            
+    <span class="n">rawdataEnergy</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">sheetname</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="n">nrow</span><span class="o">=</span><span class="n">rawdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#gives number of row count</span>
+    <span class="n">ncol</span><span class="o">=</span><span class="n">rawdata</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#gives number of col count</span>
+    <span class="nb">print</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span>
+    <span class="n">col_names</span> <span class="o">=</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="s2">&quot;Column names:&quot;</span>
+    <span class="nb">print</span> <span class="n">col_names</span>
+    <span class="nb">print</span> <span class="s2">&quot;Data Format:&quot;</span>
+    <span class="nb">print</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">dtypes</span>
+    
+    <span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Sample data:&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rawdata</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+    
+    
+    <span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> correlation Matrix&quot;</span>
+    <span class="nb">print</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+    
+    <span class="c1"># cocorrelation Matrix plot     </span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="nb">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> covariance Matrix&quot;</span>
+    <span class="nb">print</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+    
+    <span class="nb">print</span> <span class="n">rawdata</span><span class="p">[[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span><span class="s1">&#39;Ca&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+
+    
+    <span class="c1"># define colors list, to be used to plot survived either red (=0) or green (=1)</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">]</span>
+
+    <span class="c1"># make a scatter plot</span>
+
+<span class="c1">#    rawdata.info()</span>
+
+    <span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
+    <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> <span class="c1"># just a conventional alias, don&#39;t know why</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">corrplot</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span> <span class="c1"># compute and plot the pair-wise correlations</span>
+    <span class="c1"># save to file, remove the big white borders</span>
+    <span class="c1">#plt.savefig(&#39;attribute_correlations.png&#39;, tight_layout=True)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    
+    <span class="n">attr</span> <span class="o">=</span> <span class="n">rawdata</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fit</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">gamma</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="c1"># Two subplots, the axes array is 1-d</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of Age&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span> <span class="c1"># 21,1 means first one of 2 rows, 1 col </span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span> <span class="c1">#  21,2 means second one of 2 rows, 1 col </span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fit</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">gamma</span><span class="p">);</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    
+    
+    
+    
+    
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pre.html" class="btn btn-neutral float-right" title="Pre-processing procedures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gettingstarted.html" class="btn btn-neutral" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Wenqiang Feng.
+      Last updated on Sep 23, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'v1.01',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ?
+              'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+
+
+</body>
+</html>
