@@ -185,7 +185,7 @@ latex_font_size = '11pt'
 # (source start file, target name, title, author, document class [howto/manual]).
 
 latex_documents = [
-  ('contents', 'datamining.tex', 'Data Mining With Python and R Tutorials',
+  ('index', 'datamining.tex', 'Data Mining With Python and R Tutorials',
    'Wenqiang Feng', 'manual'),
 ]
 # The name of an image file (relative to this directory) to place at the top of

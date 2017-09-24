@@ -1,4 +1,8 @@
 # DatamingTutorial
+
+Website:  https://runawayhorse001.github.io/DatamingTutorial/index.html
+
+
 This document is a summary of my Data Mining Methds & Application (STAT 577) course in University of Tennessee at Knoxville.  **You may
 download and distribute it. Please be aware, however, that the note contains typos as well as inaccurate or
 incorrect description.** At here, I would like to thank Dr. Haileab Hilafu for providing some of his R code and

@@ -1,0 +1,46 @@
+\BOOKMARK [0][-]{chapter.1}{Preface}{}% 1
+\BOOKMARK [1][-]{section.1.1}{About this tutorial}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Motivation for this tutorial}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Feedback and suggestions}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{Python or R for data analysis?}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Ponder over questions}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Comparison List}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{My Opinions}{chapter.2}% 8
+\BOOKMARK [0][-]{chapter.3}{Getting Started}{}% 9
+\BOOKMARK [1][-]{section.3.1}{Installing programming language}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.2}{Installing programming platform}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.3}{Installing package}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Data analysis procedures}{}% 13
+\BOOKMARK [1][-]{section.4.1}{procedures}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.2}{Datasets in this Tutorial}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.3}{Loading Datasets}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.4}{Understand Data With Statistics methods}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.5}{Understand Data With Visualization}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.6}{Source Code for This Section}{chapter.4}% 19
+\BOOKMARK [0][-]{chapter.5}{Pre-processing procedures}{}% 20
+\BOOKMARK [1][-]{section.5.1}{Rough Pre-processing}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.2}{Source Code for This Section}{chapter.5}% 22
+\BOOKMARK [0][-]{chapter.6}{Summary of Data Mining Algorithms}{}% 23
+\BOOKMARK [1][-]{section.6.1}{Diagram of Data Mining Algorithms}{chapter.6}% 24
+\BOOKMARK [1][-]{section.6.2}{Categories of Data Mining Algorithms}{chapter.6}% 25
+\BOOKMARK [0][-]{chapter.7}{Dimension Reduction Algorithms}{}% 26
+\BOOKMARK [1][-]{section.7.1}{Principal Component Analysis \(PCA\)}{chapter.7}% 27
+\BOOKMARK [1][-]{section.7.2}{Independent Component Analysis \(ICA\)}{chapter.7}% 28
+\BOOKMARK [1][-]{section.7.3}{Nonnegative matrix factorization \(NMF\)}{chapter.7}% 29
+\BOOKMARK [0][-]{chapter.8}{Regression Algorithm}{}% 30
+\BOOKMARK [1][-]{section.8.1}{Ordinary Least Squares Regression \(OLSR\)}{chapter.8}% 31
+\BOOKMARK [1][-]{section.8.2}{Linear Regression \(LR\)}{chapter.8}% 32
+\BOOKMARK [1][-]{section.8.3}{Logistic Regression \(logR\)}{chapter.8}% 33
+\BOOKMARK [0][-]{chapter.9}{Classification ALgorithms}{}% 34
+\BOOKMARK [1][-]{section.9.1}{Logistic Regression \(LR\)}{chapter.9}% 35
+\BOOKMARK [1][-]{section.9.2}{k-Nearest Neighbour \(kNN\)}{chapter.9}% 36
+\BOOKMARK [1][-]{section.9.3}{Linear Discriminant Analysis \(LDA\)}{chapter.9}% 37
+\BOOKMARK [1][-]{section.9.4}{Quadratic Discriminant Analysis \(QDA\)}{chapter.9}% 38
+\BOOKMARK [0][-]{chapter.10}{Regularization ALgorithms}{}% 39
+\BOOKMARK [1][-]{section.10.1}{Subset Selection \(SubS\)}{chapter.10}% 40
+\BOOKMARK [1][-]{section.10.2}{Ridge Regression \(Ridge\)}{chapter.10}% 41
+\BOOKMARK [1][-]{section.10.3}{Least Absolute Shrinkage and Selection Operator \(lASSO\)}{chapter.10}% 42
+\BOOKMARK [0][-]{chapter.11}{Resampling Algorithms}{}% 43
+\BOOKMARK [0][-]{chapter.12}{Developing Your Own R Packages}{}% 44
+\BOOKMARK [0][-]{chapter.13}{Developing Your Own Python Packages}{}% 45
+\BOOKMARK [0][-]{section*.7}{Index}{}% 46
