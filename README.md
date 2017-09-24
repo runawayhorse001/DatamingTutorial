@@ -1,6 +1,6 @@
 # DatamingTutorial
 
-Website:  https://runawayhorse001.github.io/DatamingTutorial/index.html
+Website:  https://runawayhorse001.github.io/DatamingTutorial
 
 
 This document is a summary of my Data Mining Methds & Application (STAT 577) course in University of Tennessee at Knoxville.  **You may
