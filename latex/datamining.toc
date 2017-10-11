@@ -25,23 +25,25 @@
 \contentsline {section}{\numberline {6.1}Diagram of Data Mining Algorithms}{39}{section.6.1}
 \contentsline {section}{\numberline {6.2}Categories of Data Mining Algorithms}{39}{section.6.2}
 \contentsline {chapter}{\numberline {7}Dimension Reduction Algorithms}{43}{chapter.7}
-\contentsline {section}{\numberline {7.1}Principal Component Analysis (PCA)}{43}{section.7.1}
-\contentsline {section}{\numberline {7.2}Independent Component Analysis (ICA)}{43}{section.7.2}
-\contentsline {section}{\numberline {7.3}Nonnegative matrix factorization (NMF)}{43}{section.7.3}
-\contentsline {chapter}{\numberline {8}Regression Algorithm}{45}{chapter.8}
-\contentsline {section}{\numberline {8.1}Ordinary Least Squares Regression (OLSR)}{45}{section.8.1}
-\contentsline {section}{\numberline {8.2}Linear Regression (LR)}{45}{section.8.2}
-\contentsline {section}{\numberline {8.3}Logistic Regression (logR)}{45}{section.8.3}
-\contentsline {chapter}{\numberline {9}Classification ALgorithms}{47}{chapter.9}
-\contentsline {section}{\numberline {9.1}Logistic Regression (LR)}{47}{section.9.1}
-\contentsline {section}{\numberline {9.2}k-Nearest Neighbour (kNN)}{47}{section.9.2}
-\contentsline {section}{\numberline {9.3}Linear Discriminant Analysis (LDA)}{47}{section.9.3}
-\contentsline {section}{\numberline {9.4}Quadratic Discriminant Analysis (QDA)}{47}{section.9.4}
-\contentsline {chapter}{\numberline {10}Regularization ALgorithms}{49}{chapter.10}
-\contentsline {section}{\numberline {10.1}Subset Selection (SubS)}{49}{section.10.1}
-\contentsline {section}{\numberline {10.2}Ridge Regression (Ridge)}{49}{section.10.2}
-\contentsline {section}{\numberline {10.3}Least Absolute Shrinkage and Selection Operator (lASSO)}{49}{section.10.3}
-\contentsline {chapter}{\numberline {11}Resampling Algorithms}{51}{chapter.11}
-\contentsline {chapter}{\numberline {12}Developing Your Own R Packages}{53}{chapter.12}
-\contentsline {chapter}{\numberline {13}Developing Your Own Python Packages}{55}{chapter.13}
-\contentsline {chapter}{Index}{57}{section*.7}
+\contentsline {section}{\numberline {7.1}What is dimension reduction?}{43}{section.7.1}
+\contentsline {section}{\numberline {7.2}Singular Value Decomposition (SVD)}{43}{section.7.2}
+\contentsline {section}{\numberline {7.3}Principal Component Analysis (PCA)}{44}{section.7.3}
+\contentsline {section}{\numberline {7.4}Independent Component Analysis (ICA)}{45}{section.7.4}
+\contentsline {section}{\numberline {7.5}Nonnegative matrix factorization (NMF)}{45}{section.7.5}
+\contentsline {chapter}{\numberline {8}Regression Algorithm}{47}{chapter.8}
+\contentsline {section}{\numberline {8.1}Ordinary Least Squares Regression (OLSR)}{47}{section.8.1}
+\contentsline {section}{\numberline {8.2}Linear Regression (LR)}{47}{section.8.2}
+\contentsline {section}{\numberline {8.3}Logistic Regression (logR)}{47}{section.8.3}
+\contentsline {chapter}{\numberline {9}Classification ALgorithms}{49}{chapter.9}
+\contentsline {section}{\numberline {9.1}Logistic Regression (LR)}{49}{section.9.1}
+\contentsline {section}{\numberline {9.2}k-Nearest Neighbour (kNN)}{49}{section.9.2}
+\contentsline {section}{\numberline {9.3}Linear Discriminant Analysis (LDA)}{49}{section.9.3}
+\contentsline {section}{\numberline {9.4}Quadratic Discriminant Analysis (QDA)}{49}{section.9.4}
+\contentsline {chapter}{\numberline {10}Regularization ALgorithms}{51}{chapter.10}
+\contentsline {section}{\numberline {10.1}Subset Selection (SubS)}{51}{section.10.1}
+\contentsline {section}{\numberline {10.2}Ridge Regression (Ridge)}{51}{section.10.2}
+\contentsline {section}{\numberline {10.3}Least Absolute Shrinkage and Selection Operator (lASSO)}{51}{section.10.3}
+\contentsline {chapter}{\numberline {11}Resampling Algorithms}{53}{chapter.11}
+\contentsline {chapter}{\numberline {12}Developing Your Own R Packages}{55}{chapter.12}
+\contentsline {chapter}{\numberline {13}Developing Your Own Python Packages}{57}{chapter.13}
+\contentsline {chapter}{Index}{59}{section*.12}

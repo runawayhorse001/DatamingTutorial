@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  11 OCT 2017 16:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.8.22)  11 OCT 2017 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -791,6 +791,50 @@ Package: hypcap 2011/02/16 v1.11 Adjusting the anchors of captions (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen140
 )
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
+Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count124
+\calc@Bcount=\count125
+\calc@Adimen=\dimen141
+\calc@Bdimen=\dimen142
+\calc@Askip=\skip77
+\calc@Bskip=\skip78
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count126
+\calc@Cskip=\skip79
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count127
+\l_MT_multwidth_dim=\dimen143
+\origjot=\skip80
+\l_MT_shortvdotswithinadjustabove_dim=\dimen144
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen145
+\l_MT_above_intertext_sep=\dimen146
+\l_MT_below_intertext_sep=\dimen147
+\l_MT_above_shortintertext_sep=\dimen148
+\l_MT_below_shortintertext_sep=\dimen149
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
 \@indexfile=\write5
 \openout5 = `datamining.idx'.
 
@@ -799,44 +843,44 @@ Writing index file datamining.idx
 (./datamining.aux)
 \openout1 = `datamining.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 117.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 146.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 146.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 117.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 146.
+LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 146.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
-\scratchdimen=\dimen141
+\scratchcounter=\count128
+\scratchdimen=\dimen150
 \scratchbox=\box40
-\nofMPsegments=\count125
-\nofMParguments=\count126
+\nofMPsegments=\count129
+\nofMParguments=\count130
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count127
-\MPscratchDim=\dimen142
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
+\MPscratchCnt=\count131
+\MPscratchDim=\dimen151
+\MPnumerator=\count132
+\makeMPintoPDFobject=\count133
 \everyMPtoPDFconversion=\toks31
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -854,7 +898,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box41
-Package hyperref Info: Link coloring ON on input line 117.
+Package hyperref Info: Link coloring ON on input line 146.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -862,36 +906,46 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count130
+\c@section@level=\count134
 )
-LaTeX Info: Redefining \ref on input line 117.
-LaTeX Info: Redefining \pageref on input line 117.
-LaTeX Info: Redefining \nameref on input line 117.
+LaTeX Info: Redefining \ref on input line 146.
+LaTeX Info: Redefining \pageref on input line 146.
+LaTeX Info: Redefining \nameref on input line 146.
 
 (./datamining.out) (./datamining.out)
 \@outlinefile=\write6
 \openout6 = `datamining.out'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--120
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+phv on input line 120.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 149.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 120.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 149.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <17.28> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 120.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 149.
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 120.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 149.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 120.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 149.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 120.
-<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>> [1
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 149.
+<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+LaTeX Font Info:    Try loading font information for U+msa on input line 149.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 149.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
@@ -915,292 +969,615 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1
 
-] [2
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2
 
 ]
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 128.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 157.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 128.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 157.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 128.
-[3] [4]
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 157.
+[3]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
 Chapter 2.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 187.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 216.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
 []\T1/ptm/m/n/10.95 great for script-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
 \T1/ptm/m/n/10.95 and au-tomat-ing your
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
 \T1/ptm/m/n/10.95 dif-fer-ent data min-ing
  []
 
 
-Underfull \hbox (badness 5817) in paragraph at lines 252--253
+Underfull \hbox (badness 5817) in paragraph at lines 281--282
 []\T1/ptm/b/n/10.95 scikit-learn \T1/ptm/m/n/10.95 li-brary is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
 []\T1/ptm/m/n/10.95 libraries doc-u-men-ta-
  []
 
 
-Overfull \hbox (17.26639pt too wide) in paragraph at lines 221--282
+Overfull \hbox (17.26639pt too wide) in paragraph at lines 250--311
 [][] 
  []
 
 [5
 
-] [6]
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]
 Chapter 3.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 330.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 359.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [7
 
-] [8]
-<top20rpkg.jpg, id=335, 355.3275pt x 280.04625pt>
+]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8] <top20rpkg.jpg, id=345, 355.3275pt x 280.04625pt>
 File: top20rpkg.jpg Graphic file (type jpg)
  <use top20rpkg.jpg>
-Package pdftex.def Info: top20rpkg.jpg used on input line 528.
+Package pdftex.def Info: top20rpkg.jpg used on input line 557.
 (pdftex.def)             Requested size: 355.32661pt x 280.04555pt.
 File: top20rpkg.jpg Graphic file (type jpg)
 
 <use top20rpkg.jpg>
-Package pdftex.def Info: top20rpkg.jpg used on input line 528.
+Package pdftex.def Info: top20rpkg.jpg used on input line 557.
 (pdftex.def)             Requested size: 355.32661pt x 280.04555pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--529
+Underfull \hbox (badness 10000) in paragraph at lines 558--558
 []\T1/ptm/m/n/10.95 Figure 3.1: Top 20 R Ma-chine Learn-ing and Data Sci-ence p
 ack-ages. From
  []
 
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 610--611
+Underfull \hbox (badness 10000) in paragraph at lines 639--640
 []\T1/ptm/b/n/10.95 MDP\T1/ptm/m/n/10.95 , a col-lec-tion of su-per-vised and u
 n-su-per-vised learn-ing al-go-rithms,
  []
 
-[10 <./top20rpkg.jpg>] [11] [12
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10 <./top20rpkg.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12
 
 ]
 Chapter 4.
 [13]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 724.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 753.
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 765.
- [14] [15] [16] [17] [18] [19] [20] [21]
-<sumr.png, id=434, 903.375pt x 803.0pt>
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 794.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21] <sumr.png, id=444, 903.375pt x 803.0pt>
 File: sumr.png Graphic file (type png)
  <use sumr.png>
-Package pdftex.def Info: sumr.png used on input line 1394.
+Package pdftex.def Info: sumr.png used on input line 1423.
 (pdftex.def)             Requested size: 903.3728pt x 802.99805pt.
 File: sumr.png Graphic file (type png)
  <use sumr.png>
-Package pdftex.def Info: sumr.png used on input line 1394.
+Package pdftex.def Info: sumr.png used on input line 1423.
 (pdftex.def)             Requested size: 469.755pt x 417.56241pt.
 
-<sumPython.png, id=436, 1092.7224pt x 897.5934pt>
+<sumPython.png, id=446, 1092.7224pt x 897.5934pt>
 File: sumPython.png Graphic file (type png)
  <use sumPython.png>
-Package pdftex.def Info: sumPython.png used on input line 1414.
+Package pdftex.def Info: sumPython.png used on input line 1443.
 (pdftex.def)             Requested size: 1092.71974pt x 897.5912pt.
 File: sumPython.png Graphic file (type png)
 
 <use sumPython.png>
-Package pdftex.def Info: sumPython.png used on input line 1414.
+Package pdftex.def Info: sumPython.png used on input line 1443.
 (pdftex.def)             Requested size: 469.755pt x 385.86176pt.
- [22 <./sumr.png>] <histr.png, id=448, 903.375pt x 803.0pt>
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22 <./sumr.png>] <histr.png, id=458, 903.375pt x 803.0pt>
+File: histr.png Graphic file (type png)
+ <use histr.png>
+Package pdftex.def Info: histr.png used on input line 1488.
+(pdftex.def)             Requested size: 903.3728pt x 802.99805pt.
 File: histr.png Graphic file (type png)
 
 <use histr.png>
-Package pdftex.def Info: histr.png used on input line 1459.
-(pdftex.def)             Requested size: 903.3728pt x 802.99805pt.
-File: histr.png Graphic file (type png)
- <use histr.png>
-Package pdftex.def Info: histr.png used on input line 1459.
+Package pdftex.def Info: histr.png used on input line 1488.
 (pdftex.def)             Requested size: 469.755pt x 417.56241pt.
- <histp.png, id=450, 991.5444pt x 761.0031pt>
+ <histp.png, id=460, 991.5444pt x 761.0031pt>
+File: histp.png Graphic file (type png)
+ <use histp.png>
+Package pdftex.def Info: histp.png used on input line 1509.
+(pdftex.def)             Requested size: 991.54198pt x 761.00124pt.
 File: histp.png Graphic file (type png)
 
 <use histp.png>
-Package pdftex.def Info: histp.png used on input line 1480.
-(pdftex.def)             Requested size: 991.54198pt x 761.00124pt.
-File: histp.png Graphic file (type png)
- <use histp.png>
-Package pdftex.def Info: histp.png used on input line 1480.
+Package pdftex.def Info: histp.png used on input line 1509.
 (pdftex.def)             Requested size: 469.755pt x 360.52805pt.
- [23 <./sumPython.png>] [24 <./histr.png (PNG copy)> <./histp.png>] <boxr.png, 
-id=465, 903.375pt x 803.0pt>
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23 <./sumPython.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24 <./histr.png (PNG copy)> <./histp.png>]
+<boxr.png, id=475, 903.375pt x 803.0pt>
 File: boxr.png Graphic file (type png)
  <use boxr.png>
-Package pdftex.def Info: boxr.png used on input line 1516.
+Package pdftex.def Info: boxr.png used on input line 1545.
 (pdftex.def)             Requested size: 903.3728pt x 802.99805pt.
 File: boxr.png Graphic file (type png)
-
-<use boxr.png>
-Package pdftex.def Info: boxr.png used on input line 1516.
+ <use boxr.png>
+Package pdftex.def Info: boxr.png used on input line 1545.
 (pdftex.def)             Requested size: 469.755pt x 417.56241pt.
- <boxp.png, id=467, 735.7086pt x 600.5637pt>
+
+<boxp.png, id=477, 735.7086pt x 600.5637pt>
 File: boxp.png Graphic file (type png)
  <use boxp.png>
-Package pdftex.def Info: boxp.png used on input line 1537.
+Package pdftex.def Info: boxp.png used on input line 1566.
 (pdftex.def)             Requested size: 735.7068pt x 600.56223pt.
 File: boxp.png Graphic file (type png)
-
-<use boxp.png>
-Package pdftex.def Info: boxp.png used on input line 1537.
+ <use boxp.png>
+Package pdftex.def Info: boxp.png used on input line 1566.
 (pdftex.def)             Requested size: 469.755pt x 383.47055pt.
- [25 <./boxr.png>] <corr.png, id=477, 903.375pt x 803.0pt>
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25 <./boxr.png>] <corr.png, id=487, 903.375pt x 803.0pt>
+File: corr.png Graphic file (type png)
+ <use corr.png>
+Package pdftex.def Info: corr.png used on input line 1599.
+(pdftex.def)             Requested size: 903.3728pt x 802.99805pt.
 File: corr.png Graphic file (type png)
 
 <use corr.png>
-Package pdftex.def Info: corr.png used on input line 1570.
-(pdftex.def)             Requested size: 903.3728pt x 802.99805pt.
-File: corr.png Graphic file (type png)
- <use corr.png>
-Package pdftex.def Info: corr.png used on input line 1570.
+Package pdftex.def Info: corr.png used on input line 1599.
 (pdftex.def)             Requested size: 469.755pt x 417.56241pt.
- <corp.png, id=479, 939.51pt x 712.5822pt>
+ <corp.png, id=489, 939.51pt x 712.5822pt>
+File: corp.png Graphic file (type png)
+ <use corp.png>
+Package pdftex.def Info: corp.png used on input line 1620.
+(pdftex.def)             Requested size: 939.5077pt x 712.58046pt.
 File: corp.png Graphic file (type png)
 
 <use corp.png>
-Package pdftex.def Info: corp.png used on input line 1591.
-(pdftex.def)             Requested size: 939.5077pt x 712.58046pt.
-File: corp.png Graphic file (type png)
- <use corp.png>
-Package pdftex.def Info: corp.png used on input line 1591.
+Package pdftex.def Info: corp.png used on input line 1620.
 (pdftex.def)             Requested size: 469.755pt x 356.29022pt.
- [26 <./boxp.png>] [27 <./corr.png (PNG copy)> <./corp.png>]
-Underfull \vbox (badness 10000) detected at line 1690
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26 <./boxp.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27 <./corr.png (PNG copy)> <./corp.png>]
+Underfull \vbox (badness 10000) detected at line 1719
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1690
- []
-
-[28] [29]
-Underfull \vbox (badness 10000) detected at line 1802
+Underfull \vbox (badness 10000) detected at line 1719
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1802
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29]
+Underfull \vbox (badness 10000) detected at line 1831
  []
 
-[30] [31] [32
+
+Underfull \vbox (badness 10000) detected at line 1831
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32
 
 ]
 Chapter 5.
 [33]
-Underfull \vbox (badness 10000) detected at line 1932
+Underfull \vbox (badness 10000) detected at line 1961
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1932
- []
-
-[34] [35]
-Underfull \vbox (badness 10000) detected at line 2044
+Underfull \vbox (badness 10000) detected at line 1961
  []
 
 
-Underfull \vbox (badness 10000) detected at line 2044
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35]
+Underfull \vbox (badness 10000) detected at line 2073
  []
 
-[36] [37] [38
+
+Underfull \vbox (badness 10000) detected at line 2073
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[36]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[38
 
 ]
 Chapter 6.
-<mlalgs.png, id=541, 1170.3725pt x 747.79375pt>
+<mlalgs.png, id=551, 1170.3725pt x 747.79375pt>
 File: mlalgs.png Graphic file (type png)
  <use mlalgs.png>
-Package pdftex.def Info: mlalgs.png used on input line 2069.
+Package pdftex.def Info: mlalgs.png used on input line 2098.
 (pdftex.def)             Requested size: 1170.36964pt x 747.79192pt.
 File: mlalgs.png Graphic file (type png)
 
 <use mlalgs.png>
-Package pdftex.def Info: mlalgs.png used on input line 2069.
+Package pdftex.def Info: mlalgs.png used on input line 2098.
 (pdftex.def)             Requested size: 469.755pt x 300.13913pt.
- [39] [40 <./mlalgs.png (PNG copy)>] [41] [42
+ [39]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[40 <./mlalgs.png (PNG copy)>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[41]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[42
 
 ]
 Chapter 7.
-[43] [44
+<svd.png, id=583, 859.21pt x 372.39125pt>
+File: svd.png Graphic file (type png)
+ <use svd.png>
+Package pdftex.def Info: svd.png used on input line 2312.
+(pdftex.def)             Requested size: 859.20792pt x 372.39034pt.
+File: svd.png Graphic file (type png)
+ <use svd.png>
+Package pdftex.def Info: svd.png used on input line 2312.
+(pdftex.def)             Requested size: 469.755pt x 203.59982pt.
+ [43]
+<tsvd.png, id=600, 782.925pt x 380.42125pt>
+File: tsvd.png Graphic file (type png)
+ <use tsvd.png>
+Package pdftex.def Info: tsvd.png used on input line 2370.
+(pdftex.def)             Requested size: 782.9231pt x 380.4203pt.
+File: tsvd.png Graphic file (type png)
+ <use tsvd.png>
+Package pdftex.def Info: tsvd.png used on input line 2370.
+(pdftex.def)             Requested size: 469.755pt x 228.2545pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[44 <./svd.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[45 <./tsvd.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[46
 
 ]
 Chapter 8.
-[45] [46
+[47]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[48
 
 ]
 Chapter 9.
-[47] [48
+[49]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[50
 
 ]
 Chapter 10.
-[49] [50
+[51]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[52
 
 ]
 Chapter 11.
-[51] [52
+[53]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[54
 
 ]
 Chapter 12.
-[53] [54
+[55]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[56
 
 ]
 Chapter 13.
-(./datamining.ind [55] [56
+(./datamining.ind [57]
 
-] [57
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[58
+
+] [59
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2315.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2315.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2462.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2462.
  (./datamining.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2315.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2315.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2462.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2462.
 
 Package rerunfilecheck Info: File `datamining.out' has not changed.
-(rerunfilecheck)             Checksum: 5BC6EEABC9710A595AEE71E368A8D7AB;3246.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2315.
+(rerunfilecheck)             Checksum: FBF2EC8D2A1CCFEA2A6109B396725571;3405.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2462.
  ) 
 Here is how much of TeX's memory you used:
- 9434 strings out of 493304
- 130818 string characters out of 6139871
- 234422 words of memory out of 5000000
- 12442 multiletter control sequences out of 15000+600000
- 58838 words of font info for 73 fonts, out of 8000000 for 9000
+ 10336 strings out of 493304
+ 144271 string characters out of 6139871
+ 247595 words of memory out of 5000000
+ 13285 multiletter control sequences out of 15000+600000
+ 62226 words of font info for 88 fonts, out of 8000000 for 9000
  958 hyphenation exceptions out of 8191
- 38i,12n,51p,579b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,23n,49p,579b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/u
-crro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
-tmri8a.pfb>
-Output written on datamining.pdf (61 pages, 1170825 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
+elvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on datamining.pdf (63 pages, 1425895 bytes).
 PDF statistics:
- 726 PDF objects out of 1000 (max. 8388607)
- 623 compressed objects within 7 object streams
- 180 named destinations out of 1000 (max. 500000)
- 439 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 797 PDF objects out of 1000 (max. 8388607)
+ 682 compressed objects within 7 object streams
+ 198 named destinations out of 1000 (max. 500000)
+ 465 words of extra memory for PDF output out of 10000 (max. 10000000)
 

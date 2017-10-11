@@ -11,6 +11,35 @@
 \usepackage{longtable}
 \usepackage{sphinx}
 \usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\def\Z{\mathbb{Z}}
+\def\R{\mathbb{R}}
+\def\bX{\mathbf{X}}
+\def\bU{\mathbf{U}}
+\def\bV{\mathbf{V}}
+\def\V1{\mathds{1}}
+\def\hU{\mathbf{\hat{U}}}
+\def\hS{\mathbf{\hat{\Sigma}}}
+\def\hV{\mathbf{\hat{V}}}
+\def\E{\mathbf{E}}
+\def\F{\mathbf{F}}
+\def\x{\mathbf{x}}
+\def\h{\mathbf{h}}
+\def\v{\mathbf{v}}
+\def\nv{\mathbf{v^{{f -}}}}
+\def\nh{\mathbf{h^{{f -}}}}
+\def\s{\mathbf{s}}
+\def\b{\mathbf{b}}
+\def\c{\mathbf{c}}
+\def\W{\mathbf{W}}
+\def\C{\mathbf{C}}
+\def\P{\mathbf{P}}
+\def\T{{\bf \mathcal T}}
+\def\B{{\bf \mathcal B}}
 
 
 \title{Data Mining With Python and R Tutorials}
@@ -2233,19 +2262,137 @@ Gradient Boosted Regression Trees (GBRT)
 Random Forest
 
 \end{itemize}
-
+\phantomsection\label{dim:dim}
+\index{Dimension Reduction Algorithms}
 
 \chapter{Dimension Reduction Algorithms}
-\label{dim:dim}\label{dim::doc}\label{dim:dimension-reduction-algorithms}
+\label{dim:index-0}\label{dim::doc}\label{dim:dimension-reduction-algorithms}
+
+\section{What is dimension reduction?}
+\label{dim:what-is-dimension-reduction}
+\textbf{In machine learning and statistics, dimensionality reduction or dimension reduction is the process of reducing the number of random variables under consideration,
+via obtaining a set ``uncorrelated'' principle variables. It can be divided into feature selection and feature extraction.} \href{https://en.wikipedia.org/wiki/Dimensionality\_reduction}{https://en.wikipedia.org/wiki/Dimensionality\_reduction}
+
+\index{Singular Value Decomposition}
+
+\section{Singular Value Decomposition (SVD)}
+\label{dim:index-1}\label{dim:singular-value-decomposition-svd}
+At here, I will recall the three types of the SVD method, since some authors confused
+the definitions of these SVD method. SVD method is important for the the dimension reduction
+algorithms, such as Truncated Singular Value Decomposition (tSVD) can be used to do the dimension
+reduction directly, and the Full Rank Singular Value Decomposition (SVD) can be applied to do Principal Component Analysis (PCA), since PCA is a specific case of SVD.
+\begin{enumerate}
+\item {} 
+\textbf{Full Rank Singular Value Decomposition (SVD)}
+
+\end{enumerate}
+\begin{quote}
+
+Suppose \({\bf X}\in\mathbb{R}^{n\times p}, (p<n)\), then
+\phantomsection\label{dim:equation-svd}\begin{gather}
+\begin{split}    \underbracket{\bf X}_{n\times p} =\underbracket{\bf U}_{n\times n} \underbracket{\bf\Sigma}_{n\times p} \underbracket{{\bf V}^T}_{p\times p},\end{split}\label{dim-svd}
+\end{gather}
+is called a full rank \textbf{SVD} of \({\bf X}\) and
+\begin{itemize}
+\item {} 
+\(\sigma_i\)-- Sigular calues and \({\bf\Sigma}=diag(\sigma_1,\sigma_2, \cdots, \sigma_p)\in \mathbb{R}^{n\times p}\)
+
+\item {} 
+\(u_i\)-- left singular vectors, \({\bf U}=[u_1,u_2, \cdots, u_n]\) and  \({\bf U}\) is unitary.
+
+\item {} 
+\(v_i\)-- right singular vectors, \({\bf V}=[v_1,v_2, \cdots, v_p]\) and  \({\bf V}\) is unitary.
+
+\end{itemize}
+\begin{quote}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{svd.png}
+\caption{Singular Value Decomposition}\label{dim:fig-svd}\end{figure}
+\end{quote}
+\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item {} 
+\textbf{Reduced Singular Value Decomposition (rSVD)}
+
+\end{enumerate}
+\begin{quote}
+
+Suppose \({\bf X}\in\mathbb{R}^{n\times p},(n<p)\), then
+\phantomsection\label{dim:equation-rsvd}\begin{gather}
+\begin{split}    \underbracket{\bf X}_{n\times p} =\underbracket{\bf \hat{U}}_{n\times p} \underbracket{\bf\hat{\Sigma}}_{p\times p} \underbracket{{\bf \hat{V}}^T}_{p\times p},\end{split}\label{dim-rsvd}
+\end{gather}
+is called a Reduced Singular Value Decomposition \textbf{rSVD} of \({\bX}\) and
+\begin{itemize}
+\item {} 
+\(\sigma_i\)-- Sigular calues and \({\bf\hat{\Sigma}}=diag(\sigma_1,\sigma_2, \cdots, \sigma_p)\in \mathbb{R}^{p\times p}\)
+
+\item {} 
+\(u_i\)-- left singular vectors, \({\bf \hat{U}}=[u_1,u_2, \cdots, u_p]\) is column-orthonormal matrix.
+
+\item {} 
+\(v_i\)-- right singular vectors, \({\bf \hat{V}}=[v_1,v_2, \cdots, v_p]\) is column-orthonormal matrix.
+
+\end{itemize}
+\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item {} 
+\textbf{Truncated Singular Value Decomposition (tSVD)}
+
+\end{enumerate}
+\begin{quote}
+
+Suppose \({\bf X}\in\mathbb{R}^{n\times p},(r<p)\), then
+\phantomsection\label{dim:equation-tsvd}\begin{gather}
+\begin{split}    \underbracket{\bf X}_{n\times p} =\underbracket{\bf \hat{U}}_{n\times r} \underbracket{\bf\hat{\Sigma}}_{r\times r} \underbracket{{\bf \hat{V}}^T}_{r\times p},\end{split}\label{dim-tsvd}
+\end{gather}
+is called a Truncated Singular Value Decomposition \textbf{tSVD} of \({\bf X}\) and
+\begin{itemize}
+\item {} 
+\(\sigma_i\)-- Sigular calues and \({\bf\hat{\Sigma}}=diag(\sigma_1,\sigma_2, \cdots, \sigma_r)\in \mathbb{R}^{r\times r}\)
+
+\item {} 
+\(u_i\)-- left singular vectors, \({\bf \hat{U}}=[u_1,u_2, \cdots, u_r]\) is column-orthonormal matrix.
+
+\item {} 
+\(v_i\)-- right singular vectors, \({\bf \hat{V}}=[v_1,v_2, \cdots, v_p]\) is column-orthonormal matrix.
+
+\end{itemize}
+\begin{quote}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{tsvd.png}
+\caption{Truncated Singular Value Decomposition}\label{dim:fig-tsvd}\end{figure}
+\end{quote}
+\end{quote}
+
+Figure {\hyperref[dim:fig-tsvd]{\emph{Truncated Singular Value Decomposition}}} indictes that the the dimension of \({\bf \hat{U}}\) is smaller than \({\bf X}\). We can use this property to do the dimension reduction. But, usually, we will use SVD
+to compute the Principal Components. We will learn more details in next section.
+
+\index{Principal Component Analysis}
 
 \section{Principal Component Analysis (PCA)}
-\label{dim:principal-component-analysis-pca}
+\label{dim:principal-component-analysis-pca}\label{dim:index-2}
+Principal Component Analysis (PCA) is a specific case of SVD.
+\begin{quote}
+\phantomsection\label{dim:equation-test}\begin{gather}
+\begin{split}\underbracket{\bX}_{n\times p} =\hU\end{split}\label{dim-test}
+\end{gather}\end{quote}
+
+\index{Independent Component Analysis}
 
 \section{Independent Component Analysis (ICA)}
-\label{dim:independent-component-analysis-ica}
+\label{dim:independent-component-analysis-ica}\label{dim:index-3}
+\index{Nonnegative matrix factorization}
 
 \section{Nonnegative matrix factorization (NMF)}
-\label{dim:nonnegative-matrix-factorization-nmf}
+\label{dim:index-4}\label{dim:nonnegative-matrix-factorization-nmf}
 TO DO......
 
 

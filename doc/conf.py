@@ -216,11 +216,61 @@ latex_logo = None
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-default_role = 'math'
-pngmath_divpng_args = ['-gamma 1.5','-D 110']
-pngmath_latex_preamble =  '\\usepackage{amsmath}\n'+\
+
+# Additional stuff for the LaTeX preamble.
+latex_preamble =  '\\usepackage{amsmath}\n'+\
+                          '\\usepackage{mathtools}\n'+\
                           '\\usepackage{amsfonts}\n'+\
                           '\\usepackage{amssymb}\n'+\
+                          '\\usepackage{dsfont}\n'+\
+                          '\\def\\Z{\\mathbb{Z}}\n'+\
+                          '\\def\\R{\\mathbb{R}}\n'+\
+                          '\\def\\bX{\\mathbf{X}}\n'+\
+        '\\def\\bU{\\mathbf{U}}\n'+\
+                          '\\def\\bV{\\mathbf{V}}\n'+\
+                          '\\def\\V1{\\mathds{1}}\n'+\
+        '\\def\\hU{\\mathbf{\hat{U}}}\n'+\
+                          '\\def\\hS{\\mathbf{\hat{\Sigma}}}\n'+\
+                          '\\def\\hV{\\mathbf{\hat{V}}}\n'+\
+                          '\\def\\E{\\mathbf{E}}\n'+\
+                          '\\def\\F{\\mathbf{F}}\n'+\
+                          '\\def\\x{\\mathbf{x}}\n'+\
+                          '\\def\\h{\\mathbf{h}}\n'+\
+                          '\\def\\v{\\mathbf{v}}\n'+\
+                          '\\def\\nv{\\mathbf{v^{{\bf -}}}}\n'+\
+                          '\\def\\nh{\\mathbf{h^{{\bf -}}}}\n'+\
+                          '\\def\\s{\\mathbf{s}}\n'+\
+                          '\\def\\b{\\mathbf{b}}\n'+\
+                          '\\def\\c{\\mathbf{c}}\n'+\
+                          '\\def\\W{\\mathbf{W}}\n'+\
+                          '\\def\\C{\\mathbf{C}}\n'+\
+                          '\\def\\P{\\mathbf{P}}\n'+\
+                          '\\def\\T{{\\bf \\mathcal T}}\n'+\
+                          '\\def\\B{{\\bf \\mathcal B}}\n'
+
+# Documents to append as an appendix to all manuals.
+#latex_appendices = []
+
+# If false, no module index is generated.
+#latex_use_modindex = True
+
+default_role = 'math'
+pngmath_divpng_args = ['-gamma 1.5','-D 110']
+#pngmath_divpng_args = ['-gamma', '1.5', '-D', '110', '-bg', 'Transparent'] 
+pngmath_latex_preamble =  '\\usepackage{amsmath}\n'+\
+                          '\\usepackage{mathtools}\n'+\
+                          '\\usepackage{amsfonts}\n'+\
+                          '\\usepackage{amssymb}\n'+\
+                          '\\usepackage{dsfont}\n'+\
+                          '\\def\\Z{\\mathbb{Z}}\n'+\
+                          '\\def\\R{\\mathbb{R}}\n'+\
+                          '\\def\\bX{\\mathbf{X}}\n'+\
+        '\\def\\U{\\mathbf{U}}\n'+\
+                          '\\def\\V{\\mathbf{V}}\n'+\
+                          '\\def\\V1{\\mathds{1}}\n'+\
+        '\\def\\hU{\\mathbf{\hat{U}}}\n'+\
+                          '\\def\\hS{\\mathbf{\hat{\Sigma}}}\n'+\
+                          '\\def\\hV{\\mathbf{\hat{V}}}\n'+\
                           '\\def\\E{\\mathbf{E}}\n'+\
                           '\\def\\F{\\mathbf{F}}\n'+\
                           '\\def\\x{\\mathbf{x}}\n'+\

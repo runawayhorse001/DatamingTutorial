@@ -4,9 +4,11 @@
   \bigletter D
   \item Data analysis procedures, \hyperpage{11}
   \item Datasets, \hyperpage{13}
+  \item Dimension Reduction Algorithms, \hyperpage{41}
 
   \indexspace
   \bigletter I
+  \item Independent Component Analysis, \hyperpage{44}
   \item Installing package, \hyperpage{8}
   \item Installing programming language, \hyperpage{7}
   \item Installing programming platform, \hyperpage{8}
@@ -16,8 +18,13 @@
   \item Loading Datasets, \hyperpage{13}
 
   \indexspace
+  \bigletter N
+  \item Nonnegative matrix factorization, \hyperpage{45}
+
+  \indexspace
   \bigletter P
   \item Pre-processing procedures, \hyperpage{31}
+  \item Principal Component Analysis, \hyperpage{44}
   \item procedures, \hyperpage{13}
 
   \indexspace
@@ -26,6 +33,7 @@
 
   \indexspace
   \bigletter S
+  \item Singular Value Decomposition, \hyperpage{43}
   \item Summary of Data Mining Algorithms, \hyperpage{37}
 
   \indexspace

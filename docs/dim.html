@@ -105,6 +105,8 @@
 <li class="toctree-l1"><a class="reference internal" href="pre.html">Pre-processing procedures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Dimension Reduction Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-dimension-reduction">What is dimension reduction?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#singular-value-decomposition-svd">Singular Value Decomposition (SVD)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#principal-component-analysis-pca">Principal Component Analysis (PCA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#independent-component-analysis-ica">Independent Component Analysis (ICA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nonnegative-matrix-factorization-nmf">Nonnegative matrix factorization (NMF)</a></li>
@@ -179,16 +181,89 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dimension-reduction-algorithms">
-<span id="dim"></span><h1>Dimension Reduction Algorithms<a class="headerlink" href="#dimension-reduction-algorithms" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="dim"></span><div class="section" id="dimension-reduction-algorithms">
+<span id="index-0"></span><h1>Dimension Reduction Algorithms<a class="headerlink" href="#dimension-reduction-algorithms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-dimension-reduction">
+<h2>What is dimension reduction?<a class="headerlink" href="#what-is-dimension-reduction" title="Permalink to this headline">¶</a></h2>
+<p><strong>In machine learning and statistics, dimensionality reduction or dimension reduction is the process of reducing the number of random variables under consideration,
+via obtaining a set &#8220;uncorrelated&#8221; principle variables. It can be divided into feature selection and feature extraction.</strong> <a class="reference external" href="https://en.wikipedia.org/wiki/Dimensionality_reduction">https://en.wikipedia.org/wiki/Dimensionality_reduction</a></p>
+</div>
+<div class="section" id="singular-value-decomposition-svd">
+<span id="index-1"></span><h2>Singular Value Decomposition (SVD)<a class="headerlink" href="#singular-value-decomposition-svd" title="Permalink to this headline">¶</a></h2>
+<p>At here, I will recall the three types of the SVD method, since some authors confused
+the definitions of these SVD method. SVD method is important for the the dimension reduction
+algorithms, such as Truncated Singular Value Decomposition (tSVD) can be used to do the dimension
+reduction directly, and the Full Rank Singular Value Decomposition (SVD) can be applied to do Principal Component Analysis (PCA), since PCA is a specific case of SVD.</p>
+<ol class="arabic simple">
+<li><strong>Full Rank Singular Value Decomposition (SVD)</strong></li>
+</ol>
+<blockquote>
+<div><p>Suppose <img class="math" src="images/math/764f5cea96f7af9f109e22fa2c10d3d2dca8c5ac.png" alt="{\bf X}\in\mathbb{R}^{n\times p}, (p&lt;n)"/>, then</p>
+<div class="math" id="equation-svd">
+<p><span class="eqno">(1)</span><img src="images/math/b1080f585a5a971362b39d1eaeeeba4f9736d052.png" alt="\underbracket{\bf X}_{n\times p} =\underbracket{\bf U}_{n\times n} \underbracket{\bf\Sigma}_{n\times p} \underbracket{{\bf V}^T}_{p\times p},"/></p>
+</div><p>is called a full rank <strong>SVD</strong> of <img class="math" src="images/math/adfef4e1533031597107a42945d1af8a5e93bee4.png" alt="{\bf X}"/> and</p>
+<ul class="simple">
+<li><img class="math" src="images/math/3c73aed1e7093ec134bc571a36a9951db8c51009.png" alt="\sigma_i"/>&#8211; Sigular calues and <img class="math" src="images/math/8797922e997ab4f3d885b73e18cfc0c7a224d4db.png" alt="{\bf\Sigma}=diag(\sigma_1,\sigma_2, \cdots, \sigma_p)\in \mathbb{R}^{n\times p}"/></li>
+<li><img class="math" src="images/math/30ca66f9a58bc503e145c2937026954f63243da6.png" alt="u_i"/>&#8211; left singular vectors, <img class="math" src="images/math/11c8c7358a03f382eb5949ffed4cb32480b8839c.png" alt="{\bf U}=[u_1,u_2, \cdots, u_n]"/> and  <img class="math" src="images/math/d87bc21d365b48c88d66e1ede4e313776ca5686c.png" alt="{\bf U}"/> is unitary.</li>
+<li><img class="math" src="images/math/f8c3a2c0b3bb2a5a67999b27fc338c609c384d2c.png" alt="v_i"/>&#8211; right singular vectors, <img class="math" src="images/math/8f69efa64f7b9b61a2ca67b0fd1f2bd16d7e2dc3.png" alt="{\bf V}=[v_1,v_2, \cdots, v_p]"/> and  <img class="math" src="images/math/c2a71c041f4d56c70cac581d0e9d478127f8b267.png" alt="{\bf V}"/> is unitary.</li>
+</ul>
+<blockquote>
+<div><div class="figure align-center" id="id1">
+<span id="fig-svd"></span><img alt="images/svd.png" src="images/svd.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Singular Value Decomposition</span></p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><strong>Reduced Singular Value Decomposition (rSVD)</strong></li>
+</ol>
+<blockquote>
+<div><p>Suppose <img class="math" src="images/math/6d8744dcfb15980cdb00c2edab65a9cacab87f6e.png" alt="{\bf X}\in\mathbb{R}^{n\times p},(n&lt;p)"/>, then</p>
+<div class="math" id="equation-rsvd">
+<p><span class="eqno">(2)</span><img src="images/math/4d6f00ec3e087be68b78c13e1c7f73386054a720.png" alt="\underbracket{\bf X}_{n\times p} =\underbracket{\bf \hat{U}}_{n\times p} \underbracket{\bf\hat{\Sigma}}_{p\times p} \underbracket{{\bf \hat{V}}^T}_{p\times p},"/></p>
+</div><p>is called a Reduced Singular Value Decomposition <strong>rSVD</strong> of <img class="math" src="images/math/88b666cfec1708344e6c852f32a40b62bae656aa.png" alt="{\bX}"/> and</p>
+<ul class="simple">
+<li><img class="math" src="images/math/3c73aed1e7093ec134bc571a36a9951db8c51009.png" alt="\sigma_i"/>&#8211; Sigular calues and <img class="math" src="images/math/21ccc21ae94fe89f1d2e8c60093bb68f6b703e9a.png" alt="{\bf\hat{\Sigma}}=diag(\sigma_1,\sigma_2, \cdots, \sigma_p)\in \mathbb{R}^{p\times p}"/></li>
+<li><img class="math" src="images/math/30ca66f9a58bc503e145c2937026954f63243da6.png" alt="u_i"/>&#8211; left singular vectors, <img class="math" src="images/math/4da8331ea881820326b083ac309c7b62f4256947.png" alt="{\bf \hat{U}}=[u_1,u_2, \cdots, u_p]"/> is column-orthonormal matrix.</li>
+<li><img class="math" src="images/math/f8c3a2c0b3bb2a5a67999b27fc338c609c384d2c.png" alt="v_i"/>&#8211; right singular vectors, <img class="math" src="images/math/9d1775ee7a56c7c4e66651417be973fa26a89698.png" alt="{\bf \hat{V}}=[v_1,v_2, \cdots, v_p]"/> is column-orthonormal matrix.</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><strong>Truncated Singular Value Decomposition (tSVD)</strong></li>
+</ol>
+<blockquote>
+<div><p>Suppose <img class="math" src="images/math/a75e640e11815933fc264cd5a23e062faf9d7bf8.png" alt="{\bf X}\in\mathbb{R}^{n\times p},(r&lt;p)"/>, then</p>
+<div class="math" id="equation-tsvd">
+<p><span class="eqno">(3)</span><img src="images/math/43cea37b6e6b24c39cc06064f715d33cee2426d8.png" alt="\underbracket{\bf X}_{n\times p} =\underbracket{\bf \hat{U}}_{n\times r} \underbracket{\bf\hat{\Sigma}}_{r\times r} \underbracket{{\bf \hat{V}}^T}_{r\times p},"/></p>
+</div><p>is called a Truncated Singular Value Decomposition <strong>tSVD</strong> of <img class="math" src="images/math/adfef4e1533031597107a42945d1af8a5e93bee4.png" alt="{\bf X}"/> and</p>
+<ul class="simple">
+<li><img class="math" src="images/math/3c73aed1e7093ec134bc571a36a9951db8c51009.png" alt="\sigma_i"/>&#8211; Sigular calues and <img class="math" src="images/math/bf8d2740735348016b10d4a932fb996907224549.png" alt="{\bf\hat{\Sigma}}=diag(\sigma_1,\sigma_2, \cdots, \sigma_r)\in \mathbb{R}^{r\times r}"/></li>
+<li><img class="math" src="images/math/30ca66f9a58bc503e145c2937026954f63243da6.png" alt="u_i"/>&#8211; left singular vectors, <img class="math" src="images/math/25711a964d8055c51ae6f30aa07c51973a9a5b07.png" alt="{\bf \hat{U}}=[u_1,u_2, \cdots, u_r]"/> is column-orthonormal matrix.</li>
+<li><img class="math" src="images/math/f8c3a2c0b3bb2a5a67999b27fc338c609c384d2c.png" alt="v_i"/>&#8211; right singular vectors, <img class="math" src="images/math/9d1775ee7a56c7c4e66651417be973fa26a89698.png" alt="{\bf \hat{V}}=[v_1,v_2, \cdots, v_p]"/> is column-orthonormal matrix.</li>
+</ul>
+<blockquote>
+<div><div class="figure align-center" id="id2">
+<span id="fig-tsvd"></span><img alt="images/tsvd.png" src="images/tsvd.png" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Truncated Singular Value Decomposition</span></p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>Figure <a class="reference internal" href="#fig-tsvd"><span class="std std-ref">Truncated Singular Value Decomposition</span></a> indictes that the the dimension of <img class="math" src="images/math/18d68a577020851f910c9448b0b4b0b62be8bbf0.png" alt="{\bf \hat{U}}"/> is smaller than <img class="math" src="images/math/adfef4e1533031597107a42945d1af8a5e93bee4.png" alt="{\bf X}"/>. We can use this property to do the dimension reduction. But, usually, we will use SVD
+to compute the Principal Components. We will learn more details in next section.</p>
+</div>
 <div class="section" id="principal-component-analysis-pca">
-<h2>Principal Component Analysis (PCA)<a class="headerlink" href="#principal-component-analysis-pca" title="Permalink to this headline">¶</a></h2>
+<span id="index-2"></span><h2>Principal Component Analysis (PCA)<a class="headerlink" href="#principal-component-analysis-pca" title="Permalink to this headline">¶</a></h2>
+<p>Principal Component Analysis (PCA) is a specific case of SVD.</p>
+<blockquote>
+<div><div class="math" id="equation-test">
+<p><span class="eqno">(4)</span><img src="images/math/510e53c2d492981b6a1371f6ae70b404e0370787.png" alt="\underbracket{\bX}_{n\times p} =\hU"/></p>
+</div></div></blockquote>
 </div>
 <div class="section" id="independent-component-analysis-ica">
-<h2>Independent Component Analysis (ICA)<a class="headerlink" href="#independent-component-analysis-ica" title="Permalink to this headline">¶</a></h2>
+<span id="index-3"></span><h2>Independent Component Analysis (ICA)<a class="headerlink" href="#independent-component-analysis-ica" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="nonnegative-matrix-factorization-nmf">
-<h2>Nonnegative matrix factorization (NMF)<a class="headerlink" href="#nonnegative-matrix-factorization-nmf" title="Permalink to this headline">¶</a></h2>
+<span id="index-4"></span><h2>Nonnegative matrix factorization (NMF)<a class="headerlink" href="#nonnegative-matrix-factorization-nmf" title="Permalink to this headline">¶</a></h2>
 <p>TO DO......</p>
 </div>
 </div>
