@@ -110,3 +110,7 @@ Nonnegative matrix factorization (NMF)
 ++++++++++++++++++++++++++++++++++++++
 
 TO DO......
+
+
+
+.. _decomposition: http://scikit-learn.org/stable/modules/decomposition.html
