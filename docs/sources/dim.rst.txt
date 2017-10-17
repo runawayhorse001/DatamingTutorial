@@ -91,7 +91,7 @@ to compute the Principal Components. We will learn more details in next section.
 Principal Component Analysis (PCA)
 ++++++++++++++++++++++++++++++++++
 
-Principal Component Analysis (PCA) is a specific case of SVD.
+Usually, there are two ways to implement the PCA. Principal Component Analysis (PCA) is a specific case of SVD.
 
  .. math::
     :label: test
