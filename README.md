@@ -11,3 +11,15 @@ and thank the generous anonymous authors for providing the detailed solutions an
 Without those help, those tutorials would not have been possible to be made. In those tutorials, I try to use the 	
 detailed demo code to show how to use each functions in R and Python to do data mining. If you find your work wasn't cited in	
 this note, please feel free to let me know.	
+
+
+BTW, the ``sphinx-to-github`` function for github pages  can be easily solved by add  an empty file ``.nojekyll `` to your docs folder.  I add the following piece of code to add it automatically: 
+
+
+```
+# add .nojekyll file to fix the github pages issues
+nojekyll_path = os.path.join(outdir, '.nojekyll')
+if not os.path.exists(nojekyll_path):
+    os.makedirs(nojekyll_path)
+
+```
