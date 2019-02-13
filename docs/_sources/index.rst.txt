@@ -2,7 +2,7 @@
 .. _index:
 
 Welcome to my Data Mining With Python and R tutorials! In these tutorials, you will learn a wide array
-of concepts about Python and R programing in Data Mining.
+of concepts about Python and R programing in Data Mining. The PDF version can be downloaded from `HERE <datamining.pdf>`_.
 
 ========
 Contents

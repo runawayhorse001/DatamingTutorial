@@ -49,6 +49,11 @@ if __name__ == '__main__':
     mkdir(outdir)
     os.chdir(outdir)
 
+    # add .nojekyll file to fix the github pages issues
+    nojekyll_path = os.path.join(outdir, '.nojekyll')
+    if not os.path.exists(nojekyll_path):
+        os.makedirs(nojekyll_path)
+
     # Make sure the appropriate 'theano' directory is in the PYTHONPATH
     pythonpath = os.environ.get('PYTHONPATH', '')
     pythonpath = os.pathsep.join([throot, pythonpath])
@@ -57,6 +62,8 @@ if __name__ == '__main__':
     # Make sure we don't use gpu to compile documentation
     env_th_flags = os.environ.get('THEANO_FLAGS', '')
     os.environ['THEANO_FLAGS'] = 'device=cpu,force_device=True'
+    
+   
 
     def call_sphinx(builder, workdir):
         import sphinx
@@ -106,3 +113,6 @@ if __name__ == '__main__':
 
     # Reset THEANO_FLAGS
     os.environ['THEANO_FLAGS'] = env_th_flags
+
+
+
