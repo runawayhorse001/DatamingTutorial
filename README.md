@@ -13,7 +13,7 @@ detailed demo code to show how to use each functions in R and Python to do data 
 this note, please feel free to let me know.	
 
 
-BTW, the ``sphinx-to-github`` function for github pages  can be easily solved by add  an empty file ``.nojekyll `` to your docs folder.  I add the following piece of code to add it automatically: 
+BTW, the ``sphinx-to-github`` function for github pages  can be easily solved by add  an empty file ``.nojekyll ``  to your docs folder.  I add the following piece of code to add it automatically: 
 
 
 ```
