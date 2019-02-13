@@ -99,7 +99,11 @@
 <li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dim.html">Dimension Reduction Algorithms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Regression Algorithm</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#ordinary-least-squares-regression-olsr">Ordinary Least Squares Regression (OLSR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ordinary-least-squares-regression-olsr">Ordinary Least Squares Regression (OLSR)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-solve-it">How to solve it?</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#linear-regression-lr">Linear Regression (LR)</a></li>
 </ul>
 </li>
@@ -182,6 +186,80 @@
 <p>In data mining, Regression is a model to represent the relationship between the value of lable ( or target, it is numerical variable) and on one or more features (or predictors they can be numerical and categorical variables).</p>
 <div class="section" id="ordinary-least-squares-regression-olsr">
 <h2>Ordinary Least Squares Regression (OLSR)<a class="headerlink" href="#ordinary-least-squares-regression-olsr" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<p>Given that a data set <img class="math" src="_images/math/abd5c000c89a73aeca8f3e579eebe2e38de0d140.png" alt="{\displaystyle \{\,x_{i1},\ldots ,x_{in},y_{i}\}_{i=1}^{m}}"/> which contains n features
+(variables) and m samples (data points), in simple linear regression model for modeling <img class="math" src="_images/math/5afbc5407b9f0dab6a46cbc531cfcb39ee099bb6.png" alt="{\displaystyle m}"/> data points with one independent variable: <img class="math" src="_images/math/2f7d38d29680afded1dd2ae86f2f336152e94c99.png" alt="{\displaystyle x_{i1}}"/>, the formula is given by:</p>
+<blockquote>
+<div><div class="math">
+<p><img src="_images/math/3e41a77150486d89d7f5a7c95d35fc00c45bb0f5.png" alt="y_i = \beta_0 + \beta_1 x_{i1}, \text{where}, i= 1, \cdots m."/></p>
+</div></div></blockquote>
+<p>In matrix notation, the data set is written as <img class="math" src="_images/math/75c2893d913c82cda56125fc902f72390918e8f1.png" alt="\X = [\X_1,\cdots, \X_n]"/> with
+<img class="math" src="_images/math/8b9808d1af67dfeb8c9000588cf8014bce32c89b.png" alt="\X_i = {\displaystyle \{x_{\cdot i}\}_{i=1}^{n}}"/>,
+<img class="math" src="_images/math/450f1d9bfc807cf0a6b801bba6bc8efa1d8da980.png" alt="\By = {\displaystyle \{y_{i}\}_{i=1}^{m}}"/>
+and <img class="math" src="_images/math/fa25472ad78177a8bdfd7f52e75fd67a48352f1f.png" alt="\Bbeta^\top = {\displaystyle \{\beta_{i}\}_{i=1}^{m}}"/>.
+Then the normal equations are written as</p>
+<blockquote>
+<div><div class="math">
+<p><img src="_images/math/9ad307fd9e2d91983a83314e5a86a8afd1ae3df7.png" alt="\By = \X \Bbeta."/></p>
+</div></div></blockquote>
+</div>
+<div class="section" id="how-to-solve-it">
+<h3>How to solve it?<a class="headerlink" href="#how-to-solve-it" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Direct Methods (For more information please refer to my <a class="reference external" href="http://web.utk.edu/~wfeng1/doc/PrelimNum.pdf">Prelim Notes for Numerical Analysis</a>)</p>
+<blockquote>
+<div><ul>
+<li><p class="first">For squared or rectangular matrices</p>
+<blockquote>
+<div><ul class="simple">
+<li>Singular Value Decomposition</li>
+<li>Gram-Schmidt orthogonalization</li>
+<li>QR Decomposition</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">For squared matrices</p>
+<blockquote>
+<div><ul class="simple">
+<li>LU Decomposition</li>
+<li>Cholesky Decomposition</li>
+<li>Regular Splittings</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Iterative Methods</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Stationary cases iterative method</p>
+<blockquote>
+<div><ul class="simple">
+<li>Jacobi Method</li>
+<li>Gauss-Seidel Method</li>
+<li>Richardson Method</li>
+<li>Successive Over Relaxation (SOR) Method</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Dynamic cases iterative method</p>
+<blockquote>
+<div><ul class="simple">
+<li>Chebyshev iterative Method</li>
+<li>Minimal residuals Method</li>
+<li>Minimal correction iterative method</li>
+<li>Steepest Descent Method</li>
+<li>Conjugate Gradients Method</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div>
 </div>
 <div class="section" id="linear-regression-lr">
 <h2>Linear Regression (LR)<a class="headerlink" href="#linear-regression-lr" title="Permalink to this headline">¶</a></h2>
