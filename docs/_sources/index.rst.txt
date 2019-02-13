@@ -1,6 +1,11 @@
 
 .. _index:
 
+
+  .. _fig_logo:
+  .. figure:: images/logo.png
+    :align: center
+
 Welcome to my Data Mining With Python and R tutorials! In these tutorials, you will learn a wide array
 of concepts about Python and R programing in Data Mining. The PDF version can be downloaded from `HERE <datamining.pdf>`_.
 

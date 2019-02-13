@@ -261,6 +261,7 @@ latex_logo = None
 
 # If false, no module index is generated.
 #latex_use_modindex = True
+latex_logo = 'images/logo.png'
 
 #latex_elements['preamble'] = '\usepackage{xcolor}'
 # Additional stuff for the LaTeX preamble.
