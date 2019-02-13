@@ -304,7 +304,7 @@ latex_elements['preamble'] =  '\\usepackage{amsmath}\n'+\
 default_role = 'math'
 pngmath_divpng_args = ['-gamma 1.5','-D 110']
 #pngmath_divpng_args = ['-gamma', '1.5', '-D', '110', '-bg', 'Transparent'] 
-pngmath_latex_preamble =  '\\usepackage{amsmath}\n'+\
+imgmath_latex_preamble =  '\\usepackage{amsmath}\n'+\
                           '\\usepackage{mathtools}\n'+\
                           '\\usepackage{amsfonts}\n'+\
                           '\\usepackage{amssymb}\n'+\

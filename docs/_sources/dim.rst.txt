@@ -29,7 +29,6 @@ reduction directly, and the Full Rank Singular Value Decomposition (SVD) can be 
  Suppose :math:`{\bf X}\in\mathbb{R}^{n\times p}, (p<n)`, then 
 
  .. math::
-    :label: svd
 
 	\underbracket{\bf X}_{n\times p} =\underbracket{\bf U}_{n\times n} \underbracket{\bf\Sigma}_{n\times p} \underbracket{{\bf V}^T}_{p\times p},
 
@@ -49,10 +48,10 @@ reduction directly, and the Full Rank Singular Value Decomposition (SVD) can be 
 
  Suppose :math:`{\bf X}\in\mathbb{R}^{n\times p},(n<p)`, then 
 
- .. math::
-    :label: rsvd
 
-	\underbracket{\bf X}_{n\times p} =\underbracket{\bf \hat{U}}_{n\times p} \underbracket{\bf\hat{\Sigma}}_{p\times p} \underbracket{{\bf \hat{V}}^T}_{p\times p},
+ .. math::
+
+  \underbracket{\bf X}_{n\times p} =\underbracket{\bf \hat{U}}_{n\times p} \underbracket{\bf\hat{\Sigma}}_{p\times p} \underbracket{{\bf \hat{V}}^T}_{p\times p},
 
  is called a Reduced Singular Value Decomposition **rSVD** of :math:`{\bX}` and 
 
