@@ -12,7 +12,7 @@ Data analysis procedures
 
 .. index:: procedures
 
-procedures
+Procedures
 ++++++++++
 
 Data mining is a complex process that aims to discover patterns in large data sets starting from a collection of exsting data. In my opinion, data minig contains four main steps:
