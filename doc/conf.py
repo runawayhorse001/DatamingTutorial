@@ -3,37 +3,58 @@
 # theano documentation build configuration file, created by
 # sphinx-quickstart on Tue Oct  7 16:34:06 2008.
 #
-# This file is execfile()d with the current directory set to its containing dir.
+# This file is execfile()d with the current directory set to its containing
+# directory.
 #
 # The contents of this file are pickled, so don't put values in the namespace
-# that aren't pickleable (module imports are okay, they're removed automatically).
+# that aren't pickleable (module imports are okay, they're removed
+# automatically).
 #
 # All configuration values have a default value; values that are commented out
 # serve to show the default value.
-import sys, os
 
 # If your extensions are in another directory, add it here. If the directory
 # is relative to the documentation root, use os.path.abspath to make it
 # absolute, like shown here.
 #sys.path.append(os.path.abspath('some/directory'))
 
+from __future__ import absolute_import, print_function, division
+
+import os
+import sys
+#import theano
+
+theano_path = os.path.join(os.path.dirname(__file__), os.pardir)
+sys.path.append(os.path.abspath(theano_path))
+import versioneer
+
 # General configuration
 # ---------------------
 
-# Add any Sphinx extension module names here, as strings. They can be extensions
-# coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.todo',"sphinxtogithub"]
+# Add any Sphinx extension module names here, as strings. They can be
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
+extensions = ['sphinx.ext.autodoc',
+              'sphinx.ext.todo',
+              'sphinx.ext.doctest',
+              'sphinx.ext.napoleon',
+              'sphinx.ext.linkcode']
 
-sphinx_to_github = True
-sphinx_to_github_verbose = True
-sphinx_to_github_encoding = "utf-8"
+todo_include_todos = True
+napoleon_google_docstring = False
+napoleon_include_special_with_doc = False
 
+# We do it like this to support multiple sphinx version without having warning.
+# Our buildbot consider warning as error.
 try:
-    from sphinx.ext import pngmath
-    extensions.append('sphinx.ext.pngmath')
+    from sphinx.ext import imgmath
+    extensions.append('sphinx.ext.imgmath')
 except ImportError:
-    print >>sys.stderr, 'Warning: could not import sphinx.ext.pngmath'
-    pass
+    try:
+        from sphinx.ext import pngmath
+        extensions.append('sphinx.ext.pngmath')
+    except ImportError:
+        pass
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['.templates']
@@ -44,8 +65,6 @@ source_suffix = '.rst'
 # The master toctree document.
 master_doc = 'index'
 
-show_authors = True
-
 # General substitutions.
 project = 'Data Mining With Python and R'
 copyright = '2016, Wenqiang Feng'
@@ -53,6 +72,9 @@ copyright = '2016, Wenqiang Feng'
 # The default replacements for |version| and |release|, also used in various
 # other places throughout the built documents.
 #
+
+# We need this hokey-pokey because versioneer needs the current
+# directory to be the root of the project to work.
 # The short X.Y version.
 version = '1.01'
 # The full version, including alpha/beta/rc tags.
@@ -67,11 +89,12 @@ today_fmt = '%B %d, %Y'
 # List of documents that shouldn't be included in the build.
 #unused_docs = []
 
-# List of directories, relative to source directories, that shouldn't be searched
-# for source files.
-exclude_dirs = ['scripts']
+# List of directories, relative to source directories, that shouldn't be
+# searched for source files.
+exclude_dirs = ['images', 'scripts', 'sandbox']
 
-# The reST default role (used for this markup: `text`) to use for all documents.
+# The reST default role (used for this markup: `text`) to use for all
+# documents.
 #default_role = None
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
@@ -96,18 +119,21 @@ pygments_style = 'sphinx'
 # must exist either in Sphinx' static/ path, or in one of the custom paths
 # given in html_static_path.
 #html_style = 'default.css'
-#html_theme = 'sphinxdoc'
-html_theme = 'sphinx_rtd_theme'
-#html_theme_options = {
-#    "rightsidebar": "true",
-#    "relbarbgcolor": "black"
-#}
-#html_theme = 'traditional'
-#html_theme = "classic"
-#html_theme_options = {
-#    "rightsidebar": "true",
-#    "relbarbgcolor": "black"
-#}
+# html_theme = 'sphinxdoc'
+
+# Read the docs style:
+if os.environ.get('READTHEDOCS') != 'True':
+    try:
+        import sphinx_rtd_theme
+    except ImportError:
+        pass  # assume we have sphinx >= 1.3
+    else:
+        html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+    html_theme = 'sphinx_rtd_theme'
+
+def setup(app):
+    app.add_stylesheet("fix_rtd.css")
+
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 #html_title = None
@@ -117,7 +143,7 @@ html_theme = 'sphinx_rtd_theme'
 
 # The name of an image file (within the static path) to place at the top of
 # the sidebar.
-#html_logo = None
+#html_logo = 'images/theano_logo_allwhite_210x70.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -127,8 +153,7 @@ html_theme = 'sphinx_rtd_theme'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-#html_static_path = ['.static', 'images']
-html_static_path = ['images']
+html_static_path = ['.static', 'images', 'library/d3viz/examples']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -146,19 +171,16 @@ html_use_smartypants = True
 #html_additional_pages = {}
 
 # If false, no module index is generated.
-html_use_modindex = True
+#html_use_modindex = True
 
 # If false, no index is generated.
-html_use_index = True
+#html_use_index = True
 
 # If true, the index is split into individual pages for each letter.
 #html_split_index = False
 
 # If true, the reST sources are included in the HTML build as _sources/<name>.
 #html_copy_source = True
-
-# If true, the number of figure will show
-numfig = True
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
@@ -169,21 +191,55 @@ numfig = True
 #html_file_suffix = ''
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'testdoc'
+htmlhelp_basename = 'theanodoc'
 
+# Options for the linkcode extension
+# ----------------------------------
+# Resolve function
+# This function is used to populate the (source) links in the API
+def linkcode_resolve(domain, info):
+    def find_source():
+        # try to find the file and line number, based on code from numpy:
+        # https://github.com/numpy/numpy/blob/master/doc/source/conf.py#L286
+        obj = sys.modules[info['module']]
+        for part in info['fullname'].split('.'):
+            obj = getattr(obj, part)
+        import inspect
+        import os
+        fn = inspect.getsourcefile(obj)
+        fn = os.path.relpath(fn, start=os.path.dirname(theano.__file__))
+        source, lineno = inspect.getsourcelines(obj)
+        return fn, lineno, lineno + len(source) - 1
+
+    if domain != 'py' or not info['module']:
+        return None
+    try:
+        filename = 'theano/%s#L%d-L%d' % find_source()
+    except Exception:
+        filename = info['module'].replace('.', '/') + '.py'
+    import subprocess
+    tag = subprocess.Popen(['git', 'rev-parse', 'HEAD'],
+                           stdout=subprocess.PIPE,
+                           universal_newlines=True).communicate()[0][:-1]
+    return "https://github.com/runawayhorse001/%s/%s" % (tag, filename)
 
 # Options for LaTeX output
 # ------------------------
 
-# The paper size ('letter' or 'a4').
-#latex_paper_size = 'letter'
+latex_elements = {
+    # The paper size ('letter' or 'a4').
+    #latex_paper_size = 'letter',
 
-# The font size ('10pt', '11pt' or '12pt').
-latex_font_size = '11pt'
+    # The font size ('10pt', '11pt' or '12pt').
+    'pointsize': '11pt',
+
+    # Additional stuff for the LaTeX preamble.
+    #latex_preamble = '',
+}
 
 # Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, document class [howto/manual]).
-
+# (source start file, target name, title, author, document class
+# [howto/manual]).
 latex_documents = [
   ('index', 'datamining.tex', 'Data Mining With Python and R Tutorials',
    'Wenqiang Feng', 'manual'),
@@ -191,34 +247,25 @@ latex_documents = [
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
 latex_logo = None
+# The name of an image file (relative to this directory) to place at the top of
+# the title page.
+#latex_logo = 'images/snake_theta2-trans.png'
+#latex_logo = 'images/theano_logo_allblue_200x46.png'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
 #latex_use_parts = False
-
-# Additional stuff for the LaTeX preamble.
-#latex_preamble = ''
 
 # Documents to append as an appendix to all manuals.
 #latex_appendices = []
 
 # If false, no module index is generated.
 #latex_use_modindex = True
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-#on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
-#if not on_rtd:  # only import and set the theme if we're building docs locally
-#    import sphinx_rtd_theme
-#    html_theme = 'sphinx_rtd_theme'
-#    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-# otherwise, readthedocs.org uses their theme by default, so no need to specify it
-#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
+#latex_elements['preamble'] = '\usepackage{xcolor}'
 # Additional stuff for the LaTeX preamble.
-latex_preamble =  '\\usepackage{amsmath}\n'+\
+#latex_preamble 
+latex_elements['preamble'] =  '\\usepackage{amsmath}\n'+\
                           '\\usepackage{mathtools}\n'+\
                           '\\usepackage{amsfonts}\n'+\
                           '\\usepackage{amssymb}\n'+\
@@ -286,3 +333,4 @@ pngmath_latex_preamble =  '\\usepackage{amsmath}\n'+\
                           '\\def\\P{\\mathbf{P}}\n'+\
                           '\\def\\T{{\\bf \\mathcal T}}\n'+\
                           '\\def\\B{{\\bf \\mathcal B}}\n'
+
