@@ -276,7 +276,7 @@ latex_elements['preamble'] =  '\\usepackage{amsmath}\n'+\
                           '\\def\\bX{\\mathbf{X}}\n'+\
                           '\\def\\X{\\mathbf{X}}\n'+\
                           '\\def\\By{\\mathbf{y}}\n'+\
-                          '\\def\\Bbeta{\\mathbb{\\beta}}\n'+\
+                          '\\def\\Bbeta{\\boldsymbol{\\beta}}\n'+\
         '\\def\\bU{\\mathbf{U}}\n'+\
                           '\\def\\bV{\\mathbf{V}}\n'+\
                           '\\def\\V1{\\mathds{1}}\n'+\
@@ -318,7 +318,7 @@ imgmath_latex_preamble =  '\\usepackage{amsmath}\n'+\
                           '\\def\\bX{\\mathbf{X}}\n'+\
                           '\\def\\X{\\mathbf{X}}\n'+\
                           '\\def\\By{\\mathbf{y}}\n'+\
-                          '\\def\\Bbeta{\\mathbb{\\beta}}\n'+\
+                          '\\def\\Bbeta{\\boldsymbol{\\beta}}\n'+\
                           '\\def\\U{\\mathbf{U}}\n'+\
                           '\\def\\V{\\mathbf{V}}\n'+\
                           '\\def\\V1{\\mathds{1}}\n'+\
