@@ -7,7 +7,7 @@ Developing Your Own Python Packages
 
 .. code-block:: bash
 
-	Using Spark defined in the SPARK_HOME=/Users/dt216661/spark environmental property
+	Using Spark defined in the SPARK_HOME=/Users/~/spark environmental property
 
 	Python 3.7.1 (default, Dec 14 2018, 13:28:58)
 	[Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
