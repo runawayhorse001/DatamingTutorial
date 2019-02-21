@@ -43,6 +43,19 @@ todo_include_todos = True
 napoleon_google_docstring = False
 napoleon_include_special_with_doc = False
 
+html_context = {
+    # Enable the "Edit in GitHub link within the header of each page.
+    'display_github': True,
+    # Set the following variables to generate the resulting github URL for each page. 
+    # Format Template: https://{{ github_host|default("github.com") }}/{{ github_user }}
+    #/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}
+    #https://github.com/runawayhorse001/DatamingTutorial/blob/master/doc/index.rst
+    'github_user': 'runawayhorse001',
+    'github_repo': 'DatamingTutorial',
+    'github_version': 'master/doc/' ,
+}
+
+
 # We do it like this to support multiple sphinx version without having warning.
 # Our buildbot consider warning as error.
 try:
