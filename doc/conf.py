@@ -37,7 +37,9 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.todo',
               'sphinx.ext.doctest',
               'sphinx.ext.napoleon',
-              'sphinx.ext.linkcode']
+              'sphinx.ext.linkcode',
+              'sphinxcontrib.contentui' 
+              ]
 
 todo_include_todos = True
 napoleon_google_docstring = False
@@ -89,9 +91,9 @@ copyright = '2016, Wenqiang Feng'
 # We need this hokey-pokey because versioneer needs the current
 # directory to be the root of the project to work.
 # The short X.Y version.
-version = '1.01'
+#version = '1.01'
 # The full version, including alpha/beta/rc tags.
-release = 'v1.01'
+#release = 'v1.01'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -166,7 +168,7 @@ html_favicon = 'images/icon.ico'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['.static', 'images', 'library/d3viz/examples']
+html_static_path = ['.static', 'images']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
