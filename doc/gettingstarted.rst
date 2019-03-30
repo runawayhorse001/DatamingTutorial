@@ -25,7 +25,7 @@ Installing programming language
 .. content-tabs:: right-col
 
     .. tab-container:: python
-        :title: python
+        :title: Python
 
         Go to Ubuntu Software Center and follow the following steps:
 
@@ -46,7 +46,7 @@ Installing programming language
             sudo pip install ipython
 
     .. tab-container:: r
-        :title: r
+        :title: R
          
         Go to Ubuntu Software Center and follow the following steps:
 
@@ -71,7 +71,7 @@ My favorite programming platform for R is definitely `RStudio` IDE and for Pytho
 .. content-tabs:: right-col
 
     .. tab-container:: python
-        :title: python
+        :title: Python
 
         * Installing PyCharm
 
@@ -84,7 +84,7 @@ My favorite programming platform for R is definitely `RStudio` IDE and for Pytho
           Here is the video tutorial for installing Pydev for Eclipse on Youtube: `Pydev on Youtube`_
 
     .. tab-container:: r
-        :title: r
+        :title: R
 
         * **Installing RStudio**
 
@@ -102,7 +102,7 @@ Installing packages
 .. content-tabs:: right-col
 
     .. tab-container:: python
-        :title: python
+        :title: Python
 
         * **Installing package for Python**
 
@@ -165,7 +165,7 @@ Installing packages
          * **textmining**, text mining, https://pypi.python.org/pypi/textmining/1.0        
 
     .. tab-container:: r
-        :title: r
+        :title: R
 
         * **Installing package for R**
 
