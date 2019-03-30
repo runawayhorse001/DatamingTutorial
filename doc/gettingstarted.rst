@@ -22,76 +22,79 @@ and package.
 Installing programming language
 +++++++++++++++++++++++++++++++
 
-* **Installing R**
- 
- Go to Ubuntu Software Center and follow the following steps:
+.. content-tabs::
 
- #. Open Ubuntu Software Center 
- #. Search for r-base
- #. And click Install
+    .. tab-container:: py
+        :title: python
 
- Or Open your terminal and  using the following command:
+        Go to Ubuntu Software Center and follow the following steps:
 
- .. code-block:: bash
-
-    sudo apt-get update 
-    sudo apt-get install r-base
+        #. Open Ubuntu Software Center 
+        #. Search for python
+        #. And click Install
 
 
+        Or Open your terminal and  using the following command:
 
-* **Insralling Python**
+        .. code-block:: bash
 
- Go to Ubuntu Software Center and follow the following steps:
+            sudo apt-get install build-essential checkinstall
+            sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev 
+                         libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+            sudo apt-get install python
+            sudo easy_install pip
+            sudo pip install ipython
 
- #. Open Ubuntu Software Center 
- #. Search for python
- #. And click Install
+    .. tab-container:: r
+        :title: r
+         
+        Go to Ubuntu Software Center and follow the following steps:
 
- Or Open your terminal and  using the following command:
+        #. Open Ubuntu Software Center 
+        #. Search for r-base
+        #. And click Install
 
- .. code-block:: bash
+        Or Open your terminal and  using the following command:
 
-    sudo apt-get install build-essential checkinstall
-    sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev 
-                 libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
-    sudo apt-get install python
-    sudo easy_install pip
-    sudo pip install ipython
+        .. code-block:: bash
+
+            sudo apt-get update 
+            sudo apt-get install r-base
 
 .. index:: Installing programming platform
 
 Installing programming platform
 +++++++++++++++++++++++++++++++
 
-My favorite programming platform for R is definitely **RStudio** IDE and for Python is  **Eclipse+Pydev**.
+My favorite programming platform for R is definitely `RStudio` IDE and for Python is  `PyCharm`.
 
-* **Installing RStudio**
 
- Go to Ubuntu Software Center and follow the following steps:
 
- #. Open Ubuntu Software Center 
- #. Search for RStudio
- #. And click Install
+.. content-tabs::
 
-* **Installing Eclipse + Pydev**
+    .. tab-container:: py
+        :title: python
 
- * Installing Eclipse
+        * Installing PyCharm
 
-  Go to Ubuntu Software Center and follow the following steps:
+          Go to Ubuntu Software Center and follow the following steps:
 
-  #. Open Ubuntu Software Center 
-  #. Search for Eclipse
-  #. And click Install
-
- * Installing Pydev
-
-  #. Open Eclipse 
-  #. Go to Eclipse Marketplace 
-  #. Search for Pydev
-  #. And click Pydev- Python IDE for Eclipse
+          #. Open Ubuntu Software Center 
+          #. Search for Eclipse
+          #. And click Install
   
-  Here is the video tutorial for installing Pydev for Eclipse on Youtube: `Pydev on Youtube`_
+          Here is the video tutorial for installing Pydev for Eclipse on Youtube: `Pydev on Youtube`_
 
+    .. tab-container:: r
+        :title: r
+
+        * **Installing RStudio**
+
+         Go to Ubuntu Software Center and follow the following steps:
+
+         #. Open Ubuntu Software Center 
+         #. Search for RStudio
+         #. And click Install
 
 .. index:: Installing package
 

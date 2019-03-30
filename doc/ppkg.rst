@@ -5,30 +5,117 @@ Developing Your Own Python Packages
 ===================================
 
 
+It's super easy to wrap your own package in Python. I packed some functions which I frequently 
+used in my daily work. You can download and install it from `My ststspy library`_. The hierarchical 
+structure and the directory structure of this package are as follows. 
+ 
+Hierarchical Structure
+++++++++++++++++++++++
+
+
 .. code-block:: bash
 
-	Using Spark defined in the SPARK_HOME=/Users/~/spark environmental property
+	├── README.md
+	├── __init__.py
+	├── requirements.txt
+	├── setup.py
+	├── statspy
+	│   ├── __init__.py
+	│   ├── basics.py
+	│   └── tests.py
+	└── test
+	    ├── nb
+	    │   └── t.test.ipynb
+	    └── test1.py
 
-	Python 3.7.1 (default, Dec 14 2018, 13:28:58)
-	[Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
-	Type "help", "copyright", "credits" or "license" for more information.
-	2019-02-15 14:08:30 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-	Setting default log level to "WARN".
-	To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-	2019-02-15 14:08:31 WARN  Utils:66 - Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
-	2019-02-15 14:08:31 WARN  Utils:66 - Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
-	Welcome to
-	      ____              __
-	     / __/__  ___ _____/ /__
-	    _\ \/ _ \/ _ `/ __/  '_/
-	   /__ / .__/\_,_/_/ /_/\_\   version 2.4.0
-	      /_/
-
-	Using Python version 3.7.1 (default, Dec 14 2018 13:28:58)
-	SparkSession available as 'spark'.
-	>>>
+	3 directories, 9 files
 
 
+From the above hierarchical structure, you will find that you have to have ``__init__.py`` in each directory. I will explain the ``__init__.py`` file with the example below:
+
+Set Up
+++++++
+
+.. code-block:: python
+
+	from setuptools import setup, find_packages
+
+	try:
+	    with open("README.md") as f:
+	        long_description = f.read()
+	except IOError:
+	    long_description = ""
+
+	try:
+	    with open("requirements.txt") as f:
+	        requirements = [x.strip() for x in f.read().splitlines() if x.strip()]
+	except IOError:
+	    requirements = []
+
+	setup(name='statspy',
+	      install_requires=requirements,
+	      version='1.0',
+	      description='Statistics python library',
+	      author='Wenqiang Feng',
+	      author_email='von198@gmail.com',
+	      url='git@github.com:runawayhorse001/statspy.git',
+	      packages=find_packages(),
+	      long_description=long_description
+	     )
+
+Requirements
+++++++++++++
+
+.. code-block:: rst
+
+	pandas
+	numpy
+	scipy
+	patsy
+	matplotlib
 
 
-TO DO......
+
+ReadMe
+++++++
+
+.. code-block:: bash
+
+	# StatsPy
+
+	This is my statistics python library repositories.
+	The ``API`` can be found at: https://runawayhorse001.github.io/statspy. 
+	If you want to colne and install it, you can use 
+
+	- clone
+
+	```{bash}
+	git clone git@github.com:runawayhorse001/statspy.git
+	```
+	- install 
+
+	```{bash}
+	cd statspy
+	pip install -r requirements.txt 
+	python setup.py install
+	```
+	- uninstall 
+
+	```{bash}
+	pip uninstall statspy
+	```
+
+	- test 
+
+	```{bash}
+	cd statspy/test
+	python test1.py
+	```
+
+
+
+
+
+
+
+.. _My ststspy library: https://runawayhorse001.github.io/statspy/

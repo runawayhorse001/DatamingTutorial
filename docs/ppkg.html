@@ -104,7 +104,13 @@
 <li class="toctree-l1"><a class="reference internal" href="reg.html">Regularization ALgorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resample.html">Resampling Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rpkg.html">Developing Your Own R Packages</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Developing Your Own Python Packages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developing Your Own Python Packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hierarchical-structure">Hierarchical Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up">Set Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#readme">ReadMe</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -173,29 +179,103 @@
             
   <div class="section" id="developing-your-own-python-packages">
 <span id="ppkg"></span><h1>Developing Your Own Python Packages<a class="headerlink" href="#developing-your-own-python-packages" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Using Spark defined in the SPARK_HOME=/Users/~/spark environmental property
+<p>It’s super easy to wrap your own package in Python. I packed some functions which I frequently
+used in my daily work. You can download and install it from <a class="reference external" href="https://runawayhorse001.github.io/statspy/">My ststspy library</a>. The hierarchical
+structure and the directory structure of this package are as follows.</p>
+<div class="section" id="hierarchical-structure">
+<h2>Hierarchical Structure<a class="headerlink" href="#hierarchical-structure" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>├── README.md
+├── __init__.py
+├── requirements.txt
+├── setup.py
+├── statspy
+│   ├── __init__.py
+│   ├── basics.py
+│   └── tests.py
+└── <span class="nb">test</span>
+    ├── nb
+    │   └── t.test.ipynb
+    └── test1.py
 
-Python 3.7.1 (default, Dec 14 2018, 13:28:58)
-[Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-2019-02-15 14:08:30 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-Setting default log level to &quot;WARN&quot;.
-To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-2019-02-15 14:08:31 WARN  Utils:66 - Service &#39;SparkUI&#39; could not bind on port 4040. Attempting port 4041.
-2019-02-15 14:08:31 WARN  Utils:66 - Service &#39;SparkUI&#39; could not bind on port 4041. Attempting port 4042.
-Welcome to
-      ____              __
-     / __/__  ___ _____/ /__
-    _\ \/ _ \/ _ `/ __/  &#39;_/
-   /__ / .__/\_,_/_/ /_/\_\   version 2.4.0
-      /_/
-
-Using Python version 3.7.1 (default, Dec 14 2018 13:28:58)
-SparkSession available as &#39;spark&#39;.
-&gt;&gt;&gt;
+<span class="m">3</span> directories, <span class="m">9</span> files
 </pre></div>
 </div>
-<p>TO DO……</p>
+<p>From the above hierarchical structure, you will find that you have to have <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> in each directory. I will explain the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file with the example below:</p>
+</div>
+<div class="section" id="set-up">
+<h2>Set Up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.md&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">long_description</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+    <span class="n">long_description</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;requirements.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">requirements</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>
+<span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+    <span class="n">requirements</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;statspy&#39;</span><span class="p">,</span>
+      <span class="n">install_requires</span><span class="o">=</span><span class="n">requirements</span><span class="p">,</span>
+      <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span>
+      <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Statistics python library&#39;</span><span class="p">,</span>
+      <span class="n">author</span><span class="o">=</span><span class="s1">&#39;Wenqiang Feng&#39;</span><span class="p">,</span>
+      <span class="n">author_email</span><span class="o">=</span><span class="s1">&#39;von198@gmail.com&#39;</span><span class="p">,</span>
+      <span class="n">url</span><span class="o">=</span><span class="s1">&#39;git@github.com:runawayhorse001/statspy.git&#39;</span><span class="p">,</span>
+      <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(),</span>
+      <span class="n">long_description</span><span class="o">=</span><span class="n">long_description</span>
+     <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>pandas
+numpy
+scipy
+patsy
+matplotlib
+</pre></div>
+</div>
+</div>
+<div class="section" id="readme">
+<h2>ReadMe<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># StatsPy</span>
+
+This is my statistics python library repositories.
+The <span class="sb">``</span>API<span class="sb">``</span> can be found at: https://runawayhorse001.github.io/statspy.
+If you want to colne and install it, you can use
+
+- clone
+
+<span class="sb">```</span><span class="o">{</span>bash<span class="o">}</span>
+git clone git@github.com:runawayhorse001/statspy.git
+<span class="sb">```</span>
+- install
+
+<span class="sb">```</span><span class="o">{</span>bash<span class="o">}</span>
+<span class="nb">cd</span> statspy
+pip install -r requirements.txt
+python setup.py install
+<span class="sb">```</span>
+- uninstall
+
+<span class="sb">```</span><span class="o">{</span>bash<span class="o">}</span>
+pip uninstall statspy
+<span class="sb">```</span>
+
+- <span class="nb">test</span>
+
+<span class="sb">```</span><span class="o">{</span>bash<span class="o">}</span>
+<span class="nb">cd</span> statspy/test
+python test1.py
+<span class="sb">```</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -222,8 +302,7 @@ SparkSession available as &#39;spark&#39;.
       </span>
 
     </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  </div> 
 
 </footer>
 
