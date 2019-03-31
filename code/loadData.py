@@ -73,7 +73,7 @@ if __name__ == '__main__':
 
     # make a scatter plot
 
-#    rawdata.info()
+    # rawdata.info()
 
     from scipy import stats
     import seaborn as sns # just a conventional alias, don't know why
@@ -100,9 +100,4 @@ if __name__ == '__main__':
     sns.distplot(attr, kde=False, fit=stats.gamma);
 
     plt.show()
-    
-    
-    
-    
-    
     

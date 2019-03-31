@@ -22,10 +22,10 @@ from __future__ import absolute_import, print_function, division
 
 import os
 import sys
-#import theano
 
-theano_path = os.path.join(os.path.dirname(__file__), os.pardir)
-sys.path.append(os.path.abspath(theano_path))
+pkg_path = os.path.abspath('..')
+sys.path.insert(0, pkg_path)
+
 import versioneer
 
 # General configuration
@@ -34,7 +34,7 @@ import versioneer
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinx.ext.autodoc',
-              'sphinx.ext.todo',
+              #'sphinx.ext.todo',
               'sphinx.ext.doctest',
               'sphinx.ext.napoleon',
               'sphinx.ext.linkcode',
@@ -44,18 +44,6 @@ extensions = ['sphinx.ext.autodoc',
 todo_include_todos = True
 napoleon_google_docstring = False
 napoleon_include_special_with_doc = False
-
-html_context = {
-    # Enable the "Edit in GitHub link within the header of each page.
-    'display_github': True,
-    # Set the following variables to generate the resulting github URL for each page. 
-    # Format Template: https://{{ github_host|default("github.com") }}/{{ github_user }}
-    #/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}
-    #https://github.com/runawayhorse001/DatamingTutorial/blob/master/doc/index.rst
-    'github_user': 'runawayhorse001',
-    'github_repo': 'DatamingTutorial',
-    'github_version': 'master/doc/' ,
-}
 
 
 # We do it like this to support multiple sphinx version without having warning.
@@ -72,7 +60,7 @@ except ImportError:
 
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['.templates']
+#templates_path = ['.templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -135,6 +123,18 @@ pygments_style = 'sphinx'
 # given in html_static_path.
 #html_style = 'default.css'
 # html_theme = 'sphinxdoc'
+html_context = {
+    # Enable the "Edit in GitHub link within the header of each page.
+    'display_github': True,
+    # Set the following variables to generate the resulting github URL for each page. 
+    # Format Template: https://{{ github_host|default("github.com") }}/{{ github_user }}
+    #/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}
+    #https://github.com/runawayhorse001/DatamingTutorial/blob/master/doc/index.rst
+    'github_user': 'runawayhorse001',
+    'github_repo': 'DatamingTutorial',
+    'github_version': 'master/doc/' ,
+}
+
 
 # Read the docs style:
 if os.environ.get('READTHEDOCS') != 'True':
@@ -225,21 +225,22 @@ def linkcode_resolve(domain, info):
         import inspect
         import os
         fn = inspect.getsourcefile(obj)
-        fn = os.path.relpath(fn, start=os.path.dirname(theano.__file__))
+        fn = os.path.relpath(fn, start=pkg_path)
         source, lineno = inspect.getsourcelines(obj)
         return fn, lineno, lineno + len(source) - 1
 
     if domain != 'py' or not info['module']:
         return None
     try:
-        filename = 'theano/%s#L%d-L%d' % find_source()
+        filename = '%s#L%d-L%d' % find_source()
     except Exception:
         filename = info['module'].replace('.', '/') + '.py'
     import subprocess
-    tag = subprocess.Popen(['git', 'rev-parse', 'HEAD'],
-                           stdout=subprocess.PIPE,
-                           universal_newlines=True).communicate()[0][:-1]
-    return "https://github.com/runawayhorse001/%s/%s" % (tag, filename)
+    # tag = subprocess.Popen(['git', 'rev-parse', 'HEAD'],
+    #                        stdout=subprocess.PIPE,
+    #                        universal_newlines=True).communicate()[0][:-1]
+    # https://github.com/runawayhorse001/PythonTipsDS/blob/master/statspy/basics.py
+    return "https://github.com/runawayhorse001/DatamingTutorial/blob/master/%s" % (filename)
 
 # Options for LaTeX output
 # ------------------------

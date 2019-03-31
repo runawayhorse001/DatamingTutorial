@@ -41,7 +41,7 @@ The datasets for this tutorial are available to download: `Heart <../data/Heart.
 Loading Datasets
 ++++++++++++++++
 
-There are two main data formats "*.csv" and "*.xlsx". We will show how to load those two types of data in **R** and **Python**, respectively. 
+There are three main data source ``database``, ``*.csv`` and ``*.xlsx``. We will show how to load those two types of data in **R** and **Python**, respectively. 
 
 
 Loading table format database
@@ -62,6 +62,7 @@ User and Database information:
     .. tab-container:: python
         :title: Python
 
+        * Loading data from database in **Python**
 
         .. code-block:: python
         
@@ -86,6 +87,8 @@ User and Database information:
     .. tab-container:: r
         :title: R
 
+        * Loading data from database in **R**
+
         .. code-block:: r
 
             # load the library 
@@ -106,13 +109,15 @@ User and Database information:
 
             head(df)
 
-Loading data from `.csv`
--------------------------
+Loading data from ``.csv``
+--------------------------
 
 .. content-tabs:: right-col
 
     .. tab-container:: python
         :title: Python
+
+        * Loading data from ``.csv`` in **Python**
 
         .. code-block:: python
 
@@ -128,6 +133,8 @@ Loading data from `.csv`
     .. tab-container:: r
         :title: R
 
+        * Loading data from ``.csv`` in **R**
+
         .. code-block:: r
 
             # set the path or enverionment
@@ -137,13 +144,15 @@ Loading data from `.csv`
             rawdata = read.csv("spam.csv")        
 
 
-Loading data from `.xlsx`
--------------------------
+Loading data from ``.xlsx``
+---------------------------
 
 .. content-tabs:: right-col
 
     .. tab-container:: python
         :title: Python
+
+        * Loading data from ``.xlsx`` in **Python**
 
         .. code-block:: python
 
@@ -158,6 +167,8 @@ Loading data from `.xlsx`
 
     .. tab-container:: r
         :title: R
+
+        * Loading data from ``.xlsx`` in **R**
 
         .. code-block:: r
 
@@ -275,394 +286,443 @@ Summary of the data
       	 reversable:117            
       	 NA's      :  2        
 
- 
-
 The size of the data
 --------------------
 
- Sometimes we also need to know the size or dimension of our data. Such as when you need to extract the 
- response from the dataset, you need the number of column, or when you try to split your data into train
- and test data set, you need know the number of row. 
+Most of time, we also need to know the size or dimension of our data. Such as when you need to extract the response from the dataset, you need the number of column, or when you try to split your data into train and test data set, you need know the number of row. 
 
- * Checking size in **R**
+.. content-tabs:: right-col
 
-  .. code-block:: r
+    .. tab-container:: python
+        :title: Python
 
-     dim(rawdata)
+        * Checking size in **Python**
+
+        .. code-block:: python
+
+             nrow, ncol = rawdata.shape
+             print nrow, ncol
+
+        or you can use the follwing code 
+
+        .. code-block:: python
+
+            nrow=rawdata.shape[0] #gives number of row count
+            ncol=rawdata.shape[1] #gives number of col count
+            print(nrow, ncol)
+
+        Then you will get 
+
+        .. code-block:: python 
+
+             Raw data size
+             303 14
+
+
+    .. tab-container:: r
+        :title: R
+
+        * Checking size in **R**
+
+        .. code-block:: r
+
+            dim(rawdata)
+         
+        Or you can use the following code
+          
+        .. code-block:: r
+
+             nrow=nrow(rawdata)
+             ncol=ncol(rawdata)
+            
+             c(nrow, ncol)
+         
+        Then you will get 
+
+        .. code-block:: r
+
+             > dim(rawdata)
+             [1] 303  14
+
  
-  Or you can use the following code
-  
-  .. code-block:: r
 
-     nrow=nrow(rawdata)
-     ncol=ncol(rawdata)
-    
-     c(nrow, ncol)
- 
-  Then you will get 
+Data type of the features
+-------------------------
 
-  .. code-block:: r
+Data type is also very important, since some functions or methods can not be applied to the qualitative data or some machine learning algorithm will take some types as categorical data, you need to remove those features or transform them into quantitative data. 
 
-     > dim(rawdata)
-     [1] 303  14
+.. content-tabs:: right-col
 
- * Checking size in **Python**
+    .. tab-container:: python
+        :title: Python
 
-  .. code-block:: python
+        * Checking data type in **Pyhton**
 
-     nrow, ncol = rawdata.shape
-     print nrow, ncol
+        .. code-block:: python
 
-  or you can use the follwing code 
+             print(rawdata.dtypes)
+         
+        Then you will get 
 
-  .. code-block:: python
+        .. code-block:: python
 
-    nrow=rawdata.shape[0] #gives number of row count
-    ncol=rawdata.shape[1] #gives number of col count
-    print nrow, ncol
+             Data Format:
+           Age            int64
+           Sex            int64
+           ChestPain     object
+           RestBP         int64
+           Chol           int64
+           Fbs            int64
+           RestECG        int64
+           MaxHR          int64
+           ExAng          int64
+           Oldpeak      float64
+           Slope          int64
+           Ca           float64
+           Thal          object
+           AHD           object
+           dtype: object
 
-  Then you will get 
+    .. tab-container:: r
+        :title: R
 
-  .. code-block:: python 
+        * Checking data format in **R**
 
-     Raw data size
-     303 14
+        .. code-block:: r
 
-Data format of the predictors
------------------------------
+             # install the package
+             install.packages("mlbench")
+             library(mlbench)
 
- Data format is also very important, since some functions or methods can not be applied to the qualitative data, you 
- need to remove those predictors or transform them into quantitative data. 
+             sapply(rawdata, class)
+         
+        Then you will get 
 
- * Checking data format in **R**
+        .. code-block:: r
 
-  .. code-block:: r
+          	> sapply(rawdata, class)
+                 Age       Sex ChestPain    RestBP      Chol       Fbs   RestECG 
+             "integer" "integer"  "factor" "integer" "integer" "integer" "integer" 
+             MaxHR     ExAng   Oldpeak     Slope        Ca      Thal       AHD 
+             "integer" "integer" "numeric" "integer" "integer"  "factor"  "factor" 
 
-     # install the package
-     install.packages("mlbench")
-     library(mlbench)
-
-     sapply(rawdata, class)
- 
-  Then you will get 
-
-  .. code-block:: r
-
-  	> sapply(rawdata, class)
-         Age       Sex ChestPain    RestBP      Chol       Fbs   RestECG 
-     "integer" "integer"  "factor" "integer" "integer" "integer" "integer" 
-     MaxHR     ExAng   Oldpeak     Slope        Ca      Thal       AHD 
-     "integer" "integer" "numeric" "integer" "integer"  "factor"  "factor" 
-
- * Checking data format in **Pyhton**
-
-  .. code-block:: python
-
-     print rawdata.dtypes
- 
-  Then you will get 
-
-  .. code-block:: python
-
-  	 Data Format:
-	 Age            int64
-	 Sex            int64
-	 ChestPain     object
-	 RestBP         int64
-	 Chol           int64
-	 Fbs            int64
-	 RestECG        int64
-	 MaxHR          int64
-	 ExAng          int64
-	 Oldpeak      float64
-	 Slope          int64
-	 Ca           float64
-	 Thal          object
-	 AHD           object
-	 dtype: object
 
 The column names
 ----------------
 
- * Checking column names of the data in **R**
+.. content-tabs:: right-col
 
-  .. code-block:: r
+    .. tab-container:: python
+        :title: Python
 
-     colnames(rawdata)
-     attach(rawdata) # enable you can directly use name as predictors
- 
-  Then you will get 
+        * Checking column names of the data in **Python**
 
-  .. code-block:: r
+        .. code-block:: python
 
-  	> colnames(rawdata)
-     [1] "Age"       "Sex"       "ChestPain" "RestBP"    "Chol"     
-     [6] "Fbs"       "RestECG"   "MaxHR"     "ExAng"     "Oldpeak"  
-     [11] "Slope"     "Ca"        "Thal"      "AHD"  
+             colNames = rawdata.columns.tolist()
+             
+             print "Column names:"
+             print colNames
+         
+        Then you will get 
 
- * Checking column names of the data in **Python**
+        .. code-block:: python
 
-  .. code-block:: python
+             Column names:
+             ['Age', 'Sex', 'ChestPain', 'RestBP', 'Chol', 'Fbs', 'RestECG', 'MaxHR', 
+              'ExAng', 'Oldpeak', 'Slope', 'Ca', 'Thal', 'AHD']        
 
-     colNames = rawdata.columns.tolist()
-     
-     print "Column names:"
-     print colNames
- 
-  Then you will get 
+    .. tab-container:: r
+        :title: R
 
-  .. code-block:: python
+        * Checking column names of the data in **R**
 
-  	 Column names:
-     ['Age', 'Sex', 'ChestPain', 'RestBP', 'Chol', 'Fbs', 'RestECG', 'MaxHR', 
-      'ExAng', 'Oldpeak', 'Slope', 'Ca', 'Thal', 'AHD']
+        .. code-block:: r
 
+             colnames(rawdata)
+             attach(rawdata) # enable you can directly use name as features
+         
+        Then you will get 
 
+        .. code-block:: r
+
+          	> colnames(rawdata)
+             [1] "Age"       "Sex"       "ChestPain" "RestBP"    "Chol"     
+             [6] "Fbs"       "RestECG"   "MaxHR"     "ExAng"     "Oldpeak"  
+             [11] "Slope"     "Ca"        "Thal"      "AHD"  
 
 The first or last parts of the data
 -----------------------------------
 
- * Checking first parts of the data in **R**
+.. content-tabs:: right-col
 
-  .. code-block:: r
+    .. tab-container:: python
+        :title: Python
 
-     head(rawdata)
- 
-  Then you will get 
+        * Checking first parts of the data in **Python**
+         
+        .. code-block:: python
 
-  .. code-block:: r
+             print("\n Sample data:")
+             print(rawdata.head(6))
 
-    > head(rawdata)
-       Age Sex    ChestPain RestBP Chol Fbs RestECG MaxHR ExAng Oldpeak
-     1  63   1      typical    145  233   1       2   150     0     2.3
-     2  67   1 asymptomatic    160  286   0       2   108     1     1.5
-     3  67   1 asymptomatic    120  229   0       2   129     1     2.6
-     4  37   1   nonanginal    130  250   0       0   187     0     3.5
-     5  41   0   nontypical    130  204   0       2   172     0     1.4
-     6  56   1   nontypical    120  236   0       0   178     0     0.8
-        Slope Ca       Thal AHD
-     1     3  0      fixed  No
-     2     2  3     normal Yes
-     3     2  2 reversable Yes
-     4     3  0     normal  No
-     5     1  0     normal  No
-     6     1  0     normal  No
+        Then you will get 
 
- * Checking first parts of the data in **Python**
- 
-  .. code-block:: python
+        .. code-block:: python 
 
-     print "\n Sample data:"
-     print(rawdata.head(6))
+            Sample data:
+               Age  Sex     ChestPain  RestBP  Chol  Fbs  RestECG  MaxHR  ExAng  Oldpeak  \
+           0   63    1       typical     145   233    1        2    150      0      2.3   
+           1   67    1  asymptomatic     160   286    0        2    108      1      1.5   
+           2   67    1  asymptomatic     120   229    0        2    129      1      2.6   
+           3   37    1    nonanginal     130   250    0        0    187      0      3.5   
+           4   41    0    nontypical     130   204    0        2    172      0      1.4   
+           5   56    1    nontypical     120   236    0        0    178      0      0.8   
 
-  Then you will get 
+              Slope  Ca        Thal  AHD  
+           0      3   0       fixed   No  
+           1      2   3      normal  Yes  
+           2      2   2  reversable  Yes  
+           3      3   0      normal   No  
+           4      1   0      normal   No  
+           5      1   0      normal   No  
 
-  .. code-block:: python 
 
-    Sample data:
-       Age  Sex     ChestPain  RestBP  Chol  Fbs  RestECG  MaxHR  ExAng  Oldpeak  \
-   0   63    1       typical     145   233    1        2    150      0      2.3   
-   1   67    1  asymptomatic     160   286    0        2    108      1      1.5   
-   2   67    1  asymptomatic     120   229    0        2    129      1      2.6   
-   3   37    1    nonanginal     130   250    0        0    187      0      3.5   
-   4   41    0    nontypical     130   204    0        2    172      0      1.4   
-   5   56    1    nontypical     120   236    0        0    178      0      0.8   
+    .. tab-container:: r
+        :title: R
 
-      Slope  Ca        Thal  AHD  
-   0      3   0       fixed   No  
-   1      2   3      normal  Yes  
-   2      2   2  reversable  Yes  
-   3      3   0      normal   No  
-   4      1   0      normal   No  
-   5      1   0      normal   No  
+        * Checking first parts of the data in **R**
 
- You can use the samilar way to check the last part of the data, for simplicity, i will skip  it. 
+        .. code-block:: r
+
+             head(rawdata)
+         
+        Then you will get 
+
+        .. code-block:: r
+
+            > head(rawdata)
+               Age Sex    ChestPain RestBP Chol Fbs RestECG MaxHR ExAng Oldpeak
+             1  63   1      typical    145  233   1       2   150     0     2.3
+             2  67   1 asymptomatic    160  286   0       2   108     1     1.5
+             3  67   1 asymptomatic    120  229   0       2   129     1     2.6
+             4  37   1   nonanginal    130  250   0       0   187     0     3.5
+             5  41   0   nontypical    130  204   0       2   172     0     1.4
+             6  56   1   nontypical    120  236   0       0   178     0     0.8
+                Slope Ca       Thal AHD
+             1     3  0      fixed  No
+             2     2  3     normal Yes
+             3     2  2 reversable Yes
+             4     3  0     normal  No
+             5     1  0     normal  No
+             6     1  0     normal  No
+
+
+You can use the samilar way (``tail``) to check the last part of the data, for simplicity, i will skip  it. 
 
 Correlation Matrix
 ------------------
 
- * Computing correlation matrix in **R**
+.. content-tabs:: right-col
 
-  .. code-block:: r
+    .. tab-container:: python
+        :title: Python
 
-     # get numerical data and remove NAN
-     numdata=na.omit(rawdata[,c(1:2,4:12)])
+        * Computing correlation matrix in **Python**
 
-     # computing correlation matrix
-     cor(numdata)
- 
-  Then you will get 
+        .. code-block:: python
 
-  .. code-block:: r
+             print("\n correlation Matrix")
+             print(rawdata.corr())
+         
+        Then you will get 
 
-  	 > cor(numdata)
-                  Age         Sex      RestBP         Chol          Fbs
-     Age      1.00000000 -0.09181347  0.29069633  0.203376601  0.128675921
-     Sex     -0.09181347  1.00000000 -0.06552127 -0.195907357  0.045861783
-     RestBP   0.29069633 -0.06552127  1.00000000  0.132284171  0.177623291
-     Chol     0.20337660 -0.19590736  0.13228417  1.000000000  0.006664176
-     Fbs      0.12867592  0.04586178  0.17762329  0.006664176  1.000000000
-     RestECG  0.14974915  0.02643577  0.14870922  0.164957542  0.058425836
-     MaxHR   -0.39234176 -0.05206445 -0.04805281  0.002179081 -0.003386615
-     ExAng    0.09510850  0.14903849  0.06588463  0.056387955  0.011636935
-     Oldpeak  0.19737552  0.11023676  0.19161540  0.040430535  0.009092935
-     Slope    0.15895990  0.03933739  0.12110773 -0.009008239  0.053776677
-     Ca       0.36260453  0.09318476  0.09877326  0.119000487  0.145477522
-                RestECG        MaxHR       ExAng      Oldpeak        Slope
-     Age      0.14974915 -0.392341763  0.09510850  0.197375523  0.158959901
-     Sex      0.02643577 -0.052064447  0.14903849  0.110236756  0.039337394
-     RestBP   0.14870922 -0.048052805  0.06588463  0.191615405  0.121107727
-     Chol     0.16495754  0.002179081  0.05638795  0.040430535 -0.009008239
-     Fbs      0.05842584 -0.003386615  0.01163693  0.009092935  0.053776677
-     RestECG  1.00000000 -0.077798148  0.07408360  0.110275054  0.128907169
-     MaxHR   -0.07779815  1.000000000 -0.37635897 -0.341262236 -0.381348495
-     ExAng    0.07408360 -0.376358975  1.00000000  0.289573103  0.254302081
-     Oldpeak  0.11027505 -0.341262236  0.28957310  1.000000000  0.579775260
-     Slope    0.12890717 -0.381348495  0.25430208  0.579775260  1.000000000
-     Ca       0.12834265 -0.264246253  0.14556960  0.295832115  0.110119188
-                 Ca
-     Age      0.36260453
-     Sex      0.09318476
-     RestBP   0.09877326
-     Chol     0.11900049
-     Fbs      0.14547752
-     RestECG  0.12834265
-     MaxHR   -0.26424625
-     ExAng    0.14556960
-     Oldpeak  0.29583211
-     Slope    0.11011919
-     Ca       1.00000000
+        .. code-block:: python
 
- * Computing correlation matrix in **Python**
+              correlation Matrix
+                        Age       Sex    RestBP      Chol       Fbs   RestECG     MaxHR  \
+             Age      1.000000 -0.097542  0.284946  0.208950  0.118530  0.148868 -0.393806   
+             Sex     -0.097542  1.000000 -0.064456 -0.199915  0.047862  0.021647 -0.048663   
+             RestBP   0.284946 -0.064456  1.000000  0.130120  0.175340  0.146560 -0.045351   
+             Chol     0.208950 -0.199915  0.130120  1.000000  0.009841  0.171043 -0.003432   
+             Fbs      0.118530  0.047862  0.175340  0.009841  1.000000  0.069564 -0.007854   
+             RestECG  0.148868  0.021647  0.146560  0.171043  0.069564  1.000000 -0.083389   
+             MaxHR   -0.393806 -0.048663 -0.045351 -0.003432 -0.007854 -0.083389  1.000000   
+             ExAng    0.091661  0.146201  0.064762  0.061310  0.025665  0.084867 -0.378103   
+             Oldpeak  0.203805  0.102173  0.189171  0.046564  0.005747  0.114133 -0.343085   
+             Slope    0.161770  0.037533  0.117382 -0.004062  0.059894  0.133946 -0.385601   
+             Ca       0.362605  0.093185  0.098773  0.119000  0.145478  0.128343 -0.264246   
 
-  .. code-block:: python
+                       ExAng   Oldpeak     Slope        Ca  
+             Age      0.091661  0.203805  0.161770  0.362605  
+             Sex      0.146201  0.102173  0.037533  0.093185  
+             RestBP   0.064762  0.189171  0.117382  0.098773  
+             Chol     0.061310  0.046564 -0.004062  0.119000  
+             Fbs      0.025665  0.005747  0.059894  0.145478  
+             RestECG  0.084867  0.114133  0.133946  0.128343  
+             MaxHR   -0.378103 -0.343085 -0.385601 -0.264246  
+             ExAng    1.000000  0.288223  0.257748  0.145570  
+             Oldpeak  0.288223  1.000000  0.577537  0.295832  
+             Slope    0.257748  0.577537  1.000000  0.110119  
+             Ca       0.145570  0.295832  0.110119  1.000000  
 
-     print "\n correlation Matrix"
-     print rawdata.corr()
- 
-  Then you will get 
+    .. tab-container:: r
+        :title: R
 
-  .. code-block:: python
+        * Computing correlation matrix in **R**
 
-  	  correlation Matrix
-                Age       Sex    RestBP      Chol       Fbs   RestECG     MaxHR  \
-     Age      1.000000 -0.097542  0.284946  0.208950  0.118530  0.148868 -0.393806   
-     Sex     -0.097542  1.000000 -0.064456 -0.199915  0.047862  0.021647 -0.048663   
-     RestBP   0.284946 -0.064456  1.000000  0.130120  0.175340  0.146560 -0.045351   
-     Chol     0.208950 -0.199915  0.130120  1.000000  0.009841  0.171043 -0.003432   
-     Fbs      0.118530  0.047862  0.175340  0.009841  1.000000  0.069564 -0.007854   
-     RestECG  0.148868  0.021647  0.146560  0.171043  0.069564  1.000000 -0.083389   
-     MaxHR   -0.393806 -0.048663 -0.045351 -0.003432 -0.007854 -0.083389  1.000000   
-     ExAng    0.091661  0.146201  0.064762  0.061310  0.025665  0.084867 -0.378103   
-     Oldpeak  0.203805  0.102173  0.189171  0.046564  0.005747  0.114133 -0.343085   
-     Slope    0.161770  0.037533  0.117382 -0.004062  0.059894  0.133946 -0.385601   
-     Ca       0.362605  0.093185  0.098773  0.119000  0.145478  0.128343 -0.264246   
+        .. code-block:: r
 
-               ExAng   Oldpeak     Slope        Ca  
-     Age      0.091661  0.203805  0.161770  0.362605  
-     Sex      0.146201  0.102173  0.037533  0.093185  
-     RestBP   0.064762  0.189171  0.117382  0.098773  
-     Chol     0.061310  0.046564 -0.004062  0.119000  
-     Fbs      0.025665  0.005747  0.059894  0.145478  
-     RestECG  0.084867  0.114133  0.133946  0.128343  
-     MaxHR   -0.378103 -0.343085 -0.385601 -0.264246  
-     ExAng    1.000000  0.288223  0.257748  0.145570  
-     Oldpeak  0.288223  1.000000  0.577537  0.295832  
-     Slope    0.257748  0.577537  1.000000  0.110119  
-     Ca       0.145570  0.295832  0.110119  1.000000  
+             # get numerical data and remove NAN
+             numdata=na.omit(rawdata[,c(1:2,4:12)])
+
+             # computing correlation matrix
+             cor(numdata)
+         
+        Then you will get 
+
+        .. code-block:: r
+
+          	 > cor(numdata)
+                          Age         Sex      RestBP         Chol          Fbs
+             Age      1.00000000 -0.09181347  0.29069633  0.203376601  0.128675921
+             Sex     -0.09181347  1.00000000 -0.06552127 -0.195907357  0.045861783
+             RestBP   0.29069633 -0.06552127  1.00000000  0.132284171  0.177623291
+             Chol     0.20337660 -0.19590736  0.13228417  1.000000000  0.006664176
+             Fbs      0.12867592  0.04586178  0.17762329  0.006664176  1.000000000
+             RestECG  0.14974915  0.02643577  0.14870922  0.164957542  0.058425836
+             MaxHR   -0.39234176 -0.05206445 -0.04805281  0.002179081 -0.003386615
+             ExAng    0.09510850  0.14903849  0.06588463  0.056387955  0.011636935
+             Oldpeak  0.19737552  0.11023676  0.19161540  0.040430535  0.009092935
+             Slope    0.15895990  0.03933739  0.12110773 -0.009008239  0.053776677
+             Ca       0.36260453  0.09318476  0.09877326  0.119000487  0.145477522
+                        RestECG        MaxHR       ExAng      Oldpeak        Slope
+             Age      0.14974915 -0.392341763  0.09510850  0.197375523  0.158959901
+             Sex      0.02643577 -0.052064447  0.14903849  0.110236756  0.039337394
+             RestBP   0.14870922 -0.048052805  0.06588463  0.191615405  0.121107727
+             Chol     0.16495754  0.002179081  0.05638795  0.040430535 -0.009008239
+             Fbs      0.05842584 -0.003386615  0.01163693  0.009092935  0.053776677
+             RestECG  1.00000000 -0.077798148  0.07408360  0.110275054  0.128907169
+             MaxHR   -0.07779815  1.000000000 -0.37635897 -0.341262236 -0.381348495
+             ExAng    0.07408360 -0.376358975  1.00000000  0.289573103  0.254302081
+             Oldpeak  0.11027505 -0.341262236  0.28957310  1.000000000  0.579775260
+             Slope    0.12890717 -0.381348495  0.25430208  0.579775260  1.000000000
+             Ca       0.12834265 -0.264246253  0.14556960  0.295832115  0.110119188
+                         Ca
+             Age      0.36260453
+             Sex      0.09318476
+             RestBP   0.09877326
+             Chol     0.11900049
+             Fbs      0.14547752
+             RestECG  0.12834265
+             MaxHR   -0.26424625
+             ExAng    0.14556960
+             Oldpeak  0.29583211
+             Slope    0.11011919
+             Ca       1.00000000
+
 
 Covariance Matrix
 -----------------
 
- * Computing covariance matrix in **R**
+.. content-tabs:: right-col
 
-  .. code-block:: r
+    .. tab-container:: python
+        :title: Python
 
-     # get numerical data and remove NAN
-     numdata=na.omit(rawdata[,c(1:2,4:12)])
+        * Computing covariance matrix in **Python**
 
-     # computing covariance matrix
-     cov(numdata)
- 
-  Then you will get 
+        .. code-block:: python
 
-  .. code-block:: r
+             print("\n covariance Matrix")
+             print(rawdata.corr())
+         
+        Then you will get 
 
-  	 > cov(numdata)
-       		        Age          Sex      RestBP         Chol          Fbs
-    	 Age      81.3775448 -0.388397567  46.4305852   95.2454603  0.411909946
-     	Sex      -0.3883976  0.219905277  -0.5440170   -4.7693542  0.007631703
-	 RestBP   46.4305852 -0.544016969 313.4906736  121.5937353  1.116001885
-	 Chol     95.2454603 -4.769354223 121.5937353 2695.1442616  0.122769410
-	 Fbs       0.4119099  0.007631703   1.1160019    0.1227694  0.125923099
-	 RestECG   1.3440551  0.012334179   2.6196943    8.5204709  0.020628044
-	 MaxHR   -81.2442706 -0.560447577 -19.5302126    2.5968104 -0.027586362
-	 ExAng     0.4034028  0.032861215   0.5484838    1.3764001  0.001941595
-	 Oldpeak   2.0721791  0.060162510   3.9484299    2.4427678  0.003755247
-	 Slope     0.8855132  0.011391439   1.3241566   -0.2887926  0.011784247
- 	 Ca        3.0663958  0.040964288   1.6394357    5.7913852  0.048393975
-                RestECG        MaxHR        ExAng      Oldpeak       Slope
-	 Age      1.34405513 -81.24427061  0.403402842  2.072179076  0.88551323
-	 Sex      0.01233418  -0.56044758  0.032861215  0.060162510  0.01139144
-	 RestBP   2.61969428 -19.53021257  0.548483760  3.948429889  1.32415658
-	 Chol     8.52047092   2.59681040  1.376400081  2.442767839 -0.28879262
-	 Fbs      0.02062804  -0.02758636  0.001941595  0.003755247  0.01178425
-	 RestECG  0.98992166  -1.77682880  0.034656910  0.127690736  0.07920136
-	 MaxHR   -1.77682880 526.92866602 -4.062052479 -9.116871675 -5.40571480
-	 ExAng    0.03465691  -4.06205248  0.221072479  0.158455478  0.07383673
-	 Oldpeak  0.12769074  -9.11687168  0.158455478  1.354451303  0.41667415
-	 Slope    0.07920136  -5.40571480  0.073836726  0.416674149  0.38133824
-	 Ca       0.11970551  -5.68626967  0.064162421  0.322752576  0.06374717
-                   Ca
-	 Age      3.06639582
-	 Sex      0.04096429
-	 RestBP   1.63943570
-	 Chol     5.79138515
-	 Fbs      0.04839398
-	 RestECG  0.11970551
-	 MaxHR   -5.68626967
-	 ExAng    0.06416242
-	 Oldpeak  0.32275258
-	 Slope    0.06374717
-	 Ca       0.87879060 
+        .. code-block:: python
+         
+             covariance Matrix
+                         Age       Sex      RestBP         Chol       Fbs   RestECG  \
+             Age      81.697419 -0.411995   45.328678    97.787489  0.381614  1.338797   
+             Sex      -0.411995  0.218368   -0.530107    -4.836994  0.007967  0.010065   
+             RestBP   45.328678 -0.530107  309.751120   118.573339  1.099207  2.566455   
+             Chol     97.787489 -4.836994  118.573339  2680.849190  0.181496  8.811521   
+             Fbs       0.381614  0.007967    1.099207     0.181496  0.126877  0.024654   
+             RestECG   1.338797  0.010065    2.566455     8.811521  0.024654  0.989968   
+             MaxHR   -81.423065 -0.520184  -18.258005    -4.064651 -0.063996 -1.897941   
+             ExAng     0.389220  0.032096    0.535473     1.491345  0.004295  0.039670   
+             Oldpeak   2.138850  0.055436    3.865638     2.799282  0.002377  0.131850   
+             Slope     0.901034  0.010808    1.273053    -0.129598  0.013147  0.082126   
+             Ca        3.066396  0.040964    1.639436     5.791385  0.048394  0.119706   
 
- * Computing covariance matrix in **Python**
+                         MaxHR     ExAng   Oldpeak     Slope        Ca  
+             Age      -81.423065  0.389220  2.138850  0.901034  3.066396  
+             Sex       -0.520184  0.032096  0.055436  0.010808  0.040964  
+             RestBP   -18.258005  0.535473  3.865638  1.273053  1.639436  
+             Chol      -4.064651  1.491345  2.799282 -0.129598  5.791385  
+             Fbs       -0.063996  0.004295  0.002377  0.013147  0.048394  
+             RestECG   -1.897941  0.039670  0.131850  0.082126  0.119706  
+             MaxHR    523.265775 -4.063307 -9.112209 -5.435501 -5.686270  
+             ExAng     -4.063307  0.220707  0.157216  0.074618  0.064162  
+             Oldpeak   -9.112209  0.157216  1.348095  0.413219  0.322753  
+             Slope     -5.435501  0.074618  0.413219  0.379735  0.063747  
+             Ca        -5.686270  0.064162  0.322753  0.063747  0.878791  
 
-  .. code-block:: python
+    .. tab-container:: r
+        :title: R
 
-     print "\n covariance Matrix"
-     print rawdata.corr()
- 
-  Then you will get 
+        * Computing covariance matrix in **R**
 
-  .. code-block:: python
- 
-     covariance Matrix
-                 Age       Sex      RestBP         Chol       Fbs   RestECG  \
-     Age      81.697419 -0.411995   45.328678    97.787489  0.381614  1.338797   
-     Sex      -0.411995  0.218368   -0.530107    -4.836994  0.007967  0.010065   
-     RestBP   45.328678 -0.530107  309.751120   118.573339  1.099207  2.566455   
-     Chol     97.787489 -4.836994  118.573339  2680.849190  0.181496  8.811521   
-     Fbs       0.381614  0.007967    1.099207     0.181496  0.126877  0.024654   
-     RestECG   1.338797  0.010065    2.566455     8.811521  0.024654  0.989968   
-     MaxHR   -81.423065 -0.520184  -18.258005    -4.064651 -0.063996 -1.897941   
-     ExAng     0.389220  0.032096    0.535473     1.491345  0.004295  0.039670   
-     Oldpeak   2.138850  0.055436    3.865638     2.799282  0.002377  0.131850   
-     Slope     0.901034  0.010808    1.273053    -0.129598  0.013147  0.082126   
-     Ca        3.066396  0.040964    1.639436     5.791385  0.048394  0.119706   
+        .. code-block:: r
 
-                 MaxHR     ExAng   Oldpeak     Slope        Ca  
-     Age      -81.423065  0.389220  2.138850  0.901034  3.066396  
-     Sex       -0.520184  0.032096  0.055436  0.010808  0.040964  
-     RestBP   -18.258005  0.535473  3.865638  1.273053  1.639436  
-     Chol      -4.064651  1.491345  2.799282 -0.129598  5.791385  
-     Fbs       -0.063996  0.004295  0.002377  0.013147  0.048394  
-     RestECG   -1.897941  0.039670  0.131850  0.082126  0.119706  
-     MaxHR    523.265775 -4.063307 -9.112209 -5.435501 -5.686270  
-     ExAng     -4.063307  0.220707  0.157216  0.074618  0.064162  
-     Oldpeak   -9.112209  0.157216  1.348095  0.413219  0.322753  
-     Slope     -5.435501  0.074618  0.413219  0.379735  0.063747  
-     Ca        -5.686270  0.064162  0.322753  0.063747  0.878791  
+             # get numerical data and remove NAN
+             numdata=na.omit(rawdata[,c(1:2,4:12)])
+
+             # computing covariance matrix
+             cov(numdata)
+         
+        Then you will get 
+
+        .. code-block:: r
+
+          	 > cov(numdata)
+               		        Age          Sex      RestBP         Chol          Fbs
+            	 Age      81.3775448 -0.388397567  46.4305852   95.2454603  0.411909946
+             	Sex      -0.3883976  0.219905277  -0.5440170   -4.7693542  0.007631703
+        	 RestBP   46.4305852 -0.544016969 313.4906736  121.5937353  1.116001885
+        	 Chol     95.2454603 -4.769354223 121.5937353 2695.1442616  0.122769410
+        	 Fbs       0.4119099  0.007631703   1.1160019    0.1227694  0.125923099
+        	 RestECG   1.3440551  0.012334179   2.6196943    8.5204709  0.020628044
+        	 MaxHR   -81.2442706 -0.560447577 -19.5302126    2.5968104 -0.027586362
+        	 ExAng     0.4034028  0.032861215   0.5484838    1.3764001  0.001941595
+        	 Oldpeak   2.0721791  0.060162510   3.9484299    2.4427678  0.003755247
+        	 Slope     0.8855132  0.011391439   1.3241566   -0.2887926  0.011784247
+         	 Ca        3.0663958  0.040964288   1.6394357    5.7913852  0.048393975
+                        RestECG        MaxHR        ExAng      Oldpeak       Slope
+        	 Age      1.34405513 -81.24427061  0.403402842  2.072179076  0.88551323
+        	 Sex      0.01233418  -0.56044758  0.032861215  0.060162510  0.01139144
+        	 RestBP   2.61969428 -19.53021257  0.548483760  3.948429889  1.32415658
+        	 Chol     8.52047092   2.59681040  1.376400081  2.442767839 -0.28879262
+        	 Fbs      0.02062804  -0.02758636  0.001941595  0.003755247  0.01178425
+        	 RestECG  0.98992166  -1.77682880  0.034656910  0.127690736  0.07920136
+        	 MaxHR   -1.77682880 526.92866602 -4.062052479 -9.116871675 -5.40571480
+        	 ExAng    0.03465691  -4.06205248  0.221072479  0.158455478  0.07383673
+        	 Oldpeak  0.12769074  -9.11687168  0.158455478  1.354451303  0.41667415
+        	 Slope    0.07920136  -5.40571480  0.073836726  0.416674149  0.38133824
+        	 Ca       0.11970551  -5.68626967  0.064162421  0.322752576  0.06374717
+                           Ca
+        	 Age      3.06639582
+        	 Sex      0.04096429
+        	 RestBP   1.63943570
+        	 Chol     5.79138515
+        	 Fbs      0.04839398
+        	 RestECG  0.11970551
+        	 MaxHR   -5.68626967
+        	 ExAng    0.06416242
+        	 Oldpeak  0.32275258
+        	 Slope    0.06374717
+        	 Ca       0.87879060 
+
 
 .. index:: Understand Data With Visualization 
 
@@ -674,193 +734,237 @@ A picture is worth a thousand words. You will see the powerful impact of the fig
 Summary plot of data in figure 
 ------------------------------
 
- * Summary plot in **R**
+.. content-tabs:: right-col
 
-  .. code-block:: r
+    .. tab-container:: python
+        :title: Python
 
-  	# plot of the summary
-	plot(rawdata)
+        * Summary plot in **Python**
 
-  Then you will get Figure :ref:`fig_sumr`
-  
-  .. _fig_sumr:
-  .. figure:: images/sumr.png
-    :align: center
-    :scale: 60 %
+        .. code-block:: python
 
-    Summary plot of the data with R. 
+          # plot of the summary
+          plot(rawdata)
 
+        Then you will get Figure :ref:`fig_sump`
 
- * Summary plot in **Python**
+        .. _fig_sump:  
+        .. figure:: images/sumPython.png
+            :align: center
+            :scale: 50 %
 
-  .. code-block:: python
+            Summary plot of the data with Python.   
 
-  	# plot of the summary
-	plot(rawdata)
+    .. tab-container:: r
+        :title: R
 
-  Then you will get Figure :ref:`fig_sump`
+        * Summary plot in **R**
 
-  .. _fig_sump:  
-  .. figure:: images/sumPython.png
-    :align: center
-    :scale: 50 %
+        .. code-block:: r
 
-    Summary plot of the data with Python.   
+          	# plot of the summary
+        	plot(rawdata)
+
+        Then you will get Figure :ref:`fig_sumr`
+          
+        .. _fig_sumr:
+        .. figure:: images/sumr.png
+            :align: center
+            :scale: 60 %
+
+            Summary plot of the data with R. 
 
 
 Histogram of the quantitative predictors 
 ----------------------------------------
 
- * Histogram in **R**
+.. content-tabs:: right-col
 
-  .. code-block:: r
+    .. tab-container:: python
+        :title: Python
 
-  	# Histogram with normal curve plot 
-	dev.off()
-	Nvars=ncol(numdata)
-	name=colnames(numdata)
-	par(mfrow =c (4,3))
-	for (i in 1:Nvars)
-	{
-	  x<- numdata[,i]
-	  h<-hist(x, breaks=10, freq=TRUE, col="blue", xlab=name[i],main=" ", 
-	            font.lab=1) 
-	  axis(1, tck=1, col.ticks="light gray")
-	  axis(1, tck=-0.015, col.ticks="black")
-	  axis(2, tck=1, col.ticks="light gray", lwd.ticks="1")
-	  axis(2, tck=-0.015)
-	  xfit<-seq(min(x),max(x),length=40) 
-	  yfit<-dnorm(xfit,mean=mean(x),sd=sd(x)) 
-	  yfit <- yfit*diff(h$mids[1:2])*length(x) 
-	  lines(xfit, yfit, col="blue", lwd=2) 
-	} 
+        * Histogram in **Python**
 
-  Then you will get Figure :ref:`fig_histr`
+        .. code-block:: python
 
-  .. _fig_histr:
-  .. figure:: images/histr.png
-    :align: center
-    :scale: 60 %
+             # Histogram 
+             rawdata.hist()
+             plt.show()
 
-    Histogram with normal curve plot in R. 
+        Then you will get Figure :ref:`fig_histp`
+
+        .. _fig_histp:
+        .. figure:: images/histp.png
+            :align: center
+            :scale: 50 %
+
+            Histogram in Python.         
+
+    .. tab-container:: r
+        :title: R
+
+        * Histogram in **R**
+
+        .. code-block:: r
+
+          	# Histogram with normal curve plot 
+        	dev.off()
+        	Nvars=ncol(numdata)
+        	name=colnames(numdata)
+        	par(mfrow =c (4,3))
+        	for (i in 1:Nvars)
+        	{
+        	  x<- numdata[,i]
+        	  h<-hist(x, breaks=10, freq=TRUE, col="blue", xlab=name[i],main=" ", 
+        	            font.lab=1) 
+        	  axis(1, tck=1, col.ticks="light gray")
+        	  axis(1, tck=-0.015, col.ticks="black")
+        	  axis(2, tck=1, col.ticks="light gray", lwd.ticks="1")
+        	  axis(2, tck=-0.015)
+        	  xfit<-seq(min(x),max(x),length=40) 
+        	  yfit<-dnorm(xfit,mean=mean(x),sd=sd(x)) 
+        	  yfit <- yfit*diff(h$mids[1:2])*length(x) 
+        	  lines(xfit, yfit, col="blue", lwd=2) 
+        	} 
+
+        Then you will get Figure :ref:`fig_histr`
+
+        .. _fig_histr:
+        .. figure:: images/histr.png
+            :align: center
+            :scale: 60 %
+
+            Histogram with normal curve plot in R. 
 
 
- * Histogram in in **Python**
 
-  .. code-block:: python
-
-     # Histogram 
-     rawdata.hist()
-     plt.show()
-
-  Then you will get Figure :ref:`fig_histp`
-
-  .. _fig_histp:
-  .. figure:: images/histp.png
-    :align: center
-    :scale: 50 %
-
-    Histogram in Python. 
 
 Boxplot of the quantitative predictors 
 --------------------------------------
 
- * Boxplot in **R**
+.. content-tabs:: right-col
 
-  .. code-block:: r
+    .. tab-container:: python
+        :title: Python
 
-     dev.off()
-     name=colnames(numdata)
-	 Nvars=ncol(numdata)
-	 # boxplot 
-	 par(mfrow =c (4,3))
-	 for (i in 1:Nvars)
-	 {
-	  #boxplot(numdata[,i]~numdata[,Nvars],data=data,main=name[i])
-	  boxplot(numdata[,i],data=numdata,main=name[i])
-	 }
+        * Boxplot in **Python**
 
-  Then you will get Figure :ref:`fig_boxr`
+        .. code-block:: python
 
-  .. _fig_boxr:
-  .. figure:: images/boxr.png
-    :align: center
-    :scale: 60 %
+             # boxplot 
+             pd.DataFrame.boxplot(rawdata)
+             plt.show()
+            
 
-    Boxplots in R. 
+        Then you will get Figure :ref:`fig_boxp`
 
+        .. _fig_boxp:
+        .. figure:: images/boxp.png
+            :align: center
+            :scale: 60 %
 
- * Boxplot in **Python**
+            Histogram in Python.    
 
-  .. code-block:: python
+    .. tab-container:: r
+        :title: R
 
-     # boxplot 
-     pd.DataFrame.boxplot(rawdata)
-     plt.show()
-    
+        * Boxplot in **R**
 
-  Then you will get Figure :ref:`fig_boxp`
+        .. code-block:: r
 
-  .. _fig_boxp:
-  .. figure:: images/boxp.png
-    :align: center
-    :scale: 60 %
+           dev.off()
+           name=colnames(numdata)
+        	 Nvars=ncol(numdata)
+        	 # boxplot 
+        	 par(mfrow =c (4,3))
+        	 for (i in 1:Nvars)
+        	 {
+        	  #boxplot(numdata[,i]~numdata[,Nvars],data=data,main=name[i])
+        	  boxplot(numdata[,i],data=numdata,main=name[i])
+        	 }
 
-    Histogram in Python.    
+        Then you will get Figure :ref:`fig_boxr`
+
+        .. _fig_boxr:
+        .. figure:: images/boxr.png
+            :align: center
+            :scale: 60 %
+
+            Boxplots in R. 
 
 
 Correlation Matrix plot of the quantitative predictors 
 ------------------------------------------------------
 
- * Correlation Matrix plot in **R**
+.. content-tabs:: right-col
 
-  .. code-block:: r
+    .. tab-container:: python
+        :title: Python
 
-     dev.off()
-     # laod cocorrelation Matrix plot lib
-     library(corrplot)
-     M <- cor(numdata)
-     #par(mfrow =c (1,2))
-     #corrplot(M, method = "square")
-     corrplot.mixed(M)
+        * Correlation Matrix plot in **Python**
 
-  Then you will get Figure :ref:`fig_corr` 
-   
-  .. _fig_corr: 
-  .. figure:: images/corr.png
-    :align: center
-    :scale: 60 %
+        .. code-block:: python
 
-    Correlation Matrix plot  in R. 
+             # cocorrelation Matrix plot     
+             pd.DataFrame.corr(rawdata)
+             plt.show()
+            
+
+        Then you will get get Figure :ref:`fig_corp`
+
+        .. _fig_corp: 
+        .. figure:: images/corp.png
+            :align: center
+            :scale: 60 %
+
+            Correlation Matrix plot  in Python.  
+
+    .. tab-container:: r
+        :title: R
+
+        * Correlation Matrix plot in **R**
+
+        .. code-block:: r
+
+             dev.off()
+             # laod cocorrelation Matrix plot lib
+             library(corrplot)
+             M <- cor(numdata)
+             #par(mfrow =c (1,2))
+             #corrplot(M, method = "square")
+             corrplot.mixed(M)
+
+        Then you will get Figure :ref:`fig_corr` 
+           
+        .. _fig_corr: 
+        .. figure:: images/corr.png
+            :align: center
+            :scale: 60 %
+
+            Correlation Matrix plot  in R. 
 
 
- * Correlation Matrix plot in **Python**
 
-  .. code-block:: python
-
-     # cocorrelation Matrix plot     
-     pd.DataFrame.corr(rawdata)
-     plt.show()
-    
-
-  Then you will get get Figure :ref:`fig_corp`
-
-  .. _fig_corp: 
-  .. figure:: images/corp.png
-    :align: center
-    :scale: 60 %
-
-    Correlation Matrix plot  in Python.  
 
 Source Code for This Section
 ++++++++++++++++++++++++++++
 
-The code for this section is available for download for `R <../code/loaddata.R>`_, for `Python <../code/loadData.py>`_, 
- * R Source code
+The code for this section is available for download for `R <../code/loaddata.R>`_ for `Python <../code/loadData.py>`_, 
 
-  .. literalinclude:: ../code/loaddata.R
-     :language: r
+.. content-tabs:: right-col
 
- * Python Source code
+    .. tab-container:: python
+        :title: Python
 
-  .. literalinclude:: ../code/loadData.py
+        * Python Source code
+
+        .. literalinclude:: ../code/loadData.py 
+             :language: python               
+
+    .. tab-container:: r
+        :title: R
+
+        * R Source code
+
+        .. literalinclude:: ../code/loaddata.R
+             :language: r
