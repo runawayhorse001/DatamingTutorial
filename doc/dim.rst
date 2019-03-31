@@ -9,8 +9,8 @@ Dimension Reduction Algorithms
 What is dimension reduction?
 +++++++++++++++++++++++++++++++++++++++++++
 
-**In machine learning and statistics, dimensionality reduction or dimension reduction is the process of reducing the number of random variables under consideration,
-via obtaining a set "uncorrelated" principle variables. It can be divided into feature selection and feature extraction.** https://en.wikipedia.org/wiki/Dimensionality_reduction
+In machine learning and statistics, dimensionality reduction or dimension reduction is the process of reducing the number of random variables under consideration,
+via obtaining a set "uncorrelated" principle variables. It can be divided into feature selection and feature extraction. https://en.wikipedia.org/wiki/Dimensionality_reduction
 
 
 .. index:: Singular Value Decomposition 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Regularization ALgorithms &mdash; Data Mining With Python and R  documentation</title>
+  <title>11. Regularization ALgorithms &mdash; Data Mining With Python and R  documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Resampling Algorithms" href="resample.html" />
-    <link rel="prev" title="Classification ALgorithms" href="classification.html" />
+    <link rel="next" title="12. Resampling Algorithms" href="resample.html" />
+    <link rel="prev" title="10. Classification ALgorithms" href="classification.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -93,24 +93,25 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comparison.html">Python or R for data analysis?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dap.html">Data analysis procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pre.html">Pre-processing procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dim.html">Dimension Reduction Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regression.html">Regression Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification ALgorithms</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Regularization ALgorithms</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#subset-selection-subs">Subset Selection (SubS)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ridge-regression-ridge">Ridge Regression (Ridge)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#least-absolute-shrinkage-and-selection-operator-lasso">Least Absolute Shrinkage and Selection Operator (lASSO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">1. Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">2. Python or R for data analysis?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">3. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="de.html">4. Data Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dm.html">5. Data Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre.html">6. Pre-processing procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algsummary.html">7. Summary of Data Mining Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dim.html">8. Dimension Reduction Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression.html">9. Regression Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classification.html">10. Classification ALgorithms</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">11. Regularization ALgorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subset-selection-subs">11.1. Subset Selection (SubS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ridge-regression-ridge">11.2. Ridge Regression (Ridge)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#least-absolute-shrinkage-and-selection-operator-lasso">11.3. Least Absolute Shrinkage and Selection Operator (lASSO)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="resample.html">Resampling Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rpkg.html">Developing Your Own R Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppkg.html">Developing Your Own Python Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resample.html">12. Resampling Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpkg.html">13. Developing Your Own R Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppkg.html">14. Developing Your Own Python Packages</a></li>
 </ul>
 
             
@@ -156,7 +157,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Regularization ALgorithms</li>
+      <li>11. Regularization ALgorithms</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -178,15 +179,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="regularization-algorithms">
-<span id="reg"></span><h1>Regularization ALgorithms<a class="headerlink" href="#regularization-algorithms" title="Permalink to this headline">¶</a></h1>
+<span id="reg"></span><h1>11. Regularization ALgorithms<a class="headerlink" href="#regularization-algorithms" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="subset-selection-subs">
-<h2>Subset Selection (SubS)<a class="headerlink" href="#subset-selection-subs" title="Permalink to this headline">¶</a></h2>
+<h2>11.1. Subset Selection (SubS)<a class="headerlink" href="#subset-selection-subs" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="ridge-regression-ridge">
-<h2>Ridge Regression (Ridge)<a class="headerlink" href="#ridge-regression-ridge" title="Permalink to this headline">¶</a></h2>
+<h2>11.2. Ridge Regression (Ridge)<a class="headerlink" href="#ridge-regression-ridge" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="least-absolute-shrinkage-and-selection-operator-lasso">
-<h2>Least Absolute Shrinkage and Selection Operator (lASSO)<a class="headerlink" href="#least-absolute-shrinkage-and-selection-operator-lasso" title="Permalink to this headline">¶</a></h2>
+<h2>11.3. Least Absolute Shrinkage and Selection Operator (lASSO)<a class="headerlink" href="#least-absolute-shrinkage-and-selection-operator-lasso" title="Permalink to this headline">¶</a></h2>
 <p>TO DO …..</p>
 </div>
 </div>
@@ -199,10 +200,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="resample.html" class="btn btn-neutral float-right" title="Resampling Algorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="resample.html" class="btn btn-neutral float-right" title="12. Resampling Algorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="classification.html" class="btn btn-neutral float-left" title="Classification ALgorithms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="classification.html" class="btn btn-neutral float-left" title="10. Classification ALgorithms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data analysis procedures &mdash; Data Mining With Python and R  documentation</title>
+  <title>4. Data Exploration &mdash; Data Mining With Python and R  documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pre-processing procedures" href="pre.html" />
-    <link rel="prev" title="Getting Started" href="gettingstarted.html" />
+    <link rel="next" title="5. Pre-processing procedures" href="pre.html" />
+    <link rel="prev" title="3. Getting Started" href="gettingstarted.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -93,27 +93,48 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comparison.html">Python or R for data analysis?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Data analysis procedures</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#procedures">Procedures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#datasets-in-this-tutorial">Datasets in this Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#loading-datasets">Loading Datasets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#understand-data-with-statistics-methods">Understand Data With Statistics methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#understand-data-with-visualization">Understand Data With Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#source-code-for-this-section">Source Code for This Section</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">1. Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">2. Python or R for data analysis?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">3. Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Data Exploration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#procedures">4.1. Procedures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#datasets-in-this-tutorial">4.2. Datasets in this Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-datasets">4.3. Loading Datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loading-table-format-database">4.3.1. Loading table format database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-data-from-csv">4.3.2. Loading data from <img class="math" src="_images/math/eb88f44712b211b0e1874de26c002120e8fc8633.png" alt=".csv"/></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-data-from-xlsx">4.3.3. Loading data from <img class="math" src="_images/math/a0fca0cd8b3ed615073ffdc42c1bbd5933271587.png" alt=".xlsx"/></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pre.html">Pre-processing procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dim.html">Dimension Reduction Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regression.html">Regression Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification ALgorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reg.html">Regularization ALgorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resample.html">Resampling Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rpkg.html">Developing Your Own R Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppkg.html">Developing Your Own Python Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#audit-data">4.4. Audit Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understand-data-with-statistics-methods">4.5. Understand Data With Statistics methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#summary-of-the-data">4.5.1. Summary of the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-size-of-the-data">4.5.2. The size of the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-format-of-the-predictors">4.5.3. Data format of the predictors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-column-names">4.5.4. The column names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-first-or-last-parts-of-the-data">4.5.5. The first or last parts of the data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#correlation-matrix">4.5.6. Correlation Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#covariance-matrix">4.5.7. Covariance Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#understand-data-with-visualization">4.6. Understand Data With Visualization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#summary-plot-of-data-in-figure">4.6.1. Summary plot of data in figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#histogram-of-the-quantitative-predictors">4.6.2. Histogram of the quantitative predictors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boxplot-of-the-quantitative-predictors">4.6.3. Boxplot of the quantitative predictors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#correlation-matrix-plot-of-the-quantitative-predictors">4.6.4. Correlation Matrix plot of the quantitative predictors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#source-code-for-this-section">4.7. Source Code for This Section</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pre.html">5. Pre-processing procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algsummary.html">6. Summary of Data Mining Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dim.html">7. Dimension Reduction Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression.html">8. Regression Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classification.html">9. Classification ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reg.html">10. Regularization ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resample.html">11. Resampling Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpkg.html">12. Developing Your Own R Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppkg.html">13. Developing Your Own Python Packages</a></li>
 </ul>
 
             
@@ -159,7 +180,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Data analysis procedures</li>
+      <li>4. Data Exploration</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -180,14 +201,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <span class="target" id="dap"></span><div class="section" id="data-analysis-procedures">
-<span id="index-0"></span><h1>Data analysis procedures<a class="headerlink" href="#data-analysis-procedures" title="Permalink to this headline">¶</a></h1>
+  <span class="target" id="dap"></span><div class="section" id="data-exploration">
+<span id="index-0"></span><h1>4. Data Exploration<a class="headerlink" href="#data-exploration" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>Know yourself and know your enemy, and you will never be defeated</strong> – idiom, from Sunzi’s Art of War</p>
 </div>
 <div class="section" id="procedures">
-<span id="index-1"></span><h2>Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h2>
+<span id="index-1"></span><h2>4.1. Procedures<a class="headerlink" href="#procedures" title="Permalink to this headline">¶</a></h2>
 <p>Data mining is a complex process that aims to discover patterns in large data sets starting from a collection of exsting data. In my opinion, data minig contains four main steps:</p>
 <ol class="arabic simple">
 <li><strong>Collecting data</strong>: This is a complex step, I will assume we have already gotten the datasets.</li>
@@ -198,53 +219,75 @@
 <p>In this section, we will try to know our enemy – datasets. We will learn how to load data, how to understand data with statistics method and how to underdtand data with visualization. Next, we will start with Loading Datasets for the Pre-processing.</p>
 </div>
 <div class="section" id="datasets-in-this-tutorial">
-<span id="index-2"></span><h2>Datasets in this Tutorial<a class="headerlink" href="#datasets-in-this-tutorial" title="Permalink to this headline">¶</a></h2>
+<span id="index-2"></span><h2>4.2. Datasets in this Tutorial<a class="headerlink" href="#datasets-in-this-tutorial" title="Permalink to this headline">¶</a></h2>
 <p>The datasets for this tutorial are available to download: <a class="reference external" href="../data/Heart.csv">Heart</a>,  <a class="reference external" href="../data/energy_efficiency.xlsx">Energy Efficienency</a>. Those data are from my course matrials, the copyrights blongs to the origial authors.</p>
 </div>
 <div class="section" id="loading-datasets">
-<span id="index-3"></span><h2>Loading Datasets<a class="headerlink" href="#loading-datasets" title="Permalink to this headline">¶</a></h2>
+<span id="index-3"></span><h2>4.3. Loading Datasets<a class="headerlink" href="#loading-datasets" title="Permalink to this headline">¶</a></h2>
 <p>There are two main data formats “<em>.csv” and “</em>.xlsx”. We will show how to load those two types of data in <strong>R</strong> and <strong>Python</strong>, respectively.</p>
-<ol class="arabic simple">
-<li><strong>Loading datasets in R</strong></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li>Loading <img class="math" src="_images/math/db07c75a3259a1695269e2c1aad6baa5a2f30ae7.png" alt="*.csv"/> format data</li>
-</ul>
-<blockquote>
-<div><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the path or enverionment</span>
-<span class="nf">setwd</span><span class="p">(</span><span class="s">&quot;/home/feng/R-language/sat577/HW#4/data&quot;</span><span class="p">)</span>
-
-<span class="c1"># read data set</span>
-<span class="n">rawdata</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;spam.csv&quot;</span><span class="p">)</span>
+<div class="section" id="loading-table-format-database">
+<h3>4.3.1. Loading table format database<a class="headerlink" href="#loading-table-format-database" title="Permalink to this headline">¶</a></h3>
+<p>User and Database information:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">user</span> <span class="o">=</span> <span class="s">&#39;*******&#39;</span>
+<span class="n">pw</span><span class="o">=</span><span class="s">&#39;********&#39;</span>
+<span class="n">host</span> <span class="o">=</span> <span class="s">&#39;**.***.***.**&#39;</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s">&#39;**&#39;</span>
+<span class="n">table_name</span> <span class="o">=</span> <span class="s">&#39;***&#39;</span>
 </pre></div>
 </div>
-</div></blockquote>
-<ul class="simple">
-<li>Loading <img class="math" src="_images/math/66044f5e70d5dc68dac21b26bfbf24db5d9e28e7.png" alt="*.xlsx"/> format data</li>
-</ul>
-<blockquote>
-<div><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the path or enverionment</span>
-<span class="nf">setwd</span><span class="p">(</span><span class="s">&quot;~/Dropbox/R-language/sat577/&quot;</span><span class="p">)</span>
+<div class="content-tabs right-col docutils container">
+<div class="tab-content docutils container" id="tab-python">
+<p class="tab-title">Python</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import library</span>
+<span class="kn">import</span> <span class="nn">psycopg2</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
-<span class="c1">#install.packages(&quot;readxl&quot;) # CRAN version</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">readxl</span><span class="p">)</span>
+<span class="c1"># Create the database connection</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="n">database</span><span class="p">,</span>
+                        <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">pw</span><span class="p">)</span>
+<span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 
-<span class="c1"># read data set</span>
-<span class="n">energy_eff</span><span class="o">=</span><span class="nf">read_excel</span><span class="p">(</span><span class="s">&quot;energy_efficiency.xlsx&quot;</span><span class="p">)</span>
+<span class="c1"># Create the SQL query string.</span>
+<span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">      SELECT *</span>
+<span class="s2">      FROM {table_name}</span>
+<span class="s2">      &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table_name</span><span class="o">=</span><span class="n">table_name</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
-</div></blockquote>
-<ol class="arabic simple" start="2">
-<li><strong>Loading datasets in Python</strong></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li>Loading <img class="math" src="_images/math/db07c75a3259a1695269e2c1aad6baa5a2f30ae7.png" alt="*.csv"/> format data</li>
-</ul>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</div>
+<div class="tab-content docutils container" id="tab-r">
+<p class="tab-title">R</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the library</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;sqldf&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#39;RODBC&#39;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#39;RPostgreSQL&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create a driver</span>
+<span class="n">drv</span> <span class="o">&lt;-</span> <span class="n">DBI</span><span class="o">::</span><span class="nf">dbDriver</span><span class="p">(</span> <span class="s">&quot;PostgreSQL&quot;</span> <span class="p">)</span>
+<span class="c1"># Create the database connection</span>
+<span class="n">conn</span> <span class="o">&lt;-</span> <span class="nf">dbConnect</span><span class="p">(</span> <span class="n">drv</span><span class="p">,</span> <span class="n">dbname</span> <span class="o">=</span> <span class="n">database</span><span class="p">,</span> <span class="n">host</span> <span class="o">=</span> <span class="n">host</span><span class="p">,</span><span class="n">port</span> <span class="o">=</span> <span class="s">&#39;5432&#39;</span><span class="p">,</span>
+                   <span class="n">user</span> <span class="o">=</span> <span class="n">user</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="n">pw</span> <span class="p">)</span>
+
+<span class="c1"># Create the SQL query string. Include a semi-colon to terminate</span>
+<span class="n">querystring</span> <span class="o">=</span> <span class="nf">sprintf</span><span class="p">(</span><span class="s">&#39;SELECT * FROM %s;&#39;</span><span class="p">,</span> <span class="n">table_name</span><span class="p">)</span>
+<span class="c1"># Execute the query and return results as a data frame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="nf">dbGetQuery</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">querystring</span> <span class="p">)</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-data-from-csv">
+<h3>4.3.2. Loading data from <img class="math" src="_images/math/eb88f44712b211b0e1874de26c002120e8fc8633.png" alt=".csv"/><a class="headerlink" href="#loading-data-from-csv" title="Permalink to this headline">¶</a></h3>
+<div class="content-tabs right-col docutils container">
+<div class="tab-content docutils container" id="tab-python">
+<p class="tab-title">Python</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
 <span class="c1"># set data path</span>
 <span class="n">path</span> <span class="o">=</span><span class="s1">&#39;~/Dropbox/MachineLearningAlgorithms/python_code/data/Heart.csv&#39;</span>
@@ -253,12 +296,25 @@
 <span class="n">rawdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
-<ul class="simple">
-<li>Loading <img class="math" src="_images/math/66044f5e70d5dc68dac21b26bfbf24db5d9e28e7.png" alt="*.xlsx"/> format data</li>
-</ul>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</div>
+<div class="tab-content docutils container" id="tab-r">
+<p class="tab-title">R</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the path or enverionment</span>
+<span class="nf">setwd</span><span class="p">(</span><span class="s">&quot;/home/feng/R-language/sat577/HW#4/data&quot;</span><span class="p">)</span>
+
+<span class="c1"># read data set</span>
+<span class="n">rawdata</span> <span class="o">=</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;spam.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="loading-data-from-xlsx">
+<h3>4.3.3. Loading data from <img class="math" src="_images/math/a0fca0cd8b3ed615073ffdc42c1bbd5933271587.png" alt=".xlsx"/><a class="headerlink" href="#loading-data-from-xlsx" title="Permalink to this headline">¶</a></h3>
+<div class="content-tabs right-col docutils container">
+<div class="tab-content docutils container" id="tab-python">
+<p class="tab-title">Python</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
 <span class="c1"># set data path</span>
 <span class="n">path</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;/home/feng/Dropbox/MachineLearningAlgorithms/python_code/data/&#39;</span>
@@ -268,68 +324,47 @@
 <span class="n">rawdata</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">sheetname</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
-</div></blockquote>
+</div>
+<div class="tab-content docutils container" id="tab-r">
+<p class="tab-title">R</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the path or enverionment</span>
+<span class="nf">setwd</span><span class="p">(</span><span class="s">&quot;~/Dropbox/R-language/sat577/&quot;</span><span class="p">)</span>
+
+<span class="c1">#install.packages(&quot;readxl&quot;) # CRAN version</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">readxl</span><span class="p">)</span>
+
+<span class="c1"># read data set</span>
+<span class="n">energy_eff</span><span class="o">=</span><span class="nf">read_excel</span><span class="p">(</span><span class="s">&quot;energy_efficiency.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="audit-data">
+<span id="index-4"></span><h2>4.4. Audit Data<a class="headerlink" href="#audit-data" title="Permalink to this headline">¶</a></h2>
+<p>In my opinion, data audit is the first step you need to do when you get your dataset. Since you need to know whether the data quality is good enough or not.</p>
 </div>
 <div class="section" id="understand-data-with-statistics-methods">
-<span id="index-4"></span><h2>Understand Data With Statistics methods<a class="headerlink" href="#understand-data-with-statistics-methods" title="Permalink to this headline">¶</a></h2>
+<span id="index-5"></span><h2>4.5. Understand Data With Statistics methods<a class="headerlink" href="#understand-data-with-statistics-methods" title="Permalink to this headline">¶</a></h2>
 <p>After we get the data in hand, then we can try to understand them.  I will use “Heart.csv” dataset as a example to demonstrate how to use those statistics methods.</p>
-<ol class="arabic simple">
-<li><strong>Summary of the data</strong></li>
-</ol>
+<div class="section" id="summary-of-the-data">
+<h3>4.5.1. Summary of the data<a class="headerlink" href="#summary-of-the-data" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>It is always good to have a glance over the summary of the data. Since from the summary you will know some statistics features of your data, and you will also know whether you data contains missing data or not.</p>
-<ul class="simple">
-<li>Summary of the data in <strong>R</strong></li>
-</ul>
-<blockquote>
-<div><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Then you will get</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">summary</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
-        <span class="n">Age</span>             <span class="n">Sex</span>                <span class="n">ChestPain</span>       <span class="n">RestBP</span>
-     <span class="n">Min.</span>   <span class="o">:</span><span class="m">29.00</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.0000</span>   <span class="n">asymptomatic</span><span class="o">:</span><span class="m">144</span>   <span class="n">Min.</span>   <span class="o">:</span> <span class="m">94.0</span>
-     <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">48.00</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>   <span class="n">nonanginal</span>  <span class="o">:</span> <span class="m">86</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">120.0</span>
-     <span class="n">Median</span> <span class="o">:</span><span class="m">56.00</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">1.0000</span>   <span class="n">nontypical</span>  <span class="o">:</span> <span class="m">50</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">130.0</span>
-     <span class="n">Mean</span>   <span class="o">:</span><span class="m">54.44</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">0.6799</span>   <span class="n">typical</span>     <span class="o">:</span> <span class="m">23</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">131.7</span>
-     <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">61.00</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">1.0000</span>                      <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">140.0</span>
-     <span class="n">Max.</span>   <span class="o">:</span><span class="m">77.00</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">1.0000</span>                      <span class="n">Max.</span>   <span class="o">:</span><span class="m">200.0</span>
-
-       <span class="n">Chol</span>            <span class="n">Fbs</span>            <span class="n">RestECG</span>           <span class="n">MaxHR</span>
-     <span class="n">Min.</span>   <span class="o">:</span><span class="m">126.0</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.0000</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.0000</span>   <span class="n">Min.</span>   <span class="o">:</span> <span class="m">71.0</span>
-     <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">211.0</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">133.5</span>
-     <span class="n">Median</span> <span class="o">:</span><span class="m">241.0</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">0.0000</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">1.0000</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">153.0</span>
-     <span class="n">Mean</span>   <span class="o">:</span><span class="m">246.7</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">0.1485</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">0.9901</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">149.6</span>
-     <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">275.0</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">2.0000</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">166.0</span>
-     <span class="n">Max.</span>   <span class="o">:</span><span class="m">564.0</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">1.0000</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">2.0000</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">202.0</span>
-
-      <span class="n">ExAng</span>           <span class="n">Oldpeak</span>         <span class="n">Slope</span>             <span class="n">Ca</span>
-     <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.0000</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.00</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">1.000</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.0000</span>
-     <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.00</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">1.000</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>
-     <span class="n">Median</span> <span class="o">:</span><span class="m">0.0000</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">0.80</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">2.000</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">0.0000</span>
-     <span class="n">Mean</span>   <span class="o">:</span><span class="m">0.3267</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">1.04</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">1.601</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">0.6722</span>
-     <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">1.0000</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">1.60</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">2.000</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">1.0000</span>
-     <span class="n">Max.</span>   <span class="o">:</span><span class="m">1.0000</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">6.20</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">3.000</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">3.0000</span>
-                                             <span class="kc">NA</span><span class="s">&#39;s   :4</span>
-<span class="s">         Thal      AHD</span>
-<span class="s">     fixed     : 18   No :164</span>
-<span class="s">     normal    :166   Yes:139</span>
-<span class="s">     reversable:117</span>
-<span class="s">     NA&#39;</span><span class="n">s</span>      <span class="o">:</span>  <span class="m">2</span>
-</pre></div>
-</div>
-</div></blockquote>
+<div>It is always good to have a glance over the summary of the data. Since from the summary you will know some statistics features of your data, and you will also know whether you data contains missing data or not.</div></blockquote>
+<div class="content-tabs right-col docutils container">
+<div class="tab-content docutils container" id="tab-python">
+<p class="tab-title">Python</p>
 <ul class="simple">
 <li>Summary of the data in <strong>Python</strong></li>
 </ul>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;data summary&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;&gt; data summary&quot;</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">rawdata</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Then you will get</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>              <span class="n">Age</span>         <span class="n">Sex</span>      <span class="n">RestBP</span>        <span class="n">Chol</span>         <span class="n">Fbs</span>     <span class="n">RestECG</span>  \
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">data</span> <span class="n">summary</span>
+              <span class="n">Age</span>         <span class="n">Sex</span>      <span class="n">RestBP</span>        <span class="n">Chol</span>         <span class="n">Fbs</span>     <span class="n">RestECG</span>  \
 <span class="n">count</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>  <span class="mf">303.000000</span>
 <span class="n">mean</span>    <span class="mf">54.438944</span>    <span class="mf">0.679868</span>  <span class="mf">131.689769</span>  <span class="mf">246.693069</span>    <span class="mf">0.148515</span>    <span class="mf">0.990099</span>
 <span class="n">std</span>      <span class="mf">9.038662</span>    <span class="mf">0.467299</span>   <span class="mf">17.599748</span>   <span class="mf">51.776918</span>    <span class="mf">0.356198</span>    <span class="mf">0.994971</span>
@@ -350,11 +385,53 @@
 <span class="nb">max</span>    <span class="mf">202.000000</span>    <span class="mf">1.000000</span>    <span class="mf">6.200000</span>    <span class="mf">3.000000</span>    <span class="mf">3.000000</span>
 </pre></div>
 </div>
-</div></blockquote>
-</div></blockquote>
-<ol class="arabic simple" start="2">
-<li><strong>The size of the data</strong></li>
-</ol>
+</div>
+<div class="tab-content docutils container" id="tab-r">
+<p class="tab-title">R</p>
+<ul class="simple">
+<li>Summary of the data in <strong>R</strong></li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you will get</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span> <span class="o">&gt;</span> <span class="nf">summary</span><span class="p">(</span><span class="n">rawdata</span><span class="p">)</span>
+         <span class="n">Age</span>             <span class="n">Sex</span>                <span class="n">ChestPain</span>       <span class="n">RestBP</span>
+<span class="n">Min.</span>   <span class="o">:</span><span class="m">29.00</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.0000</span>   <span class="n">asymptomatic</span><span class="o">:</span><span class="m">144</span>   <span class="n">Min.</span>   <span class="o">:</span> <span class="m">94.0</span>
+        <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">48.00</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>   <span class="n">nonanginal</span>  <span class="o">:</span> <span class="m">86</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">120.0</span>
+<span class="n">Median</span> <span class="o">:</span><span class="m">56.00</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">1.0000</span>   <span class="n">nontypical</span>  <span class="o">:</span> <span class="m">50</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">130.0</span>
+<span class="n">Mean</span>   <span class="o">:</span><span class="m">54.44</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">0.6799</span>   <span class="n">typical</span>     <span class="o">:</span> <span class="m">23</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">131.7</span>
+<span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">61.00</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">1.0000</span>                      <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">140.0</span>
+<span class="n">Max.</span>   <span class="o">:</span><span class="m">77.00</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">1.0000</span>                      <span class="n">Max.</span>   <span class="o">:</span><span class="m">200.0</span>
+
+        <span class="n">Chol</span>            <span class="n">Fbs</span>            <span class="n">RestECG</span>           <span class="n">MaxHR</span>
+<span class="n">Min.</span>   <span class="o">:</span><span class="m">126.0</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.0000</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.0000</span>   <span class="n">Min.</span>   <span class="o">:</span> <span class="m">71.0</span>
+<span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">211.0</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">133.5</span>
+<span class="n">Median</span> <span class="o">:</span><span class="m">241.0</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">0.0000</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">1.0000</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">153.0</span>
+<span class="n">Mean</span>   <span class="o">:</span><span class="m">246.7</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">0.1485</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">0.9901</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">149.6</span>
+<span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">275.0</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">2.0000</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">166.0</span>
+<span class="n">Max.</span>   <span class="o">:</span><span class="m">564.0</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">1.0000</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">2.0000</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">202.0</span>
+
+       <span class="n">ExAng</span>           <span class="n">Oldpeak</span>         <span class="n">Slope</span>             <span class="n">Ca</span>
+<span class="n">Min.</span>   <span class="o">:</span><span class="m">0.0000</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.00</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">1.000</span>   <span class="n">Min.</span>   <span class="o">:</span><span class="m">0.0000</span>
+<span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.00</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">1.000</span>   <span class="m">1</span><span class="n">st</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">0.0000</span>
+<span class="n">Median</span> <span class="o">:</span><span class="m">0.0000</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">0.80</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">2.000</span>   <span class="n">Median</span> <span class="o">:</span><span class="m">0.0000</span>
+<span class="n">Mean</span>   <span class="o">:</span><span class="m">0.3267</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">1.04</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">1.601</span>   <span class="n">Mean</span>   <span class="o">:</span><span class="m">0.6722</span>
+<span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">1.0000</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">1.60</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">2.000</span>   <span class="m">3</span><span class="n">rd</span> <span class="n">Qu.</span><span class="o">:</span><span class="m">1.0000</span>
+<span class="n">Max.</span>   <span class="o">:</span><span class="m">1.0000</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">6.20</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">3.000</span>   <span class="n">Max.</span>   <span class="o">:</span><span class="m">3.0000</span>
+                                              <span class="kc">NA</span><span class="s">&#39;s   :4</span>
+<span class="s">            Thal      AHD</span>
+<span class="s">fixed     : 18   No :164</span>
+<span class="s">normal    :166   Yes:139</span>
+<span class="s">reversable:117</span>
+<span class="s">NA&#39;</span><span class="n">s</span>      <span class="o">:</span>  <span class="m">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-size-of-the-data">
+<h3>4.5.2. The size of the data<a class="headerlink" href="#the-size-of-the-data" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Sometimes we also need to know the size or dimension of our data. Such as when you need to extract the
 response from the dataset, you need the number of column, or when you try to split your data into train
@@ -400,9 +477,9 @@ and test data set, you need know the number of row.</p>
 </div>
 </div></blockquote>
 </div></blockquote>
-<ol class="arabic simple" start="3">
-<li><strong>Data format of the predictors</strong></li>
-</ol>
+</div>
+<div class="section" id="data-format-of-the-predictors">
+<h3>4.5.3. Data format of the predictors<a class="headerlink" href="#data-format-of-the-predictors" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Data format is also very important, since some functions or methods can not be applied to the qualitative data, you
 need to remove those predictors or transform them into quantitative data.</p>
@@ -454,9 +531,9 @@ need to remove those predictors or transform them into quantitative data.</p>
 </div>
 </div></blockquote>
 </div></blockquote>
-<ol class="arabic simple" start="4">
-<li><strong>The column names</strong></li>
-</ol>
+</div>
+<div class="section" id="the-column-names">
+<h3>4.5.4. The column names<a class="headerlink" href="#the-column-names" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Checking column names of the data in <strong>R</strong></li>
@@ -492,9 +569,9 @@ need to remove those predictors or transform them into quantitative data.</p>
 </div>
 </div></blockquote>
 </div></blockquote>
-<ol class="arabic simple" start="5">
-<li><strong>The first or last parts of the data</strong></li>
-</ol>
+</div>
+<div class="section" id="the-first-or-last-parts-of-the-data">
+<h3>4.5.5. The first or last parts of the data<a class="headerlink" href="#the-first-or-last-parts-of-the-data" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Checking first parts of the data in <strong>R</strong></li>
@@ -552,9 +629,9 @@ need to remove those predictors or transform them into quantitative data.</p>
 </div></blockquote>
 <p>You can use the samilar way to check the last part of the data, for simplicity, i will skip  it.</p>
 </div></blockquote>
-<ol class="arabic simple" start="6">
-<li>Correlation Matrix</li>
-</ol>
+</div>
+<div class="section" id="correlation-matrix">
+<h3>4.5.6. Correlation Matrix<a class="headerlink" href="#correlation-matrix" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Computing correlation matrix in <strong>R</strong></li>
@@ -647,9 +724,9 @@ need to remove those predictors or transform them into quantitative data.</p>
 </div>
 </div></blockquote>
 </div></blockquote>
-<ol class="arabic simple" start="7">
-<li>covariance Matrix</li>
-</ol>
+</div>
+<div class="section" id="covariance-matrix">
+<h3>4.5.7. Covariance Matrix<a class="headerlink" href="#covariance-matrix" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Computing covariance matrix in <strong>R</strong></li>
@@ -743,12 +820,12 @@ need to remove those predictors or transform them into quantitative data.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
+</div>
 <div class="section" id="understand-data-with-visualization">
-<span id="index-5"></span><h2>Understand Data With Visualization<a class="headerlink" href="#understand-data-with-visualization" title="Permalink to this headline">¶</a></h2>
+<span id="index-6"></span><h2>4.6. Understand Data With Visualization<a class="headerlink" href="#understand-data-with-visualization" title="Permalink to this headline">¶</a></h2>
 <p>A picture is worth a thousand words. You will see the powerful impact of the figures in this section.</p>
-<ol class="arabic simple">
-<li>Summary plot of data in figure</li>
-</ol>
+<div class="section" id="summary-plot-of-data-in-figure">
+<h3>4.6.1. Summary plot of data in figure<a class="headerlink" href="#summary-plot-of-data-in-figure" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Summary plot in <strong>R</strong></li>
@@ -779,9 +856,9 @@ need to remove those predictors or transform them into quantitative data.</p>
 </div>
 </div></blockquote>
 </div></blockquote>
-<ol class="arabic simple" start="2">
-<li>Histogram of the quantitative predictors</li>
-</ol>
+</div>
+<div class="section" id="histogram-of-the-quantitative-predictors">
+<h3>4.6.2. Histogram of the quantitative predictors<a class="headerlink" href="#histogram-of-the-quantitative-predictors" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Histogram in <strong>R</strong></li>
@@ -830,9 +907,9 @@ need to remove those predictors or transform them into quantitative data.</p>
 </div>
 </div></blockquote>
 </div></blockquote>
-<ol class="arabic simple" start="3">
-<li>Boxplot of the quantitative predictors</li>
-</ol>
+</div>
+<div class="section" id="boxplot-of-the-quantitative-predictors">
+<h3>4.6.3. Boxplot of the quantitative predictors<a class="headerlink" href="#boxplot-of-the-quantitative-predictors" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Boxplot in <strong>R</strong></li>
@@ -872,9 +949,9 @@ need to remove those predictors or transform them into quantitative data.</p>
 </div>
 </div></blockquote>
 </div></blockquote>
-<ol class="arabic simple" start="4">
-<li>Correlation Matrix plot of the quantitative predictors</li>
-</ol>
+</div>
+<div class="section" id="correlation-matrix-plot-of-the-quantitative-predictors">
+<h3>4.6.4. Correlation Matrix plot of the quantitative predictors<a class="headerlink" href="#correlation-matrix-plot-of-the-quantitative-predictors" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>Correlation Matrix plot in <strong>R</strong></li>
@@ -912,8 +989,9 @@ need to remove those predictors or transform them into quantitative data.</p>
 </div></blockquote>
 </div></blockquote>
 </div>
+</div>
 <div class="section" id="source-code-for-this-section">
-<h2>Source Code for This Section<a class="headerlink" href="#source-code-for-this-section" title="Permalink to this headline">¶</a></h2>
+<h2>4.7. Source Code for This Section<a class="headerlink" href="#source-code-for-this-section" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>The code for this section is available for download for <a class="reference external" href="../code/loaddata.R">R</a>, for <a class="reference external" href="../code/loadData.py">Python</a>,</dt>
 <dd><ul class="first simple">
@@ -1134,10 +1212,10 @@ need to remove those predictors or transform them into quantitative data.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pre.html" class="btn btn-neutral float-right" title="Pre-processing procedures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pre.html" class="btn btn-neutral float-right" title="5. Pre-processing procedures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gettingstarted.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="gettingstarted.html" class="btn btn-neutral float-left" title="3. Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

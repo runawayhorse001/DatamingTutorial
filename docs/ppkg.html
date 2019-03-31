@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Developing Your Own Python Packages &mdash; Data Mining With Python and R  documentation</title>
+  <title>14. Developing Your Own Python Packages &mdash; Data Mining With Python and R  documentation</title>
   
 
   
@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Developing Your Own R Packages" href="rpkg.html" />
+    <link rel="prev" title="13. Developing Your Own R Packages" href="rpkg.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -92,23 +92,24 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comparison.html">Python or R for data analysis?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dap.html">Data analysis procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pre.html">Pre-processing procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dim.html">Dimension Reduction Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regression.html">Regression Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification ALgorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reg.html">Regularization ALgorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resample.html">Resampling Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rpkg.html">Developing Your Own R Packages</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Developing Your Own Python Packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#hierarchical-structure">Hierarchical Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#set-up">Set Up</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#readme">ReadMe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">1. Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">2. Python or R for data analysis?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">3. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="de.html">4. Data Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dm.html">5. Data Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre.html">6. Pre-processing procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algsummary.html">7. Summary of Data Mining Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dim.html">8. Dimension Reduction Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression.html">9. Regression Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classification.html">10. Classification ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reg.html">11. Regularization ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resample.html">12. Resampling Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpkg.html">13. Developing Your Own R Packages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">14. Developing Your Own Python Packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hierarchical-structure">14.1. Hierarchical Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up">14.2. Set Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">14.3. Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#readme">14.4. ReadMe</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +157,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Developing Your Own Python Packages</li>
+      <li>14. Developing Your Own Python Packages</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -178,12 +179,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="developing-your-own-python-packages">
-<span id="ppkg"></span><h1>Developing Your Own Python Packages<a class="headerlink" href="#developing-your-own-python-packages" title="Permalink to this headline">¶</a></h1>
+<span id="ppkg"></span><h1>14. Developing Your Own Python Packages<a class="headerlink" href="#developing-your-own-python-packages" title="Permalink to this headline">¶</a></h1>
 <p>It’s super easy to wrap your own package in Python. I packed some functions which I frequently
 used in my daily work. You can download and install it from <a class="reference external" href="https://runawayhorse001.github.io/statspy/">My ststspy library</a>. The hierarchical
 structure and the directory structure of this package are as follows.</p>
 <div class="section" id="hierarchical-structure">
-<h2>Hierarchical Structure<a class="headerlink" href="#hierarchical-structure" title="Permalink to this headline">¶</a></h2>
+<h2>14.1. Hierarchical Structure<a class="headerlink" href="#hierarchical-structure" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>├── README.md
 ├── __init__.py
 ├── requirements.txt
@@ -203,7 +204,7 @@ structure and the directory structure of this package are as follows.</p>
 <p>From the above hierarchical structure, you will find that you have to have <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> in each directory. I will explain the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file with the example below:</p>
 </div>
 <div class="section" id="set-up">
-<h2>Set Up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h2>
+<h2>14.2. Set Up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
 
 <span class="k">try</span><span class="p">:</span>
@@ -232,7 +233,7 @@ structure and the directory structure of this package are as follows.</p>
 </div>
 </div>
 <div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<h2>14.3. Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>pandas
 numpy
 scipy
@@ -242,7 +243,7 @@ matplotlib
 </div>
 </div>
 <div class="section" id="readme">
-<h2>ReadMe<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h2>
+<h2>14.4. ReadMe<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># StatsPy</span>
 
 This is my statistics python library repositories.
@@ -287,7 +288,7 @@ python test1.py
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="rpkg.html" class="btn btn-neutral float-left" title="Developing Your Own R Packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="rpkg.html" class="btn btn-neutral float-left" title="13. Developing Your Own R Packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

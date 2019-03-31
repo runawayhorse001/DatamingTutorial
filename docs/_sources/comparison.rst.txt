@@ -48,7 +48,7 @@ Comparison List
 
 My Opinions
 +++++++++++
-In my opinion, **R** and **Python** are both choices.  Since they are open-source softwares (open-source is always good in my eyes) and are free to download. If you are a beginer without any programming experience and only want to do some data analysis, I would definitely suggest to use **R**. Otherwise, I would suggest to use both. 
+In my opinion, if you want to be a decent Data Analyst or Data Scientist, you should learn both -- **R** and **Python**.  Since they are open-source softwares (open-source is always good in my eyes) and are free to download. If you are a beginer without any programming experience and only want to do some data analysis, I would definitely suggest to use **R**. Otherwise, I would suggest to use both. 
 
 
 

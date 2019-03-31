@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Regression Algorithm &mdash; Data Mining With Python and R  documentation</title>
+  <title>9. Regression Algorithm &mdash; Data Mining With Python and R  documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Classification ALgorithms" href="classification.html" />
-    <link rel="prev" title="Dimension Reduction Algorithms" href="dim.html" />
+    <link rel="next" title="10. Classification ALgorithms" href="classification.html" />
+    <link rel="prev" title="8. Dimension Reduction Algorithms" href="dim.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -93,27 +93,28 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comparison.html">Python or R for data analysis?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dap.html">Data analysis procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pre.html">Pre-processing procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dim.html">Dimension Reduction Algorithms</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Regression Algorithm</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#ordinary-least-squares-regression-olsr">Ordinary Least Squares Regression (OLSR)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-solve-it">How to solve it?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">1. Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">2. Python or R for data analysis?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">3. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="de.html">4. Data Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dm.html">5. Data Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre.html">6. Pre-processing procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algsummary.html">7. Summary of Data Mining Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dim.html">8. Dimension Reduction Algorithms</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Regression Algorithm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ordinary-least-squares-regression-olsr">9.1. Ordinary Least Squares Regression (OLSR)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">9.1.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-solve-it">9.1.2. How to solve it?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#linear-regression-lr">Linear Regression (LR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linear-regression-lr">9.2. Linear Regression (LR)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification ALgorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reg.html">Regularization ALgorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resample.html">Resampling Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rpkg.html">Developing Your Own R Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppkg.html">Developing Your Own Python Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classification.html">10. Classification ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reg.html">11. Regularization ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resample.html">12. Resampling Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpkg.html">13. Developing Your Own R Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppkg.html">14. Developing Your Own Python Packages</a></li>
 </ul>
 
             
@@ -159,7 +160,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Regression Algorithm</li>
+      <li>9. Regression Algorithm</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -181,7 +182,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="regression-algorithm">
-<span id="regression"></span><h1>Regression Algorithm<a class="headerlink" href="#regression-algorithm" title="Permalink to this headline">¶</a></h1>
+<span id="regression"></span><h1>9. Regression Algorithm<a class="headerlink" href="#regression-algorithm" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">A journey of a thousand miles begins with a single step – old Chinese proverb</p>
@@ -189,9 +190,9 @@
 <p>In statistical modeling, regression analysis focuses on investigating the relationship between a dependent variable and one or more independent variables. <a class="reference external" href="https://en.wikipedia.org/wiki/Regression_analysis">Wikipedia Regression analysis</a></p>
 <p>In data mining, Regression is a model to represent the relationship between the value of lable ( or target, it is numerical variable) and on one or more features (or predictors they can be numerical and categorical variables).</p>
 <div class="section" id="ordinary-least-squares-regression-olsr">
-<h2>Ordinary Least Squares Regression (OLSR)<a class="headerlink" href="#ordinary-least-squares-regression-olsr" title="Permalink to this headline">¶</a></h2>
+<h2>9.1. Ordinary Least Squares Regression (OLSR)<a class="headerlink" href="#ordinary-least-squares-regression-olsr" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<h3>9.1.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
 <p>Given that a data set <img class="math" src="_images/math/88b3cfb73dea75c8b7c0639db3a2dc0123be56c6.png" alt="{\displaystyle \{\,x_{i1},\ldots ,x_{in},y_{i}\}_{i=1}^{m}}"/> which contains n features
 (variables) and m samples (data points), in simple linear regression model for modeling <img class="math" src="_images/math/cdf9a182e5d25224e34469d6ffbf367c6b1786e9.png" alt="{\displaystyle m}"/> data points with <img class="math" src="_images/math/c7827eada10f61eeef7e2b44293de9c6e29d6c73.png" alt="j"/> independent variables: <img class="math" src="_images/math/92495c9c156c3dec997248f4e186ad1cbff2123d.png" alt="{\displaystyle x_{ij}}"/>, the formula is given by:</p>
 <blockquote>
@@ -213,7 +214,7 @@ Then the normal equations are written as</p>
 </div>
 </div>
 <div class="section" id="how-to-solve-it">
-<h3>How to solve it?<a class="headerlink" href="#how-to-solve-it" title="Permalink to this headline">¶</a></h3>
+<h3>9.1.2. How to solve it?<a class="headerlink" href="#how-to-solve-it" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p class="first">Direct Methods (For more information please refer to my <a class="reference external" href="http://web.utk.edu/~wfeng1/doc/PrelimNum.pdf">Prelim Notes for Numerical Analysis</a>)</p>
 <blockquote>
@@ -270,7 +271,7 @@ Then the normal equations are written as</p>
 </div>
 </div>
 <div class="section" id="linear-regression-lr">
-<h2>Linear Regression (LR)<a class="headerlink" href="#linear-regression-lr" title="Permalink to this headline">¶</a></h2>
+<h2>9.2. Linear Regression (LR)<a class="headerlink" href="#linear-regression-lr" title="Permalink to this headline">¶</a></h2>
 <p>TO DO …..</p>
 </div>
 </div>
@@ -283,10 +284,10 @@ Then the normal equations are written as</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="classification.html" class="btn btn-neutral float-right" title="Classification ALgorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="classification.html" class="btn btn-neutral float-right" title="10. Classification ALgorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dim.html" class="btn btn-neutral float-left" title="Dimension Reduction Algorithms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dim.html" class="btn btn-neutral float-left" title="8. Dimension Reduction Algorithms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

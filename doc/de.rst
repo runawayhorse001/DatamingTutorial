@@ -1,10 +1,10 @@
-.. _dap:
+.. _de:
 
-.. index:: Data analysis procedures
+.. index:: Data Exploration
 
-========================
-Data analysis procedures
-========================
+================
+Data Exploration
+================
 
 .. note::
 
@@ -43,59 +43,141 @@ Loading Datasets
 
 There are two main data formats "*.csv" and "*.xlsx". We will show how to load those two types of data in **R** and **Python**, respectively. 
 
-1. **Loading datasets in R**
 
- * Loading `*.csv` format data
+Loading table format database
+-----------------------------
 
-  .. code-block:: r
+User and Database information: 
 
-    # set the path or enverionment
-    setwd("/home/feng/R-language/sat577/HW#4/data")
+.. code-block:: r
 
-    # read data set
-    rawdata = read.csv("spam.csv")
+    user = '*******'
+    pw='********'
+    host = '**.***.***.**'
+    database = '**'
+    table_name = '***'
 
+.. content-tabs:: right-col
 
- * Loading `*.xlsx` format data
-
-  .. code-block:: r
-
-    # set the path or enverionment
-    setwd("~/Dropbox/R-language/sat577/")
-
-    #install.packages("readxl") # CRAN version
-    library(readxl)
-
-    # read data set
-    energy_eff=read_excel("energy_efficiency.xlsx")
+    .. tab-container:: python
+        :title: Python
 
 
-2. **Loading datasets in Python**
+        .. code-block:: python
+        
+          # import library
+          import psycopg2
+          import pandas as pd
 
- * Loading `*.csv` format data
+          # Create the database connection
+          conn = psycopg2.connect(host=host, database=database, 
+                                  user=user, password=pw)
+          cur = conn.cursor()
 
-  .. code-block:: python
+          # Create the SQL query string.
+          sql = """
+                SELECT *
+                FROM {table_name}
+                """.format(table_name=table_name)
+          df = pd.read_sql(sql, conn)
 
-    import pandas as pd
+          df.head(4)
 
-    # set data path
-    path ='~/Dropbox/MachineLearningAlgorithms/python_code/data/Heart.csv' 
+    .. tab-container:: r
+        :title: R
 
-    # read data set
-    rawdata = pd.read_csv(path)
+        .. code-block:: r
 
- * Loading `*.xlsx` format data
+            # load the library 
+            library("sqldf")
+            library('RODBC')
+            library('RPostgreSQL')
 
-  .. code-block:: python
+            # Create a driver
+            drv <- DBI::dbDriver( "PostgreSQL" )
+            # Create the database connection
+            conn <- dbConnect( drv, dbname = database, host = host,port = '5432', 
+                               user = user, password = pw )
 
-    import pandas as pd
+            # Create the SQL query string. Include a semi-colon to terminate
+            querystring = sprintf('SELECT * FROM %s;', table_name)
+            # Execute the query and return results as a data frame
+            df = dbGetQuery(conn, querystring )
 
-    # set data path
-    path = ('/home/feng/Dropbox/MachineLearningAlgorithms/python_code/data/'
-    'energy_efficiency.xlsx')
+            head(df)
 
-    # read data set from first sheet
-    rawdata= pd.read_excel(path,sheetname=0)
+Loading data from `.csv`
+-------------------------
+
+.. content-tabs:: right-col
+
+    .. tab-container:: python
+        :title: Python
+
+        .. code-block:: python
+
+            import pandas as pd
+
+            # set data path
+            path ='~/Dropbox/MachineLearningAlgorithms/python_code/data/Heart.csv' 
+
+            # read data set
+            rawdata = pd.read_csv(path)
+
+
+    .. tab-container:: r
+        :title: R
+
+        .. code-block:: r
+
+            # set the path or enverionment
+            setwd("/home/feng/R-language/sat577/HW#4/data")
+
+            # read data set
+            rawdata = read.csv("spam.csv")        
+
+
+Loading data from `.xlsx`
+-------------------------
+
+.. content-tabs:: right-col
+
+    .. tab-container:: python
+        :title: Python
+
+        .. code-block:: python
+
+            import pandas as pd
+
+            # set data path
+            path = ('/home/feng/Dropbox/MachineLearningAlgorithms/python_code/data/'
+            'energy_efficiency.xlsx')
+
+            # read data set from first sheet
+            rawdata= pd.read_excel(path,sheetname=0)
+
+    .. tab-container:: r
+        :title: R
+
+        .. code-block:: r
+
+            # set the path or enverionment
+            setwd("~/Dropbox/R-language/sat577/")
+
+            #install.packages("readxl") # CRAN version
+            library(readxl)
+
+            # read data set
+            energy_eff=read_excel("energy_efficiency.xlsx")
+
+
+.. index:: Audit Data 
+
+Audit Data
+++++++++++
+
+In my opinion, data audit is the first step you need to do when you get your dataset. Since you need to know whether the data quality is good enough or not. 
+
 
 
 .. index:: Understand Data With Statistics methods
@@ -105,84 +187,98 @@ Understand Data With Statistics methods
 
 After we get the data in hand, then we can try to understand them.  I will use "Heart.csv" dataset as a example to demonstrate how to use those statistics methods. 
 
-1. **Summary of the data**
+Summary of the data
+-------------------
 
  It is always good to have a glance over the summary of the data. Since from the summary you will know some statistics features of your data, and you will also know whether you data contains missing data or not.
 
- * Summary of the data in **R**
+.. content-tabs:: right-col
 
-  .. code-block:: r
+    .. tab-container:: python
+        :title: Python
 
-     summary(rawdata)
+        * Summary of the data in **Python**
 
-  Then you will get 
+        .. code-block:: python
 
-  .. code-block:: r
+           print("> data summary")
+           print rawdata.describe()
 
-    > summary(rawdata)
-            Age             Sex                ChestPain       RestBP     
-	 Min.   :29.00   Min.   :0.0000   asymptomatic:144   Min.   : 94.0  
-  	 1st Qu.:48.00   1st Qu.:0.0000   nonanginal  : 86   1st Qu.:120.0  
- 	 Median :56.00   Median :1.0000   nontypical  : 50   Median :130.0  
- 	 Mean   :54.44   Mean   :0.6799   typical     : 23   Mean   :131.7  
-	 3rd Qu.:61.00   3rd Qu.:1.0000                      3rd Qu.:140.0  
-	 Max.   :77.00   Max.   :1.0000                      Max.   :200.0  
-                                                                    
-           Chol            Fbs            RestECG           MaxHR      
-	 Min.   :126.0   Min.   :0.0000   Min.   :0.0000   Min.   : 71.0  
-	 1st Qu.:211.0   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:133.5  
-	 Median :241.0   Median :0.0000   Median :1.0000   Median :153.0  
-	 Mean   :246.7   Mean   :0.1485   Mean   :0.9901   Mean   :149.6  
-	 3rd Qu.:275.0   3rd Qu.:0.0000   3rd Qu.:2.0000   3rd Qu.:166.0  
-	 Max.   :564.0   Max.   :1.0000   Max.   :2.0000   Max.   :202.0  
-                                                                  
-          ExAng           Oldpeak         Slope             Ca        
-	 Min.   :0.0000   Min.   :0.00   Min.   :1.000   Min.   :0.0000  
-	 1st Qu.:0.0000   1st Qu.:0.00   1st Qu.:1.000   1st Qu.:0.0000  
-	 Median :0.0000   Median :0.80   Median :2.000   Median :0.0000  
-	 Mean   :0.3267   Mean   :1.04   Mean   :1.601   Mean   :0.6722  
-	 3rd Qu.:1.0000   3rd Qu.:1.60   3rd Qu.:2.000   3rd Qu.:1.0000  
-	 Max.   :1.0000   Max.   :6.20   Max.   :3.000   Max.   :3.0000  
-                                                 NA's   :4       
-    	     Thal      AHD     
-	 fixed     : 18   No :164  
-	 normal    :166   Yes:139  
-	 reversable:117            
-	 NA's      :  2        
+        Then you will get 
 
- * Summary of the data in **Python**
+        .. code-block:: python
 
-  .. code-block:: python
+           > data summary 
+                         Age         Sex      RestBP        Chol         Fbs     RestECG  \
+           count  303.000000  303.000000  303.000000  303.000000  303.000000  303.000000   
+           mean    54.438944    0.679868  131.689769  246.693069    0.148515    0.990099   
+           std      9.038662    0.467299   17.599748   51.776918    0.356198    0.994971   
+           min     29.000000    0.000000   94.000000  126.000000    0.000000    0.000000   
+           25%     48.000000    0.000000  120.000000  211.000000    0.000000    0.000000   
+           50%     56.000000    1.000000  130.000000  241.000000    0.000000    1.000000   
+           75%     61.000000    1.000000  140.000000  275.000000    0.000000    2.000000   
+           max     77.000000    1.000000  200.000000  564.000000    1.000000    2.000000   
 
-     print "data summary"
-     print rawdata.describe()
-
-  Then you will get 
-
-  .. code-block:: python
-
-                   Age         Sex      RestBP        Chol         Fbs     RestECG  \
-     count  303.000000  303.000000  303.000000  303.000000  303.000000  303.000000   
-     mean    54.438944    0.679868  131.689769  246.693069    0.148515    0.990099   
-     std      9.038662    0.467299   17.599748   51.776918    0.356198    0.994971   
-     min     29.000000    0.000000   94.000000  126.000000    0.000000    0.000000   
-     25%     48.000000    0.000000  120.000000  211.000000    0.000000    0.000000   
-     50%     56.000000    1.000000  130.000000  241.000000    0.000000    1.000000   
-     75%     61.000000    1.000000  140.000000  275.000000    0.000000    2.000000   
-     max     77.000000    1.000000  200.000000  564.000000    1.000000    2.000000   
-
-            MaxHR       ExAng     Oldpeak       Slope          Ca  
-     count  303.000000  303.000000  303.000000  303.000000  299.000000  
-     mean   149.607261    0.326733    1.039604    1.600660    0.672241  
-     std     22.875003    0.469794    1.161075    0.616226    0.937438  
-     min     71.000000    0.000000    0.000000    1.000000    0.000000  
-     25%    133.500000    0.000000    0.000000    1.000000    0.000000  
-     50%    153.000000    0.000000    0.800000    2.000000    0.000000  
-     75%    166.000000    1.000000    1.600000    2.000000    1.000000  
-     max    202.000000    1.000000    6.200000    3.000000    3.000000  
+                  MaxHR       ExAng     Oldpeak       Slope          Ca  
+           count  303.000000  303.000000  303.000000  303.000000  299.000000  
+           mean   149.607261    0.326733    1.039604    1.600660    0.672241  
+           std     22.875003    0.469794    1.161075    0.616226    0.937438  
+           min     71.000000    0.000000    0.000000    1.000000    0.000000  
+           25%    133.500000    0.000000    0.000000    1.000000    0.000000  
+           50%    153.000000    0.000000    0.800000    2.000000    0.000000  
+           75%    166.000000    1.000000    1.600000    2.000000    1.000000  
+           max    202.000000    1.000000    6.200000    3.000000    3.000000  
 
 
-2. **The size of the data**
+
+    .. tab-container:: r
+        :title: R
+
+        * Summary of the data in **R**
+
+        .. code-block:: r
+
+           summary(rawdata)
+
+        Then you will get 
+
+        .. code-block:: r
+
+          > summary(rawdata)
+                  Age             Sex                ChestPain       RestBP     
+      	 Min.   :29.00   Min.   :0.0000   asymptomatic:144   Min.   : 94.0  
+        	 1st Qu.:48.00   1st Qu.:0.0000   nonanginal  : 86   1st Qu.:120.0  
+       	 Median :56.00   Median :1.0000   nontypical  : 50   Median :130.0  
+       	 Mean   :54.44   Mean   :0.6799   typical     : 23   Mean   :131.7  
+      	 3rd Qu.:61.00   3rd Qu.:1.0000                      3rd Qu.:140.0  
+      	 Max.   :77.00   Max.   :1.0000                      Max.   :200.0  
+                                                                          
+                 Chol            Fbs            RestECG           MaxHR      
+      	 Min.   :126.0   Min.   :0.0000   Min.   :0.0000   Min.   : 71.0  
+      	 1st Qu.:211.0   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:133.5  
+      	 Median :241.0   Median :0.0000   Median :1.0000   Median :153.0  
+      	 Mean   :246.7   Mean   :0.1485   Mean   :0.9901   Mean   :149.6  
+      	 3rd Qu.:275.0   3rd Qu.:0.0000   3rd Qu.:2.0000   3rd Qu.:166.0  
+      	 Max.   :564.0   Max.   :1.0000   Max.   :2.0000   Max.   :202.0  
+                                                                        
+                ExAng           Oldpeak         Slope             Ca        
+      	 Min.   :0.0000   Min.   :0.00   Min.   :1.000   Min.   :0.0000  
+      	 1st Qu.:0.0000   1st Qu.:0.00   1st Qu.:1.000   1st Qu.:0.0000  
+      	 Median :0.0000   Median :0.80   Median :2.000   Median :0.0000  
+      	 Mean   :0.3267   Mean   :1.04   Mean   :1.601   Mean   :0.6722  
+      	 3rd Qu.:1.0000   3rd Qu.:1.60   3rd Qu.:2.000   3rd Qu.:1.0000  
+      	 Max.   :1.0000   Max.   :6.20   Max.   :3.000   Max.   :3.0000  
+                                                       NA's   :4       
+          	     Thal      AHD     
+      	 fixed     : 18   No :164  
+      	 normal    :166   Yes:139  
+      	 reversable:117            
+      	 NA's      :  2        
+
+ 
+
+The size of the data
+--------------------
 
  Sometimes we also need to know the size or dimension of our data. Such as when you need to extract the 
  response from the dataset, you need the number of column, or when you try to split your data into train
@@ -232,8 +328,9 @@ After we get the data in hand, then we can try to understand them.  I will use "
      Raw data size
      303 14
 
-3. **Data format of the predictors** 
- 
+Data format of the predictors
+-----------------------------
+
  Data format is also very important, since some functions or methods can not be applied to the qualitative data, you 
  need to remove those predictors or transform them into quantitative data. 
 
@@ -284,7 +381,8 @@ After we get the data in hand, then we can try to understand them.  I will use "
 	 AHD           object
 	 dtype: object
 
-4. **The column names** 
+The column names
+----------------
 
  * Checking column names of the data in **R**
 
@@ -321,7 +419,8 @@ After we get the data in hand, then we can try to understand them.  I will use "
 
 
 
-5. **The first or last parts of the data**
+The first or last parts of the data
+-----------------------------------
 
  * Checking first parts of the data in **R**
 
@@ -379,7 +478,8 @@ After we get the data in hand, then we can try to understand them.  I will use "
 
  You can use the samilar way to check the last part of the data, for simplicity, i will skip  it. 
 
-6. Correlation Matrix
+Correlation Matrix
+------------------
 
  * Computing correlation matrix in **R**
 
@@ -471,7 +571,8 @@ After we get the data in hand, then we can try to understand them.  I will use "
      Slope    0.257748  0.577537  1.000000  0.110119  
      Ca       0.145570  0.295832  0.110119  1.000000  
 
-7. covariance Matrix
+Covariance Matrix
+-----------------
 
  * Computing covariance matrix in **R**
 
@@ -570,7 +671,8 @@ Understand Data With Visualization
 
 A picture is worth a thousand words. You will see the powerful impact of the figures in this section.
 
-1. Summary plot of data in figure 
+Summary plot of data in figure 
+------------------------------
 
  * Summary plot in **R**
 
@@ -605,7 +707,9 @@ A picture is worth a thousand words. You will see the powerful impact of the fig
 
     Summary plot of the data with Python.   
 
-2. Histogram of the quantitative predictors 
+
+Histogram of the quantitative predictors 
+----------------------------------------
 
  * Histogram in **R**
 
@@ -658,7 +762,8 @@ A picture is worth a thousand words. You will see the powerful impact of the fig
 
     Histogram in Python. 
 
-3. Boxplot of the quantitative predictors 
+Boxplot of the quantitative predictors 
+--------------------------------------
 
  * Boxplot in **R**
 
@@ -704,7 +809,8 @@ A picture is worth a thousand words. You will see the powerful impact of the fig
     Histogram in Python.    
 
 
-4. Correlation Matrix plot of the quantitative predictors 
+Correlation Matrix plot of the quantitative predictors 
+------------------------------------------------------
 
  * Correlation Matrix plot in **R**
 
@@ -748,6 +854,7 @@ A picture is worth a thousand words. You will see the powerful impact of the fig
 
 Source Code for This Section
 ++++++++++++++++++++++++++++
+
 The code for this section is available for download for `R <../code/loaddata.R>`_, for `Python <../code/loadData.py>`_, 
  * R Source code
 

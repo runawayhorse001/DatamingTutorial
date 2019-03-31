@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Classification ALgorithms &mdash; Data Mining With Python and R  documentation</title>
+  <title>10. Classification ALgorithms &mdash; Data Mining With Python and R  documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Regularization ALgorithms" href="reg.html" />
-    <link rel="prev" title="Regression Algorithm" href="regression.html" />
+    <link rel="next" title="11. Regularization ALgorithms" href="reg.html" />
+    <link rel="prev" title="9. Regression Algorithm" href="regression.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -93,25 +93,26 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comparison.html">Python or R for data analysis?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dap.html">Data analysis procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pre.html">Pre-processing procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dim.html">Dimension Reduction Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regression.html">Regression Algorithm</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Classification ALgorithms</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#logistic-regression-lr">Logistic Regression (LR)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#k-nearest-neighbour-knn">k-Nearest Neighbour (kNN)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#linear-discriminant-analysis-lda">Linear Discriminant Analysis (LDA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#quadratic-discriminant-analysis-qda">Quadratic Discriminant Analysis (QDA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">1. Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">2. Python or R for data analysis?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">3. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="de.html">4. Data Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dm.html">5. Data Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre.html">6. Pre-processing procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algsummary.html">7. Summary of Data Mining Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dim.html">8. Dimension Reduction Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression.html">9. Regression Algorithm</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. Classification ALgorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#logistic-regression-lr">10.1. Logistic Regression (LR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#k-nearest-neighbour-knn">10.2. k-Nearest Neighbour (kNN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linear-discriminant-analysis-lda">10.3. Linear Discriminant Analysis (LDA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quadratic-discriminant-analysis-qda">10.4. Quadratic Discriminant Analysis (QDA)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="reg.html">Regularization ALgorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resample.html">Resampling Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rpkg.html">Developing Your Own R Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppkg.html">Developing Your Own Python Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reg.html">11. Regularization ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resample.html">12. Resampling Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpkg.html">13. Developing Your Own R Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppkg.html">14. Developing Your Own Python Packages</a></li>
 </ul>
 
             
@@ -157,7 +158,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Classification ALgorithms</li>
+      <li>10. Classification ALgorithms</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -179,18 +180,18 @@
            <div itemprop="articleBody">
             
   <div class="section" id="classification-algorithms">
-<span id="classification"></span><h1>Classification ALgorithms<a class="headerlink" href="#classification-algorithms" title="Permalink to this headline">¶</a></h1>
+<span id="classification"></span><h1>10. Classification ALgorithms<a class="headerlink" href="#classification-algorithms" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="logistic-regression-lr">
-<h2>Logistic Regression (LR)<a class="headerlink" href="#logistic-regression-lr" title="Permalink to this headline">¶</a></h2>
+<h2>10.1. Logistic Regression (LR)<a class="headerlink" href="#logistic-regression-lr" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="k-nearest-neighbour-knn">
-<h2>k-Nearest Neighbour (kNN)<a class="headerlink" href="#k-nearest-neighbour-knn" title="Permalink to this headline">¶</a></h2>
+<h2>10.2. k-Nearest Neighbour (kNN)<a class="headerlink" href="#k-nearest-neighbour-knn" title="Permalink to this headline">¶</a></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MDniRwXizWo" frameborder="0" allowfullscreen></iframe></div>
 <div class="section" id="linear-discriminant-analysis-lda">
-<h2>Linear Discriminant Analysis (LDA)<a class="headerlink" href="#linear-discriminant-analysis-lda" title="Permalink to this headline">¶</a></h2>
+<h2>10.3. Linear Discriminant Analysis (LDA)<a class="headerlink" href="#linear-discriminant-analysis-lda" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="quadratic-discriminant-analysis-qda">
-<h2>Quadratic Discriminant Analysis (QDA)<a class="headerlink" href="#quadratic-discriminant-analysis-qda" title="Permalink to this headline">¶</a></h2>
+<h2>10.4. Quadratic Discriminant Analysis (QDA)<a class="headerlink" href="#quadratic-discriminant-analysis-qda" title="Permalink to this headline">¶</a></h2>
 <p>TO DO …..</p>
 </div>
 </div>
@@ -203,10 +204,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="reg.html" class="btn btn-neutral float-right" title="Regularization ALgorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="reg.html" class="btn btn-neutral float-right" title="11. Regularization ALgorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="regression.html" class="btn btn-neutral float-left" title="Regression Algorithm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="regression.html" class="btn btn-neutral float-left" title="9. Regression Algorithm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

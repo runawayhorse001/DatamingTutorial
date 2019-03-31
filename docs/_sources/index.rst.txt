@@ -6,20 +6,21 @@
   .. figure:: images/logo.png
     :align: center
 
-Welcome to my Data Mining With Python and R tutorials! In these tutorials, you will learn a wide array
-of concepts about Python and R programing in Data Mining. The PDF version can be downloaded from `HERE <datamining.pdf>`_.
+Welcome to my **Data Mining With Python and R** tutorials! In these tutorials, you will learn a wide array of concepts about Python and R programing in Data Mining. The PDF version can be downloaded from `HERE <datamining.pdf>`_.
 
 ========
 Contents
 ========
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+   :numbered:
 
    preface
    comparison
    gettingstarted
-   dap
+   de
+   dm
    pre
    algsummary
    dim

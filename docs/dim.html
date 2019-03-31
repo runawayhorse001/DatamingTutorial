@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Dimension Reduction Algorithms &mdash; Data Mining With Python and R  documentation</title>
+  <title>8. Dimension Reduction Algorithms &mdash; Data Mining With Python and R  documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Regression Algorithm" href="regression.html" />
-    <link rel="prev" title="Summary of Data Mining Algorithms" href="algsummary.html" />
+    <link rel="next" title="9. Regression Algorithm" href="regression.html" />
+    <link rel="prev" title="7. Summary of Data Mining Algorithms" href="algsummary.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -93,26 +93,27 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="preface.html">Preface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="comparison.html">Python or R for data analysis?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dap.html">Data analysis procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pre.html">Pre-processing procedures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="algsummary.html">Summary of Data Mining Algorithms</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Dimension Reduction Algorithms</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-is-dimension-reduction">What is dimension reduction?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#singular-value-decomposition-svd">Singular Value Decomposition (SVD)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#principal-component-analysis-pca">Principal Component Analysis (PCA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#independent-component-analysis-ica">Independent Component Analysis (ICA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#nonnegative-matrix-factorization-nmf">Nonnegative matrix factorization (NMF)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">1. Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">2. Python or R for data analysis?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">3. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="de.html">4. Data Exploration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dm.html">5. Data Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre.html">6. Pre-processing procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algsummary.html">7. Summary of Data Mining Algorithms</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Dimension Reduction Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-dimension-reduction">8.1. What is dimension reduction?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#singular-value-decomposition-svd">8.2. Singular Value Decomposition (SVD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#principal-component-analysis-pca">8.3. Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#independent-component-analysis-ica">8.4. Independent Component Analysis (ICA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nonnegative-matrix-factorization-nmf">8.5. Nonnegative matrix factorization (NMF)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="regression.html">Regression Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification ALgorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reg.html">Regularization ALgorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resample.html">Resampling Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rpkg.html">Developing Your Own R Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ppkg.html">Developing Your Own Python Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression.html">9. Regression Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classification.html">10. Classification ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reg.html">11. Regularization ALgorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resample.html">12. Resampling Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpkg.html">13. Developing Your Own R Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppkg.html">14. Developing Your Own Python Packages</a></li>
 </ul>
 
             
@@ -158,7 +159,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Dimension Reduction Algorithms</li>
+      <li>8. Dimension Reduction Algorithms</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -180,14 +181,14 @@
            <div itemprop="articleBody">
             
   <span class="target" id="dim"></span><div class="section" id="dimension-reduction-algorithms">
-<span id="index-0"></span><h1>Dimension Reduction Algorithms<a class="headerlink" href="#dimension-reduction-algorithms" title="Permalink to this headline">¶</a></h1>
+<span id="index-0"></span><h1>8. Dimension Reduction Algorithms<a class="headerlink" href="#dimension-reduction-algorithms" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-dimension-reduction">
-<h2>What is dimension reduction?<a class="headerlink" href="#what-is-dimension-reduction" title="Permalink to this headline">¶</a></h2>
-<p><strong>In machine learning and statistics, dimensionality reduction or dimension reduction is the process of reducing the number of random variables under consideration,
-via obtaining a set “uncorrelated” principle variables. It can be divided into feature selection and feature extraction.</strong> <a class="reference external" href="https://en.wikipedia.org/wiki/Dimensionality_reduction">https://en.wikipedia.org/wiki/Dimensionality_reduction</a></p>
+<h2>8.1. What is dimension reduction?<a class="headerlink" href="#what-is-dimension-reduction" title="Permalink to this headline">¶</a></h2>
+<p>In machine learning and statistics, dimensionality reduction or dimension reduction is the process of reducing the number of random variables under consideration,
+via obtaining a set “uncorrelated” principle variables. It can be divided into feature selection and feature extraction. <a class="reference external" href="https://en.wikipedia.org/wiki/Dimensionality_reduction">https://en.wikipedia.org/wiki/Dimensionality_reduction</a></p>
 </div>
 <div class="section" id="singular-value-decomposition-svd">
-<span id="index-1"></span><h2>Singular Value Decomposition (SVD)<a class="headerlink" href="#singular-value-decomposition-svd" title="Permalink to this headline">¶</a></h2>
+<span id="index-1"></span><h2>8.2. Singular Value Decomposition (SVD)<a class="headerlink" href="#singular-value-decomposition-svd" title="Permalink to this headline">¶</a></h2>
 <p>At here, I will recall the three types of the SVD method, since some authors confused
 the definitions of these SVD method. SVD method is important for the the dimension reduction
 algorithms, such as Truncated Singular Value Decomposition (tSVD) can be used to do the dimension
@@ -250,7 +251,7 @@ reduction directly, and the Full Rank Singular Value Decomposition (SVD) can be 
 to compute the Principal Components. We will learn more details in next section.</p>
 </div>
 <div class="section" id="principal-component-analysis-pca">
-<span id="index-2"></span><h2>Principal Component Analysis (PCA)<a class="headerlink" href="#principal-component-analysis-pca" title="Permalink to this headline">¶</a></h2>
+<span id="index-2"></span><h2>8.3. Principal Component Analysis (PCA)<a class="headerlink" href="#principal-component-analysis-pca" title="Permalink to this headline">¶</a></h2>
 <p>Usually, there are two ways to implement the PCA. Principal Component Analysis (PCA) is a specific case of SVD.</p>
 <blockquote>
 <div><div class="math" id="equation-test">
@@ -258,10 +259,10 @@ to compute the Principal Components. We will learn more details in next section.
 </div></div></blockquote>
 </div>
 <div class="section" id="independent-component-analysis-ica">
-<span id="index-3"></span><h2>Independent Component Analysis (ICA)<a class="headerlink" href="#independent-component-analysis-ica" title="Permalink to this headline">¶</a></h2>
+<span id="index-3"></span><h2>8.4. Independent Component Analysis (ICA)<a class="headerlink" href="#independent-component-analysis-ica" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="nonnegative-matrix-factorization-nmf">
-<span id="index-4"></span><h2>Nonnegative matrix factorization (NMF)<a class="headerlink" href="#nonnegative-matrix-factorization-nmf" title="Permalink to this headline">¶</a></h2>
+<span id="index-4"></span><h2>8.5. Nonnegative matrix factorization (NMF)<a class="headerlink" href="#nonnegative-matrix-factorization-nmf" title="Permalink to this headline">¶</a></h2>
 <p>TO DO……</p>
 </div>
 </div>
@@ -274,10 +275,10 @@ to compute the Principal Components. We will learn more details in next section.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="regression.html" class="btn btn-neutral float-right" title="Regression Algorithm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="regression.html" class="btn btn-neutral float-right" title="9. Regression Algorithm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="algsummary.html" class="btn btn-neutral float-left" title="Summary of Data Mining Algorithms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="algsummary.html" class="btn btn-neutral float-left" title="7. Summary of Data Mining Algorithms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
