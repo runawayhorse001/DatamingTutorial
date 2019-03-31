@@ -31,7 +31,7 @@ Given that a data set :math:`{\displaystyle \{\,x_{i1},\ldots ,x_{in},y_{i}\}_{i
 
 In matrix notation, the data set is written as :math:`\X = [\x_1,\cdots, \x_n]` with
 :math:`\x_i = {\displaystyle \{x_{\cdot i}\}_{i=1}^{n}}`, 
-:math:`\By = {\displaystyle \{y_{i}\}_{i=1}^{m}}`
+:math:`\By = {\displaystyle \{y_{i}\}_{i=1}^{m}}` (see Fig. :ref:`fig_fm`)
 and :math:`\Bbeta^\top = {\displaystyle \{\beta_{i}\}_{i=1}^{m}}`. 
 Then the normal equations are written as
 
@@ -39,6 +39,13 @@ Then the normal equations are written as
 
          \By = \X \Bbeta.
          
+
+.. _fig_fm:
+.. figure:: images/fm.png
+   :align: center
+
+   Feature matrix and label
+
 How to solve it?
 ----------------
 
