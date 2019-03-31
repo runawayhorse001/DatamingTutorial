@@ -303,7 +303,7 @@ latex_elements['preamble'] =  '\\usepackage{amsmath}\n'+\
                           '\\def\\hV{\\mathbf{\hat{V}}}\n'+\
                           '\\def\\E{\\mathbf{E}}\n'+\
                           '\\def\\F{\\mathbf{F}}\n'+\
-                          '\\def\\x{\\mathbf{x}}\n'+\
+                          '\\def\\x{\\boldsymbol{x}}\n'+\
                           '\\def\\h{\\mathbf{h}}\n'+\
                           '\\def\\v{\\mathbf{v}}\n'+\
                           '\\def\\nv{\\mathbf{v^{{\bf -}}}}\n'+\
@@ -345,7 +345,7 @@ imgmath_latex_preamble =  '\\usepackage{amsmath}\n'+\
                           '\\def\\hV{\\mathbf{\hat{V}}}\n'+\
                           '\\def\\E{\\mathbf{E}}\n'+\
                           '\\def\\F{\\mathbf{F}}\n'+\
-                          '\\def\\x{\\mathbf{x}}\n'+\
+                          '\\def\\x{\\boldsymbol{x}}\n'+\
                           '\\def\\h{\\mathbf{h}}\n'+\
                           '\\def\\v{\\mathbf{v}}\n'+\
                           '\\def\\nv{\\mathbf{v^{{\bf -}}}}\n'+\

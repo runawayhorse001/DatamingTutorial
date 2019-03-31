@@ -29,8 +29,8 @@ Given that a data set :math:`{\displaystyle \{\,x_{i1},\ldots ,x_{in},y_{i}\}_{i
          y_i = \beta_0 + \beta_1 x_{i1}, \text{where}, i= 1, \cdots m. 
        
 
-In matrix notation, the data set is written as :math:`\X = [\X_1,\cdots, \X_n]` with
-:math:`\X_i = {\displaystyle \{x_{\cdot i}\}_{i=1}^{n}}`, 
+In matrix notation, the data set is written as :math:`\X = [\x_1,\cdots, \x_n]` with
+:math:`\x_i = {\displaystyle \{x_{\cdot i}\}_{i=1}^{n}}`, 
 :math:`\By = {\displaystyle \{y_{i}\}_{i=1}^{m}}`
 and :math:`\Bbeta^\top = {\displaystyle \{\beta_{i}\}_{i=1}^{m}}`. 
 Then the normal equations are written as
