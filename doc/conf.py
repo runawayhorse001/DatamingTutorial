@@ -295,15 +295,16 @@ latex_elements['preamble'] =  '\\usepackage{amsmath}\n'+\
                           '\\def\\X{\\mathbf{X}}\n'+\
                           '\\def\\By{\\mathbf{y}}\n'+\
                           '\\def\\Bbeta{\\boldsymbol{\\beta}}\n'+\
-        '\\def\\bU{\\mathbf{U}}\n'+\
+                          '\\def\\bU{\\mathbf{U}}\n'+\
                           '\\def\\bV{\\mathbf{V}}\n'+\
                           '\\def\\V1{\\mathds{1}}\n'+\
-        '\\def\\hU{\\mathbf{\hat{U}}}\n'+\
+                          '\\def\\hU{\\mathbf{\hat{U}}}\n'+\
                           '\\def\\hS{\\mathbf{\hat{\Sigma}}}\n'+\
                           '\\def\\hV{\\mathbf{\hat{V}}}\n'+\
                           '\\def\\E{\\mathbf{E}}\n'+\
                           '\\def\\F{\\mathbf{F}}\n'+\
                           '\\def\\x{\\boldsymbol{x}}\n'+\
+                          '\\def\\y{\\boldsymbol{y}}\n'+\
                           '\\def\\h{\\mathbf{h}}\n'+\
                           '\\def\\v{\\mathbf{v}}\n'+\
                           '\\def\\nv{\\mathbf{v^{{\bf -}}}}\n'+\
@@ -346,6 +347,7 @@ imgmath_latex_preamble =  '\\usepackage{amsmath}\n'+\
                           '\\def\\E{\\mathbf{E}}\n'+\
                           '\\def\\F{\\mathbf{F}}\n'+\
                           '\\def\\x{\\boldsymbol{x}}\n'+\
+                          '\\def\\y{\\boldsymbol{y}}\n'+\
                           '\\def\\h{\\mathbf{h}}\n'+\
                           '\\def\\v{\\mathbf{v}}\n'+\
                           '\\def\\nv{\\mathbf{v^{{\bf -}}}}\n'+\

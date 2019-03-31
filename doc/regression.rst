@@ -22,7 +22,7 @@ Introduction
 ------------
 
 Given that a data set :math:`{\displaystyle \{\,x_{i1},\ldots ,x_{in},y_{i}\}_{i=1}^{m}}` which contains n features
-(variables) and m samples (data points), in simple linear regression model for modeling :math:`{\displaystyle m}` data points with one independent variable: :math:`{\displaystyle x_{i1}}`, the formula is given by:
+(variables) and m samples (data points), in simple linear regression model for modeling :math:`{\displaystyle m}` data points with :math:`j` independent variables: :math:`{\displaystyle x_{ij}}`, the formula is given by:
 
       .. math::
 
@@ -30,14 +30,14 @@ Given that a data set :math:`{\displaystyle \{\,x_{i1},\ldots ,x_{in},y_{i}\}_{i
        
 
 In matrix notation, the data set is written as :math:`\X = [\x_1,\cdots, \x_n]` with
-:math:`\x_j = {\displaystyle \{x_{\cdot j}\}_{j=1}^{n}}`, 
-:math:`\By = {\displaystyle \{y_{i}\}_{i=1}^{m}}` (see Fig. :ref:`fig_fm`)
+:math:`\x_j = {\displaystyle \{x_{ij}\}_{i=1}^{m}}`, 
+:math:`\y = {\displaystyle \{y_{i}\}_{i=1}^{m}}` (see Fig. :ref:`fig_fm`)
 and :math:`\Bbeta^\top = {\displaystyle \{\beta_{j}\}_{j=1}^{n}}`. 
 Then the normal equations are written as
 
       .. math::
 
-         \By = \X \Bbeta.
+         \y = \X \Bbeta.
          
 
 .. _fig_fm:

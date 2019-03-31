@@ -196,14 +196,14 @@ reduction directly, and the Full Rank Singular Value Decomposition (SVD) can be 
 <li><strong>Full Rank Singular Value Decomposition (SVD)</strong></li>
 </ol>
 <blockquote>
-<div><p>Suppose <img class="math" src="_images/math/781fe1b9a8ea6aeafaa08cd20973386a38c3dfdd.png" alt="{\bf X}\in\mathbb{R}^{n\times p}, (p&lt;n)"/>, then</p>
+<div><p>Suppose <img class="math" src="_images/math/c8acdce43baa5227707f4ec947fd6c03af51fd1b.png" alt="{\bf X}\in\mathbb{R}^{n\times p}, (p&lt;n)"/>, then</p>
 <div class="math">
-<p><img src="_images/math/4d92bed89e0895857151b72e1ee31a1e39480b26.png" alt="\underbracket{\bf X}_{n\times p} =\underbracket{\bf U}_{n\times n} \underbracket{\bf\Sigma}_{n\times p} \underbracket{{\bf V}^T}_{p\times p},"/></p>
-</div><p>is called a full rank <strong>SVD</strong> of <img class="math" src="_images/math/44d9294ab42d22f627d7622b6ab40129f15fd3ef.png" alt="{\bf X}"/> and</p>
+<p><img src="_images/math/ee2bdc10dbb8b1fcf2cb6c92690cebe7786b7492.png" alt="\underbracket{\bf X}_{n\times p} =\underbracket{\bf U}_{n\times n} \underbracket{\bf\Sigma}_{n\times p} \underbracket{{\bf V}^T}_{p\times p},"/></p>
+</div><p>is called a full rank <strong>SVD</strong> of <img class="math" src="_images/math/cc33b8fee6fbb446b2cb4be367ed9ea31372992d.png" alt="{\bf X}"/> and</p>
 <ul class="simple">
-<li><img class="math" src="_images/math/52cfd27983706af034f30e315365f30e40ee12bb.png" alt="\sigma_i"/>– Sigular calues and <img class="math" src="_images/math/a9c00ec8266df0d6685098e4f5bc1957b821ddea.png" alt="{\bf\Sigma}=diag(\sigma_1,\sigma_2, \cdots, \sigma_p)\in \mathbb{R}^{n\times p}"/></li>
-<li><img class="math" src="_images/math/0c987737fc69b440d11385ec698031cc529678ab.png" alt="u_i"/>– left singular vectors, <img class="math" src="_images/math/13e3260b0b0f2e9cc207d6c81a54ad3f450d641e.png" alt="{\bf U}=[u_1,u_2, \cdots, u_n]"/> and  <img class="math" src="_images/math/ac10183aaabe73b8000aba09951ec6f4b1984504.png" alt="{\bf U}"/> is unitary.</li>
-<li><img class="math" src="_images/math/b6c6b4c523b0f14f397e9087346877564cc7002e.png" alt="v_i"/>– right singular vectors, <img class="math" src="_images/math/597cbe85f8718f8b915daa06ac5453c64d49d3b2.png" alt="{\bf V}=[v_1,v_2, \cdots, v_p]"/> and  <img class="math" src="_images/math/5d12a21a3f90d6861a5411ec84fda1a4d9f2d20d.png" alt="{\bf V}"/> is unitary.</li>
+<li><img class="math" src="_images/math/4d141bf58c99791e2c7fbf8d6e3374be256af1f2.png" alt="\sigma_i"/>– Sigular calues and <img class="math" src="_images/math/cb66e6bfef0185ae1e7b77776f4934ef314c8f44.png" alt="{\bf\Sigma}=diag(\sigma_1,\sigma_2, \cdots, \sigma_p)\in \mathbb{R}^{n\times p}"/></li>
+<li><img class="math" src="_images/math/1f72a490ad24f07998d236892ec6d09d90ed8946.png" alt="u_i"/>– left singular vectors, <img class="math" src="_images/math/ea760680b07b1b356dc6afbeb089c8bca1f09108.png" alt="{\bf U}=[u_1,u_2, \cdots, u_n]"/> and  <img class="math" src="_images/math/ce3cd86b3e2256b8d2dce29531ee8b4d9105cefd.png" alt="{\bf U}"/> is unitary.</li>
+<li><img class="math" src="_images/math/142881538f656982dcb5aa2fc27ddbc247965b5a.png" alt="v_i"/>– right singular vectors, <img class="math" src="_images/math/d226f9a1719c1b64609c64444029f1b7ad5bb719.png" alt="{\bf V}=[v_1,v_2, \cdots, v_p]"/> and  <img class="math" src="_images/math/70cf09f3b5555d649daf5e2ab69ed9090164df3d.png" alt="{\bf V}"/> is unitary.</li>
 </ul>
 <blockquote>
 <div><div class="figure align-center" id="id1">
@@ -216,28 +216,28 @@ reduction directly, and the Full Rank Singular Value Decomposition (SVD) can be 
 <li><strong>Reduced Singular Value Decomposition (rSVD)</strong></li>
 </ol>
 <blockquote>
-<div><p>Suppose <img class="math" src="_images/math/5a3dfbe785910e4bd9f62e48fe384e1d70cdf08f.png" alt="{\bf X}\in\mathbb{R}^{n\times p},(n&lt;p)"/>, then</p>
+<div><p>Suppose <img class="math" src="_images/math/765825c17a03cfa8920775d92bff9419cc9f8a88.png" alt="{\bf X}\in\mathbb{R}^{n\times p},(n&lt;p)"/>, then</p>
 <div class="math">
-<p><img src="_images/math/be462e5968297225a0b4338c1dfa35451acbd797.png" alt="\underbracket{\bf X}_{n\times p} =\underbracket{\bf \hat{U}}_{n\times p} \underbracket{\bf\hat{\Sigma}}_{p\times p} \underbracket{{\bf \hat{V}}^T}_{p\times p},"/></p>
-</div><p>is called a Reduced Singular Value Decomposition <strong>rSVD</strong> of <img class="math" src="_images/math/9c0a5bc62c5fff1200a8905549a4bfb2fb73e22a.png" alt="{\bX}"/> and</p>
+<p><img src="_images/math/9884ab6abe2a731bfd6571a3d409f28480dfd238.png" alt="\underbracket{\bf X}_{n\times p} =\underbracket{\bf \hat{U}}_{n\times p} \underbracket{\bf\hat{\Sigma}}_{p\times p} \underbracket{{\bf \hat{V}}^T}_{p\times p},"/></p>
+</div><p>is called a Reduced Singular Value Decomposition <strong>rSVD</strong> of <img class="math" src="_images/math/dde91fd8574d9fbf67ac91679710c860a57682e1.png" alt="{\bX}"/> and</p>
 <ul class="simple">
-<li><img class="math" src="_images/math/52cfd27983706af034f30e315365f30e40ee12bb.png" alt="\sigma_i"/>– Sigular calues and <img class="math" src="_images/math/b7cc3c0554cf272db5fe41332f44e0f6693ae8d3.png" alt="{\bf\hat{\Sigma}}=diag(\sigma_1,\sigma_2, \cdots, \sigma_p)\in \mathbb{R}^{p\times p}"/></li>
-<li><img class="math" src="_images/math/0c987737fc69b440d11385ec698031cc529678ab.png" alt="u_i"/>– left singular vectors, <img class="math" src="_images/math/93d317b13b335d6c78bf16b8353dcaa62ec9f3f6.png" alt="{\bf \hat{U}}=[u_1,u_2, \cdots, u_p]"/> is column-orthonormal matrix.</li>
-<li><img class="math" src="_images/math/b6c6b4c523b0f14f397e9087346877564cc7002e.png" alt="v_i"/>– right singular vectors, <img class="math" src="_images/math/d6919ce4a32adb1a0a96b6545662f62d028b5d8f.png" alt="{\bf \hat{V}}=[v_1,v_2, \cdots, v_p]"/> is column-orthonormal matrix.</li>
+<li><img class="math" src="_images/math/4d141bf58c99791e2c7fbf8d6e3374be256af1f2.png" alt="\sigma_i"/>– Sigular calues and <img class="math" src="_images/math/46c3f334186061ef5330f2eb77e4b3fc0a4442d6.png" alt="{\bf\hat{\Sigma}}=diag(\sigma_1,\sigma_2, \cdots, \sigma_p)\in \mathbb{R}^{p\times p}"/></li>
+<li><img class="math" src="_images/math/1f72a490ad24f07998d236892ec6d09d90ed8946.png" alt="u_i"/>– left singular vectors, <img class="math" src="_images/math/2e52f9ed4015b0a88639d9fcfc5937ad2d041250.png" alt="{\bf \hat{U}}=[u_1,u_2, \cdots, u_p]"/> is column-orthonormal matrix.</li>
+<li><img class="math" src="_images/math/142881538f656982dcb5aa2fc27ddbc247965b5a.png" alt="v_i"/>– right singular vectors, <img class="math" src="_images/math/631192b067b519e9202bc2503dd34f51b1f33183.png" alt="{\bf \hat{V}}=[v_1,v_2, \cdots, v_p]"/> is column-orthonormal matrix.</li>
 </ul>
 </div></blockquote>
 <ol class="arabic simple" start="3">
 <li><strong>Truncated Singular Value Decomposition (tSVD)</strong></li>
 </ol>
 <blockquote>
-<div><p>Suppose <img class="math" src="_images/math/0aaa9558630523976947d81e38f50189fb2fef3e.png" alt="{\bf X}\in\mathbb{R}^{n\times p},(r&lt;p)"/>, then</p>
+<div><p>Suppose <img class="math" src="_images/math/d4461c32354b9845872bc56cf4af09ee1a0a6899.png" alt="{\bf X}\in\mathbb{R}^{n\times p},(r&lt;p)"/>, then</p>
 <div class="math" id="equation-tsvd">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-tsvd" title="Permalink to this equation">¶</a></span><img src="_images/math/1b4ab80f328da8cb3f18953405fcf6dcb7f83f8e.png" alt="\underbracket{\bf X}_{n\times p} =\underbracket{\bf \hat{U}}_{n\times r} \underbracket{\bf\hat{\Sigma}}_{r\times r} \underbracket{{\bf \hat{V}}^T}_{r\times p},"/></p>
-</div><p>is called a Truncated Singular Value Decomposition <strong>tSVD</strong> of <img class="math" src="_images/math/44d9294ab42d22f627d7622b6ab40129f15fd3ef.png" alt="{\bf X}"/> and</p>
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-tsvd" title="Permalink to this equation">¶</a></span><img src="_images/math/8d63532ca2663acb390f6493f3bdd7d7fe194cfc.png" alt="\underbracket{\bf X}_{n\times p} =\underbracket{\bf \hat{U}}_{n\times r} \underbracket{\bf\hat{\Sigma}}_{r\times r} \underbracket{{\bf \hat{V}}^T}_{r\times p},"/></p>
+</div><p>is called a Truncated Singular Value Decomposition <strong>tSVD</strong> of <img class="math" src="_images/math/cc33b8fee6fbb446b2cb4be367ed9ea31372992d.png" alt="{\bf X}"/> and</p>
 <ul class="simple">
-<li><img class="math" src="_images/math/52cfd27983706af034f30e315365f30e40ee12bb.png" alt="\sigma_i"/>– Sigular calues and <img class="math" src="_images/math/7064df88d283d891ac9b471831be39771112c407.png" alt="{\bf\hat{\Sigma}}=diag(\sigma_1,\sigma_2, \cdots, \sigma_r)\in \mathbb{R}^{r\times r}"/></li>
-<li><img class="math" src="_images/math/0c987737fc69b440d11385ec698031cc529678ab.png" alt="u_i"/>– left singular vectors, <img class="math" src="_images/math/da339ce85ff75fe4f6420058e061c01b5f9f5690.png" alt="{\bf \hat{U}}=[u_1,u_2, \cdots, u_r]"/> is column-orthonormal matrix.</li>
-<li><img class="math" src="_images/math/b6c6b4c523b0f14f397e9087346877564cc7002e.png" alt="v_i"/>– right singular vectors, <img class="math" src="_images/math/d6919ce4a32adb1a0a96b6545662f62d028b5d8f.png" alt="{\bf \hat{V}}=[v_1,v_2, \cdots, v_p]"/> is column-orthonormal matrix.</li>
+<li><img class="math" src="_images/math/4d141bf58c99791e2c7fbf8d6e3374be256af1f2.png" alt="\sigma_i"/>– Sigular calues and <img class="math" src="_images/math/807c634fc18bf12afec9c6f253ca4b7f54f5e55b.png" alt="{\bf\hat{\Sigma}}=diag(\sigma_1,\sigma_2, \cdots, \sigma_r)\in \mathbb{R}^{r\times r}"/></li>
+<li><img class="math" src="_images/math/1f72a490ad24f07998d236892ec6d09d90ed8946.png" alt="u_i"/>– left singular vectors, <img class="math" src="_images/math/5fbb61bf44bbd87a3ac1e7235dd319d005338b2f.png" alt="{\bf \hat{U}}=[u_1,u_2, \cdots, u_r]"/> is column-orthonormal matrix.</li>
+<li><img class="math" src="_images/math/142881538f656982dcb5aa2fc27ddbc247965b5a.png" alt="v_i"/>– right singular vectors, <img class="math" src="_images/math/631192b067b519e9202bc2503dd34f51b1f33183.png" alt="{\bf \hat{V}}=[v_1,v_2, \cdots, v_p]"/> is column-orthonormal matrix.</li>
 </ul>
 <blockquote>
 <div><div class="figure align-center" id="id2">
@@ -246,7 +246,7 @@ reduction directly, and the Full Rank Singular Value Decomposition (SVD) can be 
 </div>
 </div></blockquote>
 </div></blockquote>
-<p>Figure <a class="reference internal" href="#fig-tsvd"><span class="std std-ref">Truncated Singular Value Decomposition</span></a> indictes that the the dimension of <img class="math" src="_images/math/b3de61ea9df42bea814294c35ae324fa76a709ba.png" alt="{\bf \hat{U}}"/> is smaller than <img class="math" src="_images/math/44d9294ab42d22f627d7622b6ab40129f15fd3ef.png" alt="{\bf X}"/>. We can use this property to do the dimension reduction. But, usually, we will use SVD
+<p>Figure <a class="reference internal" href="#fig-tsvd"><span class="std std-ref">Truncated Singular Value Decomposition</span></a> indictes that the the dimension of <img class="math" src="_images/math/c6337ee1b8ce875e48b7753c0816087c76f75f7b.png" alt="{\bf \hat{U}}"/> is smaller than <img class="math" src="_images/math/cc33b8fee6fbb446b2cb4be367ed9ea31372992d.png" alt="{\bf X}"/>. We can use this property to do the dimension reduction. But, usually, we will use SVD
 to compute the Principal Components. We will learn more details in next section.</p>
 </div>
 <div class="section" id="principal-component-analysis-pca">
@@ -254,7 +254,7 @@ to compute the Principal Components. We will learn more details in next section.
 <p>Usually, there are two ways to implement the PCA. Principal Component Analysis (PCA) is a specific case of SVD.</p>
 <blockquote>
 <div><div class="math" id="equation-test">
-<p><span class="eqno">(2)<a class="headerlink" href="#equation-test" title="Permalink to this equation">¶</a></span><img src="_images/math/9fa08323e2ae57ef47c05e6b89727ba2caac4eb4.png" alt="\underbracket{\bX}_{n\times p} =\hU"/></p>
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-test" title="Permalink to this equation">¶</a></span><img src="_images/math/90b47ed0b38d36620ad073065b9f1848e0f4a64f.png" alt="\underbracket{\bX}_{n\times p} =\hU"/></p>
 </div></div></blockquote>
 </div>
 <div class="section" id="independent-component-analysis-ica">
