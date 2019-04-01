@@ -189,7 +189,163 @@ Audit Data
 
 In my opinion, data audit is the first step you need to do when you get your dataset. Since you need to know whether the data quality is good enough or not. 
 
+Check missing rate
+------------------
 
+.. content-tabs:: right-col
+
+    .. tab-container:: python
+        :title: Python
+
+        * Checking missing rate in **Python**
+
+        .. code-block:: python
+
+            import pandas as pd
+
+            d = {'A': [1, 2, None, 3],
+                 'B': [None, None, 4, 5],
+                 'C': [None, 'b', 'c', 'd']}
+
+            # create DataFrame
+            df = pd.DataFrame(d)
+            print(df)
+
+
+            # define the missing rate function
+            def missing_rate(df_in):
+                # calculate missing rate and transpose the DataFrame
+                rate = df_in.isnull().sum() / df_in.shape[0]
+                # rename the column
+                rate = pd.DataFrame(rate).reset_index()\
+                                         .rename(columns={'index': 'feature', 0: 'missing_rate'})
+                print(rate)
+
+
+            missing_rate(df)   
+
+        The results:
+
+        .. code-block:: python
+
+                 A    B     C
+            0  1.0  NaN  None
+            1  2.0  NaN     b
+            2  NaN  4.0     c
+            3  3.0  5.0     d
+              feature  missing_rate
+            0       A          0.25
+            1       B          0.50
+            2       C          0.25
+
+
+    .. tab-container:: r
+        :title: R
+
+        * Checking missing rate in **R**
+
+        .. code-block:: r
+
+            # create DataFrame
+            x = data.frame(A = c(1, 2, NA, 3), B = c(NA, NA, 4, 5), C = c(NA, 'b', 'c', 'd'))
+
+            # loding library
+            library('dplyr')
+            #library('tidyverse')
+
+            # define the missing rate function
+            missing_rate <- function(df){
+              # calculate missing rate and transpose the DataFrame
+              rate <-t( df %>% summarize_all(funs(sum(is.na(.)) / length(.))))
+              # rename the column
+              colnames(rate)[1] <- "missing_rate"
+              print(rate)
+            }
+
+            x
+
+            missing_rate(x)
+
+        The results:
+
+        .. code-block:: r  
+
+            > x
+               A  B    C
+            1  1 NA <NA>
+            2  2 NA    b
+            3 NA  4    c
+            4  3  5    d
+            > missing_rate(x)
+              missing_rate
+            A         0.25
+            B         0.50
+            C         0.25                      
+
+
+Checking zero variance features 
+-------------------------------
+
+.. content-tabs:: right-col
+
+    .. tab-container:: python
+        :title: Python
+
+        * Checking zero variance features in **Python**
+        
+        .. code-block:: python
+
+            import pandas as pd
+
+            d = {'A': [1, 2, 3, 3],
+                 'B': [1, 1, 1, 1],
+                 'C': ['a', 'b', 'c', 'd']}
+
+            # create DataFrame
+            df = pd.DataFrame(d)
+            print(df)
+
+
+            def zero_variance(df_in):
+
+                counts = df_in.nunique()
+                counts = pd.DataFrame(counts)\
+                           .reset_index().rename(columns={'index': 'feature', 0: 'count'})
+                return list(counts[counts['count'] == 1]['feature'])
+
+            print(zero_variance(df))        
+
+        .. code-block:: python
+
+               A  B  C
+            0  1  1  a
+            1  2  1  b
+            2  3  1  c
+            3  3  1  d
+            ['B']
+
+    .. tab-container:: r
+        :title: R
+
+        * Checking zero variance features in **R**
+
+        .. code-block:: r 
+
+            df = data.frame(A = c(1, 2, 3, 3), B = c(1, 1, 1, 1), C = c('a', 'b', 'c', 'd'))
+
+            zero_variance <- function(df){
+              compData <- data.frame(feature= c(NA), count= c(NA))
+              for(i in 1:ncol(df))
+              {
+                compData[i, ] <- c(colnames(df)[i],length(unique(df[,i])))
+              }
+              return(compData[compData$count==1,]$feature)
+            }
+
+        .. code-block:: r  
+
+            > zero_variance(df)
+            [1] "B"                
 
 .. index:: Understand Data With Statistics methods
 
@@ -835,9 +991,6 @@ Histogram of the quantitative predictors
             :scale: 60 %
 
             Histogram with normal curve plot in R. 
-
-
-
 
 Boxplot of the quantitative predictors 
 --------------------------------------
