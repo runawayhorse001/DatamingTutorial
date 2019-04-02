@@ -95,12 +95,13 @@
 <li class="toctree-l1"><a class="reference internal" href="algsummary.html">7. Summary of Data Mining Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dim.html">8. Dimension Reduction Algorithms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">9. Regression Algorithm</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#ordinary-least-squares-regression-olsr">9.1. Ordinary Least Squares Regression (OLSR)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#introduction">9.1.1. Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#how-to-solve-it">9.1.2. How to solve it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">9.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ordinary-least-squares-regression-olsr">9.2. Ordinary Least Squares Regression (OLSR)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-solve-it">9.2.1. How to solve it?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ordinary-least-squares">9.2.2. Ordinary Least Squares</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#linear-regression-lr">9.2. Linear Regression (LR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linear-regression-lr">9.3. Linear Regression (LR)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="classification.html">10. Classification ALgorithms</a></li>
@@ -182,12 +183,9 @@
 </div>
 <p>In statistical modeling, regression analysis focuses on investigating the relationship between a dependent variable and one or more independent variables. <a class="reference external" href="https://en.wikipedia.org/wiki/Regression_analysis">Wikipedia Regression analysis</a></p>
 <p>In data mining, Regression is a model to represent the relationship between the value of lable ( or target, it is numerical variable) and on one or more features (or predictors they can be numerical and categorical variables).</p>
-<div class="section" id="ordinary-least-squares-regression-olsr">
-<h2>9.1. Ordinary Least Squares Regression (OLSR)<a class="headerlink" href="#ordinary-least-squares-regression-olsr" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="introduction">
-<h3>9.1.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
-<p>Given that a data set <img class="math" src="_images/math/88b3cfb73dea75c8b7c0639db3a2dc0123be56c6.png" alt="{\displaystyle \{\,x_{i1},\ldots ,x_{in},y_{i}\}_{i=1}^{m}}"/> which contains n features
-(variables) and m samples (data points), in simple linear regression model for modeling <img class="math" src="_images/math/cdf9a182e5d25224e34469d6ffbf367c6b1786e9.png" alt="{\displaystyle m}"/> data points with <img class="math" src="_images/math/c7827eada10f61eeef7e2b44293de9c6e29d6c73.png" alt="j"/> independent variables: <img class="math" src="_images/math/92495c9c156c3dec997248f4e186ad1cbff2123d.png" alt="{\displaystyle x_{ij}}"/>, the formula is given by:</p>
+<h2>9.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Given that a data set <img class="math" src="_images/math/88b3cfb73dea75c8b7c0639db3a2dc0123be56c6.png" alt="{\displaystyle \{\,x_{i1},\ldots ,x_{in},y_{i}\}_{i=1}^{m}}"/> which contains n features (variables) and m samples (data points), in simple linear regression model for modeling <img class="math" src="_images/math/cdf9a182e5d25224e34469d6ffbf367c6b1786e9.png" alt="{\displaystyle m}"/> data points with <img class="math" src="_images/math/c7827eada10f61eeef7e2b44293de9c6e29d6c73.png" alt="j"/> independent variables: <img class="math" src="_images/math/92495c9c156c3dec997248f4e186ad1cbff2123d.png" alt="{\displaystyle x_{ij}}"/>, the formula is given by:</p>
 <blockquote>
 <div><div class="math">
 <p><img src="_images/math/36bb233f388c4e2ad463279805e343e096eee38f.png" alt="y_i = \beta_0 + \beta_j x_{ij}, \text{where}, i= 1, \cdots m, j= 1, \cdots n."/></p>
@@ -196,18 +194,21 @@
 <img class="math" src="_images/math/0767f75d317b99fa1abf2ac02405b3962c6df57e.png" alt="\x_j = {\displaystyle \{x_{ij}\}_{i=1}^{m}}"/>,
 <img class="math" src="_images/math/0fc9a6ee90c961208c213228ce0d3960e7513507.png" alt="\y = {\displaystyle \{y_{i}\}_{i=1}^{m}}"/> (see Fig. <a class="reference internal" href="#fig-fm"><span class="std std-ref">Feature matrix and label</span></a>)
 and <img class="math" src="_images/math/117180e0118a62e65bd0c2c7a6a1c719fe46224b.png" alt="\Bbeta^\top = {\displaystyle \{\beta_{j}\}_{j=1}^{n}}"/>.
-Then the normal equations are written as</p>
+Then the matrix format equation is written as</p>
 <blockquote>
-<div><div class="math">
-<p><img src="_images/math/fbbbca44d84095b923a12b65e279ad8fa22e242e.png" alt="\y = \X \Bbeta."/></p>
+<div><div class="math" id="equation-eq-ax">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-eq-ax" title="Permalink to this equation">¶</a></span><img src="_images/math/fbbbca44d84095b923a12b65e279ad8fa22e242e.png" alt="\y = \X \Bbeta."/></p>
 </div></div></blockquote>
 <div class="figure align-center" id="id1">
 <span id="fig-fm"></span><img alt="_images/fm.png" src="_images/fm.png" />
 <p class="caption"><span class="caption-text">Feature matrix and label</span></p>
 </div>
 </div>
+<div class="section" id="ordinary-least-squares-regression-olsr">
+<h2>9.2. Ordinary Least Squares Regression (OLSR)<a class="headerlink" href="#ordinary-least-squares-regression-olsr" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="how-to-solve-it">
-<h3>9.1.2. How to solve it?<a class="headerlink" href="#how-to-solve-it" title="Permalink to this headline">¶</a></h3>
+<h3>9.2.1. How to solve it?<a class="headerlink" href="#how-to-solve-it" title="Permalink to this headline">¶</a></h3>
+<p>Theoretically, you can apply all the following methods to solve <a class="reference internal" href="#equation-eq-ax">(1)</a> if you matrix <img class="math" src="_images/math/5740a647adc220581f16c07ef400fcaed66850fa.png" alt="\X"/> have a good properties.</p>
 <ol class="arabic">
 <li><p class="first">Direct Methods (For more information please refer to my <a class="reference external" href="http://web.utk.edu/~wfeng1/doc/PrelimNum.pdf">Prelim Notes for Numerical Analysis</a>)</p>
 <blockquote>
@@ -262,9 +263,23 @@ Then the normal equations are written as</p>
 </li>
 </ol>
 </div>
+<div class="section" id="ordinary-least-squares">
+<h3>9.2.2. Ordinary Least Squares<a class="headerlink" href="#ordinary-least-squares" title="Permalink to this headline">¶</a></h3>
+<p>In mathematics, <a class="reference internal" href="#equation-eq-ax">(1)</a> is a overdetermined system.  The method of ordinary least squares can be used to find an approximate solution to overdetermined systems. For the system overdetermined system <a class="reference internal" href="#equation-eq-ax">(1)</a>, the least squares formula is obtained from the problem</p>
+<div class="math" id="equation-eq-minax">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-eq-minax" title="Permalink to this equation">¶</a></span><img src="_images/math/de88ef5674c69702e3744fe65dd8f34d4eee65a6.png" alt="{\displaystyle \min _{x}  ||\X \Bbeta-\y||} ,"/></p>
+</div><p>the solution of which can be written with the normal equations:</p>
+<div class="math" id="equation-eq-solax">
+<p><span class="eqno">(3)<a class="headerlink" href="#equation-eq-solax" title="Permalink to this equation">¶</a></span><img src="_images/math/a00d7096b2f0c66219f6377f586e5ad96e90ec50.png" alt="\Bbeta  = (\X^T\X)^{-1}\X^T\y"/></p>
+</div><p>where <img class="math" src="_images/math/bc362a3b36dbfc5074d148d21a0bf92fd6791e89.png" alt="{\displaystyle {\mathrm {T} }}"/> indicates a matrix transpose, provided <img class="math" src="_images/math/6ad486913f405fb6b816cf3e78f59522f1f729ea.png" alt="{\displaystyle (\X^{\mathrm {T} }\X)^{-1}}"/> exists (that is, provided <img class="math" src="_images/math/5740a647adc220581f16c07ef400fcaed66850fa.png" alt="\X"/> has full column rank).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Actually, <a class="reference internal" href="#equation-eq-solax">(3)</a> is derivated by the following way: multiply <img class="math" src="_images/math/13a89db85547bd8fd6049eb079abdd813668698d.png" alt="\X^T"/> on side of <a class="reference internal" href="#equation-eq-ax">(1)</a> and then multiply <img class="math" src="_images/math/73fc5989cb44f8dfd0734f299f363850a6eb4199.png" alt="(\X^T\X)^{-1}"/> on both side of the former result.</p>
+</div>
+</div>
 </div>
 <div class="section" id="linear-regression-lr">
-<h2>9.2. Linear Regression (LR)<a class="headerlink" href="#linear-regression-lr" title="Permalink to this headline">¶</a></h2>
+<h2>9.3. Linear Regression (LR)<a class="headerlink" href="#linear-regression-lr" title="Permalink to this headline">¶</a></h2>
 <p>TO DO …..</p>
 </div>
 </div>
@@ -291,7 +306,7 @@ Then the normal equations are written as</p>
     <p>
         &copy; Copyright 2016, Wenqiang Feng
       <span class="lastupdated">
-        Last updated on Mar 31, 2019.
+        Last updated on Apr 01, 2019.
       </span>
 
     </p>
