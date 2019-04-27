@@ -70,7 +70,7 @@ master_doc = 'index'
 
 # General substitutions.
 project = 'Data Mining With Python and R'
-copyright = '2016, Wenqiang Feng'
+copyright = '2016, Wenqiang Feng and Ming Chen'
 
 # The default replacements for |version| and |release|, also used in various
 # other places throughout the built documents.
@@ -261,7 +261,7 @@ latex_elements = {
 # [howto/manual]).
 latex_documents = [
   ('index', 'datamining.tex', 'Data Mining With Python and R',
-   'Wenqiang Feng', 'manual'),
+   'Wenqiang Feng and Ming Chen', 'manual'),
 ]
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.

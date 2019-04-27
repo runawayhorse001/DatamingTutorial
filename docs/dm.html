@@ -180,6 +180,311 @@
 <h2>5.1. Combining DataFrame<a class="headerlink" href="#combining-dataframe" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="mutating-joins">
 <h3>5.1.1. Mutating Joins<a class="headerlink" href="#mutating-joins" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple" start="0">
+<li>Datasets</li>
+</ol>
+<div class="content-tabs right-col docutils container">
+<div class="tab-content docutils container" id="tab-python">
+<p class="tab-title">Python</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="n">left</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A0&#39;</span><span class="p">,</span> <span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="s1">&#39;A2&#39;</span><span class="p">,</span> <span class="s1">&#39;A3&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B0&#39;</span><span class="p">,</span> <span class="s1">&#39;B1&#39;</span><span class="p">,</span> <span class="s1">&#39;B2&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="s1">&#39;C3&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;D0&#39;</span><span class="p">,</span> <span class="s1">&#39;D1&#39;</span><span class="p">,</span> <span class="s1">&#39;D2&#39;</span><span class="p">,</span> <span class="s1">&#39;D3&#39;</span><span class="p">]},</span>
+                    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="n">right</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A0&#39;</span><span class="p">,</span> <span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="s1">&#39;A6&#39;</span><span class="p">,</span> <span class="s1">&#39;A7&#39;</span><span class="p">],</span>
+                       <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;B5&#39;</span><span class="p">,</span> <span class="s1">&#39;B6&#39;</span><span class="p">,</span> <span class="s1">&#39;B7&#39;</span><span class="p">],</span>
+                       <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C4&#39;</span><span class="p">,</span> <span class="s1">&#39;C5&#39;</span><span class="p">,</span> <span class="s1">&#39;C6&#39;</span><span class="p">,</span> <span class="s1">&#39;C7&#39;</span><span class="p">],</span>
+                       <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;D4&#39;</span><span class="p">,</span> <span class="s1">&#39;D5&#39;</span><span class="p">,</span> <span class="s1">&#39;D6&#39;</span><span class="p">,</span> <span class="s1">&#39;D7&#39;</span><span class="p">]},</span>
+                       <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+
+    <span class="n">A</span>   <span class="n">B</span>   <span class="n">C</span>   <span class="n">D</span>
+<span class="mi">0</span>  <span class="n">A0</span>  <span class="n">B0</span>  <span class="n">C0</span>  <span class="n">D0</span>
+<span class="mi">1</span>  <span class="n">A1</span>  <span class="n">B1</span>  <span class="n">C1</span>  <span class="n">D1</span>
+<span class="mi">2</span>  <span class="n">A2</span>  <span class="n">B2</span>  <span class="n">C2</span>  <span class="n">D2</span>
+<span class="mi">3</span>  <span class="n">A3</span>  <span class="n">B3</span>  <span class="n">C3</span>  <span class="n">D3</span>
+    <span class="n">A</span>   <span class="n">F</span>   <span class="n">G</span>   <span class="n">H</span>
+<span class="mi">4</span>  <span class="n">A0</span>  <span class="n">B4</span>  <span class="n">C4</span>  <span class="n">D4</span>
+<span class="mi">5</span>  <span class="n">A1</span>  <span class="n">B5</span>  <span class="n">C5</span>  <span class="n">D5</span>
+<span class="mi">6</span>  <span class="n">A6</span>  <span class="n">B6</span>  <span class="n">C6</span>  <span class="n">D6</span>
+<span class="mi">7</span>  <span class="n">A7</span>  <span class="n">B7</span>  <span class="n">C7</span>  <span class="n">D7</span>
+</pre></div>
+</div>
+</div>
+<div class="tab-content docutils container" id="tab-r">
+<p class="tab-title">R</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">left</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">A</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;A0&#39;</span><span class="p">,</span> <span class="s">&#39;A1&#39;</span><span class="p">,</span> <span class="s">&#39;A2&#39;</span><span class="p">,</span> <span class="s">&#39;A3&#39;</span><span class="p">),</span>
+                  <span class="n">B</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;B0&#39;</span><span class="p">,</span> <span class="s">&#39;B1&#39;</span><span class="p">,</span> <span class="s">&#39;B2&#39;</span><span class="p">,</span> <span class="s">&#39;B3&#39;</span><span class="p">),</span>
+                  <span class="n">C</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;C0&#39;</span><span class="p">,</span> <span class="s">&#39;C1&#39;</span><span class="p">,</span> <span class="s">&#39;C2&#39;</span><span class="p">,</span> <span class="s">&#39;C3&#39;</span><span class="p">),</span>
+                  <span class="n">D</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;D0&#39;</span><span class="p">,</span> <span class="s">&#39;D1&#39;</span><span class="p">,</span> <span class="s">&#39;D2&#39;</span><span class="p">,</span> <span class="s">&#39;D3&#39;</span><span class="p">))</span>
+<span class="n">left</span>
+
+<span class="n">right</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">A</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;A0&#39;</span><span class="p">,</span> <span class="s">&#39;A1&#39;</span><span class="p">,</span> <span class="s">&#39;A6&#39;</span><span class="p">,</span> <span class="s">&#39;A7&#39;</span><span class="p">),</span>
+                   <span class="bp">F</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;B4&#39;</span><span class="p">,</span> <span class="s">&#39;B5&#39;</span><span class="p">,</span> <span class="s">&#39;B6&#39;</span><span class="p">,</span> <span class="s">&#39;B7&#39;</span><span class="p">),</span>
+                   <span class="n">G</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;C4&#39;</span><span class="p">,</span> <span class="s">&#39;C5&#39;</span><span class="p">,</span> <span class="s">&#39;C6&#39;</span><span class="p">,</span> <span class="s">&#39;C7&#39;</span><span class="p">),</span>
+                   <span class="n">H</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;D4&#39;</span><span class="p">,</span> <span class="s">&#39;D5&#39;</span><span class="p">,</span> <span class="s">&#39;D6&#39;</span><span class="p">,</span> <span class="s">&#39;D7&#39;</span><span class="p">))</span>
+<span class="n">right</span>
+
+<span class="o">&gt;</span> <span class="n">left</span>
+   <span class="n">A</span>  <span class="n">B</span>  <span class="n">C</span>  <span class="n">D</span>
+<span class="m">1</span> <span class="n">A0</span> <span class="n">B0</span> <span class="n">C0</span> <span class="n">D0</span>
+<span class="m">2</span> <span class="n">A1</span> <span class="n">B1</span> <span class="n">C1</span> <span class="n">D1</span>
+<span class="m">3</span> <span class="n">A2</span> <span class="n">B2</span> <span class="n">C2</span> <span class="n">D2</span>
+<span class="m">4</span> <span class="n">A3</span> <span class="n">B3</span> <span class="n">C3</span> <span class="n">D3</span>
+
+<span class="o">&gt;</span> <span class="n">right</span>
+   <span class="n">A</span>  <span class="bp">F</span>  <span class="n">G</span>  <span class="n">H</span>
+<span class="m">1</span> <span class="n">A0</span> <span class="n">B4</span> <span class="n">C4</span> <span class="n">D4</span>
+<span class="m">2</span> <span class="n">A1</span> <span class="n">B5</span> <span class="n">C5</span> <span class="n">D5</span>
+<span class="m">3</span> <span class="n">A6</span> <span class="n">B6</span> <span class="n">C6</span> <span class="n">D6</span>
+<span class="m">4</span> <span class="n">A7</span> <span class="n">B7</span> <span class="n">C7</span> <span class="n">D7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li>Left join</li>
+</ol>
+<div class="content-tabs right-col docutils container">
+<div class="tab-content docutils container" id="tab-python">
+<p class="tab-title">Python</p>
+<ul class="simple">
+<li>Code:</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># left join</span>
+<span class="n">left_join</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">left_join</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Result:</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">A</span>   <span class="n">B</span>   <span class="n">C</span>   <span class="n">D</span>    <span class="n">F</span>    <span class="n">G</span>    <span class="n">H</span>
+<span class="mi">0</span>  <span class="n">A0</span>  <span class="n">B0</span>  <span class="n">C0</span>  <span class="n">D0</span>   <span class="n">B4</span>   <span class="n">C4</span>   <span class="n">D4</span>
+<span class="mi">1</span>  <span class="n">A1</span>  <span class="n">B1</span>  <span class="n">C1</span>  <span class="n">D1</span>   <span class="n">B5</span>   <span class="n">C5</span>   <span class="n">D5</span>
+<span class="mi">2</span>  <span class="n">A2</span>  <span class="n">B2</span>  <span class="n">C2</span>  <span class="n">D2</span>  <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="n">NaN</span>
+<span class="mi">3</span>  <span class="n">A3</span>  <span class="n">B3</span>  <span class="n">C3</span>  <span class="n">D3</span>  <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="n">NaN</span>
+</pre></div>
+</div>
+</div>
+<div class="tab-content docutils container" id="tab-r">
+<p class="tab-title">R</p>
+<ul class="simple">
+<li>Code:</li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="c1"># left join</span>
+<span class="n">dplyr</span><span class="o">::</span><span class="nf">left_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">left</span> <span class="o">%&gt;%</span> <span class="nf">left_join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Result:</li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">left_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span><span class="p">)</span>
+   <span class="n">A</span>  <span class="n">B</span>  <span class="n">C</span>  <span class="n">D</span>    <span class="bp">F</span>    <span class="n">G</span>    <span class="n">H</span>
+<span class="m">1</span> <span class="n">A0</span> <span class="n">B0</span> <span class="n">C0</span> <span class="n">D0</span>   <span class="n">B4</span>   <span class="n">C4</span>   <span class="n">D4</span>
+<span class="m">2</span> <span class="n">A1</span> <span class="n">B1</span> <span class="n">C1</span> <span class="n">D1</span>   <span class="n">B5</span>   <span class="n">C5</span>   <span class="n">D5</span>
+<span class="m">3</span> <span class="n">A2</span> <span class="n">B2</span> <span class="n">C2</span> <span class="n">D2</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+<span class="m">4</span> <span class="n">A3</span> <span class="n">B3</span> <span class="n">C3</span> <span class="n">D3</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+<span class="n">Warning</span> <span class="n">message</span><span class="o">:</span>
+<span class="n">Column</span> <span class="n">`A`</span> <span class="n">joining</span> <span class="n">factors</span> <span class="n">with</span> <span class="n">different</span> <span class="n">levels</span><span class="p">,</span> <span class="n">coercing</span> <span class="n">to</span> <span class="n">character</span> <span class="n">vector</span>
+<span class="o">&gt;</span> <span class="n">left</span> <span class="o">%&gt;%</span> <span class="nf">left_join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+   <span class="n">A</span>  <span class="n">B</span>  <span class="n">C</span>  <span class="n">D</span>    <span class="bp">F</span>    <span class="n">G</span>    <span class="n">H</span>
+<span class="m">1</span> <span class="n">A0</span> <span class="n">B0</span> <span class="n">C0</span> <span class="n">D0</span>   <span class="n">B4</span>   <span class="n">C4</span>   <span class="n">D4</span>
+<span class="m">2</span> <span class="n">A1</span> <span class="n">B1</span> <span class="n">C1</span> <span class="n">D1</span>   <span class="n">B5</span>   <span class="n">C5</span>   <span class="n">D5</span>
+<span class="m">3</span> <span class="n">A2</span> <span class="n">B2</span> <span class="n">C2</span> <span class="n">D2</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+<span class="m">4</span> <span class="n">A3</span> <span class="n">B3</span> <span class="n">C3</span> <span class="n">D3</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Right join</li>
+</ol>
+<div class="content-tabs right-col docutils container">
+<div class="tab-content docutils container" id="tab-python">
+<p class="tab-title">Python</p>
+<ul class="simple">
+<li>Code:</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># right join</span>
+<span class="n">right_join</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">right_join</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Result:</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">A</span>    <span class="n">B</span>    <span class="n">C</span>    <span class="n">D</span>   <span class="n">F</span>   <span class="n">G</span>   <span class="n">H</span>
+<span class="mi">0</span>  <span class="n">A0</span>   <span class="n">B0</span>   <span class="n">C0</span>   <span class="n">D0</span>  <span class="n">B4</span>  <span class="n">C4</span>  <span class="n">D4</span>
+<span class="mi">1</span>  <span class="n">A1</span>   <span class="n">B1</span>   <span class="n">C1</span>   <span class="n">D1</span>  <span class="n">B5</span>  <span class="n">C5</span>  <span class="n">D5</span>
+<span class="mi">2</span>  <span class="n">A6</span>  <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="n">B6</span>  <span class="n">C6</span>  <span class="n">D6</span>
+<span class="mi">3</span>  <span class="n">A7</span>  <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="n">B7</span>  <span class="n">C7</span>  <span class="n">D7</span>
+</pre></div>
+</div>
+</div>
+<div class="tab-content docutils container" id="tab-r">
+<p class="tab-title">R</p>
+<ul class="simple">
+<li>Code:</li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="c1"># right join</span>
+<span class="n">dplyr</span><span class="o">::</span><span class="nf">right_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">left</span> <span class="o">%&gt;%</span> <span class="nf">right_join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Result:</li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">right_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span><span class="p">)</span>
+   <span class="n">A</span>    <span class="n">B</span>    <span class="n">C</span>    <span class="n">D</span>  <span class="bp">F</span>  <span class="n">G</span>  <span class="n">H</span>
+<span class="m">1</span> <span class="n">A0</span>   <span class="n">B0</span>   <span class="n">C0</span>   <span class="n">D0</span> <span class="n">B4</span> <span class="n">C4</span> <span class="n">D4</span>
+<span class="m">2</span> <span class="n">A1</span>   <span class="n">B1</span>   <span class="n">C1</span>   <span class="n">D1</span> <span class="n">B5</span> <span class="n">C5</span> <span class="n">D5</span>
+<span class="m">3</span> <span class="n">A6</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="n">B6</span> <span class="n">C6</span> <span class="n">D6</span>
+<span class="m">4</span> <span class="n">A7</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="n">B7</span> <span class="n">C7</span> <span class="n">D7</span>
+<span class="n">Warning</span> <span class="n">message</span><span class="o">:</span>
+<span class="n">Column</span> <span class="n">`A`</span> <span class="n">joining</span> <span class="n">factors</span> <span class="n">with</span> <span class="n">different</span> <span class="n">levels</span><span class="p">,</span> <span class="n">coercing</span> <span class="n">to</span> <span class="n">character</span> <span class="n">vector</span>
+<span class="o">&gt;</span> <span class="n">left</span> <span class="o">%&gt;%</span> <span class="nf">right_join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+   <span class="n">A</span>    <span class="n">B</span>    <span class="n">C</span>    <span class="n">D</span>  <span class="bp">F</span>  <span class="n">G</span>  <span class="n">H</span>
+<span class="m">1</span> <span class="n">A0</span>   <span class="n">B0</span>   <span class="n">C0</span>   <span class="n">D0</span> <span class="n">B4</span> <span class="n">C4</span> <span class="n">D4</span>
+<span class="m">2</span> <span class="n">A1</span>   <span class="n">B1</span>   <span class="n">C1</span>   <span class="n">D1</span> <span class="n">B5</span> <span class="n">C5</span> <span class="n">D5</span>
+<span class="m">3</span> <span class="n">A6</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="n">B6</span> <span class="n">C6</span> <span class="n">D6</span>
+<span class="m">4</span> <span class="n">A7</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="n">B7</span> <span class="n">C7</span> <span class="n">D7</span>
+<span class="n">Warning</span> <span class="n">message</span><span class="o">:</span>
+<span class="n">Column</span> <span class="n">`A`</span> <span class="n">joining</span> <span class="n">factors</span> <span class="n">with</span> <span class="n">different</span> <span class="n">levels</span><span class="p">,</span> <span class="n">coercing</span> <span class="n">to</span> <span class="n">character</span> <span class="n">vector</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Inner join</li>
+</ol>
+<div class="content-tabs right-col docutils container">
+<div class="tab-content docutils container" id="tab-python">
+<p class="tab-title">Python</p>
+<ul class="simple">
+<li>Code:</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># inner join</span>
+<span class="n">inner_join</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">inner_join</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Result:</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">A</span>   <span class="n">B</span>   <span class="n">C</span>   <span class="n">D</span>   <span class="n">F</span>   <span class="n">G</span>   <span class="n">H</span>
+<span class="mi">0</span>  <span class="n">A0</span>  <span class="n">B0</span>  <span class="n">C0</span>  <span class="n">D0</span>  <span class="n">B4</span>  <span class="n">C4</span>  <span class="n">D4</span>
+<span class="mi">1</span>  <span class="n">A1</span>  <span class="n">B1</span>  <span class="n">C1</span>  <span class="n">D1</span>  <span class="n">B5</span>  <span class="n">C5</span>  <span class="n">D5</span>
+</pre></div>
+</div>
+</div>
+<div class="tab-content docutils container" id="tab-r">
+<p class="tab-title">R</p>
+<ul class="simple">
+<li>Code:</li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="c1"># inner join</span>
+<span class="n">dplyr</span><span class="o">::</span><span class="nf">inner_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">left</span> <span class="o">%&gt;%</span> <span class="nf">inner_join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Result:</li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">inner_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span><span class="p">)</span>
+   <span class="n">A</span>  <span class="n">B</span>  <span class="n">C</span>  <span class="n">D</span>  <span class="bp">F</span>  <span class="n">G</span>  <span class="n">H</span>
+<span class="m">1</span> <span class="n">A0</span> <span class="n">B0</span> <span class="n">C0</span> <span class="n">D0</span> <span class="n">B4</span> <span class="n">C4</span> <span class="n">D4</span>
+<span class="m">2</span> <span class="n">A1</span> <span class="n">B1</span> <span class="n">C1</span> <span class="n">D1</span> <span class="n">B5</span> <span class="n">C5</span> <span class="n">D5</span>
+<span class="n">Warning</span> <span class="n">message</span><span class="o">:</span>
+<span class="n">Column</span> <span class="n">`A`</span> <span class="n">joining</span> <span class="n">factors</span> <span class="n">with</span> <span class="n">different</span> <span class="n">levels</span><span class="p">,</span> <span class="n">coercing</span> <span class="n">to</span> <span class="n">character</span> <span class="n">vector</span>
+<span class="o">&gt;</span> <span class="n">left</span> <span class="o">%&gt;%</span> <span class="nf">inner_join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+   <span class="n">A</span>  <span class="n">B</span>  <span class="n">C</span>  <span class="n">D</span>  <span class="bp">F</span>  <span class="n">G</span>  <span class="n">H</span>
+<span class="m">1</span> <span class="n">A0</span> <span class="n">B0</span> <span class="n">C0</span> <span class="n">D0</span> <span class="n">B4</span> <span class="n">C4</span> <span class="n">D4</span>
+<span class="m">2</span> <span class="n">A1</span> <span class="n">B1</span> <span class="n">C1</span> <span class="n">D1</span> <span class="n">B5</span> <span class="n">C5</span> <span class="n">D5</span>
+<span class="n">Warning</span> <span class="n">message</span><span class="o">:</span>
+<span class="n">Column</span> <span class="n">`A`</span> <span class="n">joining</span> <span class="n">factors</span> <span class="n">with</span> <span class="n">different</span> <span class="n">levels</span><span class="p">,</span> <span class="n">coercing</span> <span class="n">to</span> <span class="n">character</span> <span class="n">vector</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Full join</li>
+</ol>
+<div class="content-tabs right-col docutils container">
+<div class="tab-content docutils container" id="tab-python">
+<p class="tab-title">Python</p>
+<ul class="simple">
+<li>Code:</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># full join</span>
+<span class="n">full_join</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">full_join</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Result:</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">A</span>    <span class="n">B</span>    <span class="n">C</span>    <span class="n">D</span>    <span class="n">F</span>    <span class="n">G</span>    <span class="n">H</span>
+<span class="mi">0</span>  <span class="n">A0</span>   <span class="n">B0</span>   <span class="n">C0</span>   <span class="n">D0</span>   <span class="n">B4</span>   <span class="n">C4</span>   <span class="n">D4</span>
+<span class="mi">1</span>  <span class="n">A1</span>   <span class="n">B1</span>   <span class="n">C1</span>   <span class="n">D1</span>   <span class="n">B5</span>   <span class="n">C5</span>   <span class="n">D5</span>
+<span class="mi">2</span>  <span class="n">A2</span>   <span class="n">B2</span>   <span class="n">C2</span>   <span class="n">D2</span>  <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="n">NaN</span>
+<span class="mi">3</span>  <span class="n">A3</span>   <span class="n">B3</span>   <span class="n">C3</span>   <span class="n">D3</span>  <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="n">NaN</span>
+<span class="mi">4</span>  <span class="n">A6</span>  <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="n">NaN</span>   <span class="n">B6</span>   <span class="n">C6</span>   <span class="n">D6</span>
+<span class="mi">5</span>  <span class="n">A7</span>  <span class="n">NaN</span>  <span class="n">NaN</span>  <span class="n">NaN</span>   <span class="n">B7</span>   <span class="n">C7</span>   <span class="n">D7</span>
+</pre></div>
+</div>
+</div>
+<div class="tab-content docutils container" id="tab-r">
+<p class="tab-title">R</p>
+<ul class="simple">
+<li>Code:</li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="c1"># full join</span>
+<span class="n">dplyr</span><span class="o">::</span><span class="nf">full_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">left</span> <span class="o">%&gt;%</span> <span class="nf">full_join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Result:</li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">full_join</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="s">&#39;A&#39;</span><span class="p">)</span>
+   <span class="n">A</span>    <span class="n">B</span>    <span class="n">C</span>    <span class="n">D</span>    <span class="bp">F</span>    <span class="n">G</span>    <span class="n">H</span>
+<span class="m">1</span> <span class="n">A0</span>   <span class="n">B0</span>   <span class="n">C0</span>   <span class="n">D0</span>   <span class="n">B4</span>   <span class="n">C4</span>   <span class="n">D4</span>
+<span class="m">2</span> <span class="n">A1</span>   <span class="n">B1</span>   <span class="n">C1</span>   <span class="n">D1</span>   <span class="n">B5</span>   <span class="n">C5</span>   <span class="n">D5</span>
+<span class="m">3</span> <span class="n">A2</span>   <span class="n">B2</span>   <span class="n">C2</span>   <span class="n">D2</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+<span class="m">4</span> <span class="n">A3</span>   <span class="n">B3</span>   <span class="n">C3</span>   <span class="n">D3</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+<span class="m">5</span> <span class="n">A6</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>   <span class="n">B6</span>   <span class="n">C6</span>   <span class="n">D6</span>
+<span class="m">6</span> <span class="n">A7</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>   <span class="n">B7</span>   <span class="n">C7</span>   <span class="n">D7</span>
+<span class="n">Warning</span> <span class="n">message</span><span class="o">:</span>
+<span class="n">Column</span> <span class="n">`A`</span> <span class="n">joining</span> <span class="n">factors</span> <span class="n">with</span> <span class="n">different</span> <span class="n">levels</span><span class="p">,</span> <span class="n">coercing</span> <span class="n">to</span> <span class="n">character</span> <span class="n">vector</span>
+<span class="o">&gt;</span> <span class="n">left</span> <span class="o">%&gt;%</span> <span class="nf">full_join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+   <span class="n">A</span>    <span class="n">B</span>    <span class="n">C</span>    <span class="n">D</span>    <span class="bp">F</span>    <span class="n">G</span>    <span class="n">H</span>
+<span class="m">1</span> <span class="n">A0</span>   <span class="n">B0</span>   <span class="n">C0</span>   <span class="n">D0</span>   <span class="n">B4</span>   <span class="n">C4</span>   <span class="n">D4</span>
+<span class="m">2</span> <span class="n">A1</span>   <span class="n">B1</span>   <span class="n">C1</span>   <span class="n">D1</span>   <span class="n">B5</span>   <span class="n">C5</span>   <span class="n">D5</span>
+<span class="m">3</span> <span class="n">A2</span>   <span class="n">B2</span>   <span class="n">C2</span>   <span class="n">D2</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+<span class="m">4</span> <span class="n">A3</span>   <span class="n">B3</span>   <span class="n">C3</span>   <span class="n">D3</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+<span class="m">5</span> <span class="n">A6</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>   <span class="n">B6</span>   <span class="n">C6</span>   <span class="n">D6</span>
+<span class="m">6</span> <span class="n">A7</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>   <span class="n">B7</span>   <span class="n">C7</span>   <span class="n">D7</span>
+<span class="n">Warning</span> <span class="n">message</span><span class="o">:</span>
+<span class="n">Column</span> <span class="n">`A`</span> <span class="n">joining</span> <span class="n">factors</span> <span class="n">with</span> <span class="n">different</span> <span class="n">levels</span><span class="p">,</span> <span class="n">coercing</span> <span class="n">to</span> <span class="n">character</span> <span class="n">vector</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="filtering-joins">
 <h3>5.1.2. Filtering Joins<a class="headerlink" href="#filtering-joins" title="Permalink to this headline">¶</a></h3>
@@ -211,9 +516,9 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Wenqiang Feng
+        &copy; Copyright 2016, Wenqiang Feng and Ming Chen
       <span class="lastupdated">
-        Last updated on Apr 01, 2019.
+        Last updated on Apr 27, 2019.
       </span>
 
     </p>
