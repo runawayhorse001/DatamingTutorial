@@ -24,6 +24,12 @@ About the authors
   * University of Tennessee at Knoxville
   * Email: von198@gmail.com
 
+* **Ming Chen** 
+	
+  * Data Scientist and PhD in Genome Science and Technology 
+  * University of Tennessee at Knoxville
+  * Email: ming.chen0919@gmail.com  
+
 * **Biography**
 
   Wenqiang Feng is Data Scientist within DST’s Applied Analytics Group. Dr. Feng’s responsibilities include providing DST clients with access to cutting-edge skills and technologies, including Big Data analytic solutions, advanced analytic and data enhancement techniques and modeling.

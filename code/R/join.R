@@ -8,7 +8,7 @@ right = data.frame(A = c('A0', 'A1', 'A6', 'A7'),
                    F = c('B4', 'B5', 'B6', 'B7'), 
                    G = c('C4', 'C5', 'C6', 'C7'),
                    H = c('D4', 'D5', 'D6', 'D7'))
-
+right
 library(dplyr)
 
 # left join
