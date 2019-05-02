@@ -92,7 +92,10 @@
 <li class="toctree-l1"><a class="reference internal" href="de.html">4. Data Exploration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dm.html">5. Data Manipulation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. Pre-processing procedures</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#rough-pre-processing">6.1. Rough Pre-processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rough-pre-processing">6.1. Rough Pre-processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dealing-with-missing-data">6.1.1. dealing with missing data</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#source-code-for-this-section">6.2. Source Code for This Section</a></li>
 </ul>
 </li>
@@ -179,11 +182,9 @@
 <p>In my opinion,  preprocessing is crucial for the data mining algorithms. If you get a good pre-processing, you will definitely get a beeter result. In this section, we will learn how to do a proper pre-processing in  <strong>R</strong> and <strong>Python</strong>.</p>
 <div class="section" id="rough-pre-processing">
 <span id="index-1"></span><h2>6.1. Rough Pre-processing<a class="headerlink" href="#rough-pre-processing" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><strong>dealing with missing data</strong></li>
-</ul>
-<blockquote>
-<div>Usually, we have two popular way to deal with the missing data: replacing by 0 or replacing by mean value.</div></blockquote>
+<div class="section" id="dealing-with-missing-data">
+<h3>6.1.1. dealing with missing data<a class="headerlink" href="#dealing-with-missing-data" title="Permalink to this headline">¶</a></h3>
+<p>Usually, we have two popular way to deal with the missing data: replacing by 0 or replacing by mean value.</p>
 <div class="content-tabs right-col docutils container">
 <div class="tab-content docutils container" id="tab-python">
 <p class="tab-title">Python</p>
@@ -278,6 +279,7 @@
 <span class="m">3</span> <span class="m">1.333333</span> <span class="m">0</span> <span class="m">7.000000</span>
 <span class="m">4</span> <span class="m">3.000000</span> <span class="m">0</span> <span class="m">8.000000</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

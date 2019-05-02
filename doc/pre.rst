@@ -24,9 +24,10 @@ In my opinion,  preprocessing is crucial for the data mining algorithms. If you 
 Rough Pre-processing 
 ++++++++++++++++++++
 
-* **dealing with missing data**
+dealing with missing data
+-------------------------
 
- Usually, we have two popular way to deal with the missing data: replacing by 0 or replacing by mean value.
+Usually, we have two popular way to deal with the missing data: replacing by 0 or replacing by mean value.
 
 .. content-tabs:: right-col
 
