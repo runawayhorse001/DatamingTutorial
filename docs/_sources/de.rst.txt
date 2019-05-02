@@ -187,7 +187,11 @@ Loading data from ``.xlsx``
 Audit Data
 ++++++++++
 
-In my opinion, data audit is the first step you need to do when you get your dataset. Since you need to know whether the data quality is good enough or not. 
+In my opinion, data auditing is the first step you need to do when you get your dataset. Since you need to know whether the data quality is good enough or not. My **PyAudit: Python Data Audit Library** can be found at: `PyAudit`_.  You can install the ``PyAudit`` from [PyPI](https://pypi.org/project/PyAudit):
+
+.. code-block:: bash
+
+    pip install PyAudit
 
 Check missing rate
 ------------------
@@ -1121,3 +1125,6 @@ The code for this section is available for download for `R <../code/loaddata.R>`
 
         .. literalinclude:: ../code/loaddata.R
              :language: r
+
+
+.. _PyAudit: https://github.com/runawayhorse001/PyAudit

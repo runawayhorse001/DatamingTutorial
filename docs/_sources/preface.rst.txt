@@ -20,7 +20,7 @@ About the authors
 
 * **Wenqiang Feng** 
 	
-  * Data Scientist and PhD in Mathematics 
+  * Sr. Data Scientist and PhD in Mathematics 
   * University of Tennessee at Knoxville
   * Email: von198@gmail.com
 
@@ -29,6 +29,12 @@ About the authors
   * Data Scientist and PhD in Genome Science and Technology 
   * University of Tennessee at Knoxville
   * Email: ming.chen0919@gmail.com  
+
+* **Weiyu Wang** 
+  
+  * MBA and Master in Information Science  
+  * Missouri University of Science and Technology
+  * Email: wwpmc@mst.com    
 
 * **Biography**
 
