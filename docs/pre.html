@@ -183,12 +183,104 @@
 <li><strong>dealing with missing data</strong></li>
 </ul>
 <blockquote>
-<div><p>Usually, we have two popular way to deal with the missing data: replacing by 0 or replacing by mean value.</p>
+<div>Usually, we have two popular way to deal with the missing data: replacing by 0 or replacing by mean value.</div></blockquote>
+<div class="content-tabs right-col docutils container">
+<div class="tab-content docutils container" id="tab-python">
+<p class="tab-title">Python</p>
 <ul class="simple">
-<li>dealing with missing data in <strong>R</strong></li>
 <li>dealing with missing data in <strong>Python</strong></li>
 </ul>
-</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">::</span> <span class="pre">Example:</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+     <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+     <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># fill missing numerical value with 0</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># fill missing numerical value with mean</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">::</span> <span class="pre">Ouput:</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>     <span class="n">A</span>  <span class="n">B</span>    <span class="n">C</span>
+<span class="mi">0</span>  <span class="mf">1.0</span>  <span class="mi">1</span>  <span class="mf">4.0</span>
+<span class="mi">1</span>  <span class="mf">0.0</span>  <span class="mi">0</span>  <span class="n">NaN</span>
+<span class="mi">2</span>  <span class="n">NaN</span>  <span class="mi">0</span>  <span class="mf">7.0</span>
+<span class="mi">3</span>  <span class="mf">3.0</span>  <span class="mi">0</span>  <span class="mf">8.0</span>
+     <span class="n">A</span>  <span class="n">B</span>    <span class="n">C</span>
+<span class="mi">0</span>  <span class="mf">1.0</span>  <span class="mi">1</span>  <span class="mf">4.0</span>
+<span class="mi">1</span>  <span class="mf">0.0</span>  <span class="mi">0</span>  <span class="mf">0.0</span>
+<span class="mi">2</span>  <span class="mf">0.0</span>  <span class="mi">0</span>  <span class="mf">7.0</span>
+<span class="mi">3</span>  <span class="mf">3.0</span>  <span class="mi">0</span>  <span class="mf">8.0</span>
+          <span class="n">A</span>  <span class="n">B</span>         <span class="n">C</span>
+<span class="mi">0</span>  <span class="mf">1.000000</span>  <span class="mi">1</span>  <span class="mf">4.000000</span>
+<span class="mi">1</span>  <span class="mf">0.000000</span>  <span class="mi">0</span>  <span class="mf">6.333333</span>
+<span class="mi">2</span>  <span class="mf">1.333333</span>  <span class="mi">0</span>  <span class="mf">7.000000</span>
+<span class="mi">3</span>  <span class="mf">3.000000</span>  <span class="mi">0</span>  <span class="mf">8.000000</span>
+</pre></div>
+</div>
+</div>
+<div class="tab-content docutils container" id="tab-r">
+<p class="tab-title">R</p>
+<ul class="simple">
+<li>dealing with missing data in <strong>R</strong></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">::</span> <span class="pre">Example:</span></code></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">A</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span>
+                <span class="n">B</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span>
+                <span class="n">C</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="m">8</span><span class="p">))</span>
+<span class="n">df</span>
+
+<span class="n">na2zero</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">){</span>
+  <span class="n">data</span> <span class="o">%&gt;%</span> <span class="nf">mutate_all</span><span class="p">(</span><span class="o">~</span><span class="nf">replace</span><span class="p">(</span><span class="n">.,</span> <span class="nf">is.na</span><span class="p">(</span><span class="n">.)</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="nf">na2zero</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">na2mean</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">){</span>
+  <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="p">)){</span>
+    <span class="n">data</span><span class="nf">[is.na</span><span class="p">(</span><span class="n">data[</span><span class="p">,</span><span class="n">i]</span><span class="p">),</span> <span class="n">i]</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">data[</span><span class="p">,</span><span class="n">i]</span><span class="p">,</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nf">return</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">na2mean</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">::</span> <span class="pre">Ouput:</span></code></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">df</span>
+   <span class="n">A</span> <span class="n">B</span>  <span class="n">C</span>
+<span class="m">1</span>  <span class="m">1</span> <span class="m">1</span>  <span class="m">4</span>
+<span class="m">2</span>  <span class="m">0</span> <span class="m">0</span> <span class="kc">NA</span>
+<span class="m">3</span> <span class="kc">NA</span> <span class="m">0</span>  <span class="m">7</span>
+<span class="m">4</span>  <span class="m">3</span> <span class="m">0</span>  <span class="m">8</span>
+
+<span class="o">&gt;</span> <span class="nf">na2zero</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+  <span class="n">A</span> <span class="n">B</span> <span class="n">C</span>
+<span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">4</span>
+<span class="m">2</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
+<span class="m">3</span> <span class="m">0</span> <span class="m">0</span> <span class="m">7</span>
+<span class="m">4</span> <span class="m">3</span> <span class="m">0</span> <span class="m">8</span>
+
+<span class="o">&gt;</span> <span class="nf">na2mean</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+         <span class="n">A</span> <span class="n">B</span>        <span class="n">C</span>
+<span class="m">1</span> <span class="m">1.000000</span> <span class="m">1</span> <span class="m">4.000000</span>
+<span class="m">2</span> <span class="m">0.000000</span> <span class="m">0</span> <span class="m">6.333333</span>
+<span class="m">3</span> <span class="m">1.333333</span> <span class="m">0</span> <span class="m">7.000000</span>
+<span class="m">4</span> <span class="m">3.000000</span> <span class="m">0</span> <span class="m">8.000000</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="source-code-for-this-section">
 <h2>6.2. Source Code for This Section<a class="headerlink" href="#source-code-for-this-section" title="Permalink to this headline">¶</a></h2>
